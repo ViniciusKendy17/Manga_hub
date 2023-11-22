@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import manga_hub.manga_hub.models.UserModel;
-import manga_hub.manga_hub.repository.UserRespository;
+import manga_hub.manga_hub.repositories.UserRespository;
 
 @RestController
 @RequestMapping("/api")
