@@ -1,6 +1,10 @@
 package manga_hub.manga_hub.models;
 
+import java.util.Collection;
 import java.util.UUID;
+
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -15,20 +19,49 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class UserModel {
+public class UserModel implements UserDetails{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(name = "nome")
     private String name;
-
-    private String email;
-
+     @Column(name = "email")
+    private String login;
     private String senha;
-
     private String cep;
-
     private String telefone;
 
+    @Override
+    public String getPassword() {
+        return senha;
+    }
+    @Override
+    public String getUsername() {
+        return login;
+    }
+    
+    //IGNORAR DAQUI PRA BAIXO POR HORA, OBRIGADO A IMPLEMENTAR
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return null;
+    }
+    
+    @Override
+    public boolean isAccountNonExpired() {
+        return true;
+    }
+    @Override
+    public boolean isAccountNonLocked() {
+        return true;
+    }
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return true;
+    }
+    @Override
+    public boolean isEnabled() {
+       return true;
+    }
 }
+
