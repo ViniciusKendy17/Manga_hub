@@ -1,14 +1,15 @@
 
 function Cadastrar() {
-fetch("https//localhost:8080/cadastro",
+    fetch("http://localhost:8080/auth/register"),
 {
-    Headers:{
+    headers:{
         "Accept":"aplication/json",
         "Content-Type": "aplication/json"
     },
 
     method:"Post",
     body: JSON.stringify({
+
 
     })
 
