@@ -3,44 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="/dist/output.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/All_definitions_.css">
+    <link href="./css/Cadastro.css" rel="stylesheet">
     <script src="./assets/Cadastro.js"></script>
-    <title>Document</title>
+    
+    <title>Cadastro</title>
 </head>
-<body class="w-full h-full">
-    <div class="bg-black">aaaa</div>
-       
-        <h1 class="text-3xl font-bold ">
-            Hello world!
-        </h1>
-        <p class="text-3xl font-bold">The quick brown fox ...</p>
-        <button class="bg-indigo-500">
-            Save changes
-        </button>
-    </div>
+<body>
+    
+        <form id="form" action="POST">
 
+            <section id="in-form" >
 
-        <form action="POST">
-
-            <section>
-                <div>
-
+                <div class="out-input" >
+                    <label for="">Cadastro</label>
                 </div>
 
-                <div>
+                <div class="out-input" >
+                    <input class="inputs" id="nome" type="text" placeholder="Nome">
+                </div>  
 
+                <div class="out-input" >
+                    <input class="inputs" id="email" inputmode="email" type="email" placeholder="Email">
                 </div>
 
-                <div>
+                <div class="out-input" >
+                    <input class="inputs" id="senha" type="password" placeholder="Senha">
+                </div>  
 
+                <div class="out-input" >
+                    <input class="inputs" id="cpf" type="text" placeholder="CPF">
+                </div>  
+
+                <div class="out-input" >
+                    <button >Registrar</button>
                 </div>
 
-                <div>
-
-                </div>
             </section>
 
         </form>
-    </div>
+    
 </body>
 </html>

@@ -1,0 +1,76 @@
+/*Celulares*/
+@media (max-width: 800px) {
+    
+    body {
+        /* use flexbox to center the form */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+     }
+    
+    form {
+       /* set margins and paddings */
+       margin: 0 auto;
+       padding: 20px;
+       width: 55%; 
+       height: 100%;
+       border: blue solid 2px;
+       /* set maximum width */
+       max-width: 350px;
+       max-height: 350px;
+
+    }
+
+    #in-form{
+        width: 100%;
+        height: 100%;
+        border: black solid 2px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+    }
+
+    .out-input{
+       max-width: 300px;
+       margin-top: 30px; 
+    }
+
+    .inputs{
+        width: 100%;
+        border-radius: 5px;
+        border: 1.5px solid rgba(44, 0, 139, 0.90);
+    }
+
+    input:focus{
+        outline: none;
+        transition: .2s;
+    }
+
+
+
+}
+
+
+
+
+@media(min-width: 900px){
+body{
+margin: auto 0;
+padding: 0;
+box-sizing: border-box;
+background-image: url();
+}
+
+#out-form{
+position: absolute;
+border: red solid 2px;
+height: 100px;
+
+}
+
+
+
+}
