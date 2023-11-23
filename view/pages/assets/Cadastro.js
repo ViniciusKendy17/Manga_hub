@@ -1,4 +1,4 @@
-
+const nome = 
 function Cadastrar() {
     fetch("http://localhost:8080/auth/register"),
 {
