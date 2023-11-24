@@ -8,47 +8,87 @@
         justify-content: center;
         height: 100vh;
         margin: 0;
+        background-color: #D9D9D9;
      }
     
     form {
        /* set margins and paddings */
        margin: 0 auto;
-       padding: 20px;
-       width: 55%; 
+      margin-top: -80px;
+       width: 60%; 
        height: 100%;
-       border: blue solid 2px;
        /* set maximum width */
        max-width: 350px;
-       max-height: 350px;
+       max-height: 450px;
+       background: #D9D9D9;    
+     
+    }
 
+    #title{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    label{
+        color: rgba(44, 0, 139, 0.9);
+        font-weight:600;
+        font-size: x-large;
     }
 
     #in-form{
         width: 100%;
         height: 100%;
-        border: black solid 2px;
         display: flex;
         flex-direction: column;
         align-items: center;
-
+        justify-content: space-between;
     }
 
     .out-input{
-       max-width: 300px;
-       margin-top: 30px; 
+       max-width: 450px; 
+       width: 80vw;
+       height: 7%;
+
     }
 
-    .inputs{
+    .inputs {
         width: 100%;
-        border-radius: 5px;
-        border: 1.5px solid rgba(44, 0, 139, 0.90);
-    }
-
-    input:focus{
-        outline: none;
+        height: 100%;
+        border-bottom:  rgba(44, 0, 139, 0.92) 2px solid;
         transition: .2s;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        background-color:  #D9D9D9;
+       }
+
+       .inputs:focus-within::-webkit-input-placeholder {
+        color:  rgba(44, 0, 139, 0.92);
+       }
+  
+       .inputs:focus {
+        outline: none;      
+       }
+
+
+    #botao{
+        width: 100%;
+        background-color: rgba(44, 0, 139, 0.9);
+        outline: none;
+        border: none;
+        color: white;
+        border-radius: 10px;
+        transition: .3s;
     }
 
+    #botao:hover{
+        cursor: pointer;
+        background-color: white;
+        color: rgba(44, 0, 139, 0.9) ;
+        border:  rgba(44, 0, 139, 0.9) 1px solid;
+        font-weight: bold;
+    }
 
 
 }

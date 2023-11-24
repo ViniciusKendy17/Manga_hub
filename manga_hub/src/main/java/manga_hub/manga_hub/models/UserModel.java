@@ -19,49 +19,52 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class UserModel implements UserDetails{
+public class UserModel implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(name = "nome")
     private String name;
-     @Column(name = "email")
+    @Column(name = "email")
     private String login;
     private String senha;
-    private String cep;
+    private String cpf;
     private String telefone;
 
     @Override
     public String getPassword() {
         return senha;
     }
+
     @Override
     public String getUsername() {
         return login;
     }
-    
-    //IGNORAR DAQUI PRA BAIXO POR HORA, OBRIGADO A IMPLEMENTAR
+
+    // IGNORAR DAQUI PRA BAIXO POR HORA, OBRIGADO A IMPLEMENTAR
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return null;
     }
-    
+
     @Override
     public boolean isAccountNonExpired() {
         return true;
     }
+
     @Override
     public boolean isAccountNonLocked() {
         return true;
     }
+
     @Override
     public boolean isCredentialsNonExpired() {
         return true;
     }
+
     @Override
     public boolean isEnabled() {
-       return true;
+        return true;
     }
 }
-

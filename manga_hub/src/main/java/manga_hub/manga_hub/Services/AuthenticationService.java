@@ -11,25 +11,25 @@ import manga_hub.manga_hub.models.UserModel;
 import manga_hub.manga_hub.repositories.UserRepository;
 
 @Service
-public class AuthenticationService implements UserDetailsService{
+public class AuthenticationService implements UserDetailsService {
 
     @Autowired
     UserRepository repository;
 
-    public void save(UserRegDTO userRegDTO){
+    public void save(UserRegDTO userRegDTO) {
         // Converter UserDTO para UserModel
         UserModel userModel = new UserModel();
         userModel.setName(userRegDTO.nome());
         userModel.setLogin(userRegDTO.login());
         userModel.setSenha(userRegDTO.senha());
-        userModel.setCep(userRegDTO.cep());
+        userModel.setCpf(userRegDTO.cep());
         userModel.setTelefone(userRegDTO.telefone());
         userModel = repository.save(userModel);
     }
-    
+
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
         return repository.findByLogin(email);
     }
-    
+
 }
