@@ -6,18 +6,18 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import manga_hub.manga_hub.models.UserModel;
 import manga_hub.manga_hub.repositories.UserRepository;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/teste")
 public class UserController {
 
     @Autowired
     private UserRepository userRepository;
 
-    @GetMapping("/check-database")
-    public void checkDatabaseConnection() {
-        System.out.println(userRepository.findAll());
-
+    @GetMapping("/")
+    public java.util.List<UserModel> teste() {
+        return userRepository.findAll();
     }
 }

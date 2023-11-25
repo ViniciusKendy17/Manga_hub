@@ -18,8 +18,8 @@ import manga_hub.manga_hub.repositories.UserRepository;
 @Component
 public class SecurityFilter extends OncePerRequestFilter {
 
-   @Autowired
-   TokenService tokenService;
+    @Autowired
+    TokenService tokenService;
 
     @Autowired
     UserRepository userRepository;
