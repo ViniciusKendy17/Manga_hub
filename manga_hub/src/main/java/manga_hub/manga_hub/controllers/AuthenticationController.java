@@ -5,11 +5,11 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.web.bind.annotation.CrossOrigin;
+
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+
 import org.springframework.web.bind.annotation.RestController;
 
 import manga_hub.manga_hub.DTO.LoginTokenDTO;
@@ -52,8 +52,7 @@ public class AuthenticationController {
             return ResponseEntity.badRequest().build();
 
         String encriptedPassowrd = new BCryptPasswordEncoder().encode(userDTOreg.senha());
-        UserRegDTO userDto = new UserRegDTO(userDTOreg.nome(), userDTOreg.login(), encriptedPassowrd, userDTOreg.cep(),
-                userDTOreg.telefone());
+        UserRegDTO userDto = new UserRegDTO(userDTOreg.nome(), userDTOreg.login(), encriptedPassowrd, userDTOreg.cep(),userDTOreg.telefone());
         service.save(userDto);
         return ResponseEntity.ok().build();
     }
