@@ -1,6 +1,7 @@
 package manga_hub.manga_hub.models;
 
 import java.util.Collection;
+import java.util.List;
 import java.util.UUID;
 
 import org.springframework.security.core.GrantedAuthority;
@@ -11,6 +12,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToMany;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -26,11 +29,14 @@ public class UserModel implements UserDetails{
 
     @Column(name = "nome")
     private String name;
-     @Column(name = "email")
+    @Column(name = "email")
     private String login;
     private String senha;
     private String cep;
     private String telefone;
+
+    @OneToMany(mappedBy = "id_vendedor")
+    private List<ProductModel> produtos; 
 
     @Override
     public String getPassword() {
