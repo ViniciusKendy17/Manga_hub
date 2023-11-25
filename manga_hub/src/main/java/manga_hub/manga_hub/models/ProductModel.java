@@ -5,7 +5,11 @@ import java.util.List;
 
 import org.hibernate.annotations.ManyToAny;
 
+import jakarta.persistence.CollectionTable;
+import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -31,7 +35,9 @@ public class ProductModel {
     private String nome;
     private Double preco;
     private int estoque;
-    @OneToMany
+    @ElementCollection(targetClass = Genero.class)
+    @CollectionTable(name = "produto_genero", joinColumns = @JoinColumn(name = "produto_id"))
+    @Enumerated(EnumType.STRING)
     private List<Genero> genero = new ArrayList<>();
     private TipoProduto tipo_produto;
     private String isbn;
