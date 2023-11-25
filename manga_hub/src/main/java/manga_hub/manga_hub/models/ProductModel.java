@@ -35,6 +35,7 @@ public class ProductModel {
     private List <Genero> genero = new ArrayList<>();
     private TipoProduto tipo_produto; 
     private String isbn; 
+    private String imagem;
 
     @ManyToOne
     @JoinColumn(name = "id_vendedor")
