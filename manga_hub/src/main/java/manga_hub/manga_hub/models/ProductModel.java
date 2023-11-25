@@ -23,20 +23,21 @@ import manga_hub.manga_hub.Enums.TipoProduto;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ProductModel {
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id; 
+    private long id;
 
-    private String nome; 
+    private String nome;
     private Double preco;
     private int estoque;
     @OneToMany
-    private List <Genero> genero = new ArrayList<>();
-    private TipoProduto tipo_produto; 
-    private String isbn; 
+    private List<Genero> genero = new ArrayList<>();
+    private TipoProduto tipo_produto;
+    private String isbn;
+    private String imagem;
 
     @ManyToOne
     @JoinColumn(name = "id_vendedor")
-    private UserModel id_vendedor; 
+    private UserModel id_vendedor;
 }
