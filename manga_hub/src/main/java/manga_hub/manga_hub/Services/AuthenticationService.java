@@ -22,7 +22,7 @@ public class AuthenticationService implements UserDetailsService {
         userModel.setName(userRegDTO.nome());
         userModel.setLogin(userRegDTO.login());
         userModel.setSenha(userRegDTO.senha());
-        userModel.setCpf(userRegDTO.cpf());
+        userModel.setCep(userRegDTO.cep());
         userModel.setTelefone(userRegDTO.telefone());
         userModel = repository.save(userModel);
     }

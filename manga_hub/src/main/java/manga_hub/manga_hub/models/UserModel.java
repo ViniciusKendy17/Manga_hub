@@ -12,7 +12,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -32,7 +31,8 @@ public class UserModel implements UserDetails {
     @Column(name = "email")
     private String login;
     private String senha;
-    private String cpf;
+    private String cep;
+    @Column(name = "telefone", length = 15)
     private String telefone;
 
     @OneToMany(mappedBy = "id_vendedor")
