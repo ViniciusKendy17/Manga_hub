@@ -5,15 +5,18 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+
 import org.springframework.web.bind.annotation.RestController;
 
 import manga_hub.manga_hub.DTO.LoginTokenDTO;
 import manga_hub.manga_hub.DTO.UserLoginDTO;
 import manga_hub.manga_hub.DTO.UserRegDTO;
 import manga_hub.manga_hub.Security.TokenService;
+//import manga_hub.manga_hub.Security.TokenService;
 import manga_hub.manga_hub.Services.AuthenticationService;
 import manga_hub.manga_hub.models.UserModel;
 
@@ -39,18 +42,18 @@ public class AuthenticationController {
 
         var token = tokenService.generateToken((UserModel) auth.getPrincipal());
 
-        return ResponseEntity.ok(new LoginTokenDTO(token));
+        return (ResponseEntity) ResponseEntity.ok(new LoginTokenDTO(token));
     }
 
     // localhost:8080/auth/register
     @PostMapping("/register")
     public ResponseEntity register(@RequestBody UserRegDTO userDTOreg) {
+        System.out.println("-->Chegou no endpoint de cadastro");
         if (this.service.loadUserByUsername(userDTOreg.login()) != null)
             return ResponseEntity.badRequest().build();
 
         String encriptedPassowrd = new BCryptPasswordEncoder().encode(userDTOreg.senha());
-        UserRegDTO userDto = new UserRegDTO(userDTOreg.nome(), userDTOreg.login(), encriptedPassowrd, userDTOreg.cpf(),
-                userDTOreg.telefone());
+        UserRegDTO userDto = new UserRegDTO(userDTOreg.nome(), userDTOreg.login(), encriptedPassowrd, userDTOreg.cep(),userDTOreg.telefone());
         service.save(userDto);
         return ResponseEntity.ok().build();
     }

@@ -26,7 +26,7 @@ public class TokenService {
         try {
             Algorithm algorithm = Algorithm.HMAC256(secret);
             String token = JWT.create()
-            .withIssuer("apiWebQuest")
+            .withIssuer("manga_hub")
             .withSubject(userModel.getLogin())
             .withExpiresAt(getExpirationDate())
             .sign(algorithm);
@@ -41,7 +41,7 @@ public class TokenService {
         try {
             Algorithm algorithm = Algorithm.HMAC256(secret);
             return JWT.require(algorithm)
-            .withIssuer("apiWebQuest")
+            .withIssuer("manga_hub")
             .build()
             .verify(token)
             .getSubject();
