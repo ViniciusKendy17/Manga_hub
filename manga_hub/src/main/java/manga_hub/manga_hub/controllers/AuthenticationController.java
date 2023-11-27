@@ -36,10 +36,8 @@ public class AuthenticationController {
     // localhost:8080/auth/login
     @PostMapping("/login")
     public ResponseEntity login(@RequestBody UserLoginDTO loginDTO) {
-        System.out.println("Chegou na desgraça do endpoint");
         var usernamePassword = new UsernamePasswordAuthenticationToken(loginDTO.login(), loginDTO.senha());
         var auth = this.authenticationManager.authenticate(usernamePassword);
-
         var token = tokenService.generateToken((UserModel) auth.getPrincipal());
 
         return (ResponseEntity) ResponseEntity.ok(new LoginTokenDTO(token));
@@ -48,7 +46,6 @@ public class AuthenticationController {
     // localhost:8080/auth/register
     @PostMapping("/register")
     public ResponseEntity register(@RequestBody UserRegDTO userDTOreg) {
-        System.out.println("-->Chegou no endpoint de cadastro");
         if (this.service.loadUserByUsername(userDTOreg.login()) != null)
             return ResponseEntity.badRequest().build();
 
