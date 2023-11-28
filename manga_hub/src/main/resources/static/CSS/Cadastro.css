@@ -1,5 +1,5 @@
 /*Celulares*/
-@media (max-width: 800px) {
+@media (min-width:1px) {
     
     body {
         /* use flexbox to center the form */

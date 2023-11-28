@@ -14,7 +14,7 @@
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-image: url(/src/pages/imgs/imageLoginMobile.jpg);
+    background-image: url(../IMGs/imageLoginMobile.jpg);
     background-size: cover;
     background-repeat: no-repeat;
   }
@@ -93,7 +93,7 @@
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-image: url(/src/pages/imgs/imageLoginMobile.jpg);
+    background-image: url(../IMGs/imageLoginMobile.jpg);
     background-size: cover;
     background-repeat: no-repeat;
   }
@@ -173,7 +173,7 @@
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-image: url(/src/pages/imgs/imageLoginMobile.jpg);
+    background-image: url(../IMGs/imageLoginMobile.jpg);
     background-size: cover;
     background-repeat: no-repeat;
   }
@@ -253,7 +253,7 @@
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-image: url(/src/pages/imgs/imageLoginMobile.jpg);
+    background-image: url(../IMGs/imageLoginMobile.jpg);
     background-size: cover;
     background-repeat: no-repeat;
   }
@@ -273,7 +273,7 @@
     position: relative;
     width: 90%;
     top: 10%;
-    left: 3%;
+    left: 5%;
     display: flex;
     flex-direction: column;
     
@@ -333,7 +333,7 @@
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-image: url(/src/pages/imgs/imageLoginMobile.jpg);
+    background-image: url(../IMGs/imageLoginMobile.jpg);
     background-size: cover;
     background-repeat: no-repeat;
   }
