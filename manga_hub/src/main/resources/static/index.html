@@ -1,13 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" xmlns:th="http://www.thymeleaf.org" >
+    <script src="https://unpkg.com/htmx.org@1.9.9" integrity="sha384-QFjmbokDn2DjBjq+fM+8LUIVrAgqcNW2s0PjAxHETgRn9l4fvX31ZxDxvwQnyMOX" crossorigin="anonymous"></script>
+    <script src="/path/to/htmx.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manga Hub</title>
 </head>
 <body>
-    <h1>Home</h1>
-    <a href="./HTML/Cadastro.html">CADASTRO</a>
-    <a href="./HTML/Login.html">Login</a>
+
+    <div th:replace="fragments/header :: header"></div>
+
+    <!-- Conteúdo específico da página aqui -->
+    <main>
+        <h1>Home</h1>
+        <div hx-trigger="" hx-get="/auth/login" >Login</div>
+        <a href="./templates/Cadastro.html">CADASTRO</a>
+        <a href="./templates/login.html">Login</a>
+
+        <h2>Bem-vindo à Página Inicial</h2>
+        <p>Esta é a sua página inicial. Adicione mais conteúdo conforme necessário.</p>
+    </main>
+
+    <!-- Incluir o footer -->
+    <div th:replace="fragments/footer :: footer"></div>
 </body>
 </html>
