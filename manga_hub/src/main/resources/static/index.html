@@ -9,12 +9,12 @@
 </head>
 <body>
 
-    <div th:replace="fragments/header :: header"></div>
+    <div th:replace="/templates/header :: header"></div>
 
     <!-- Conteúdo específico da página aqui -->
     <main>
         <h1>Home</h1>
-        <div hx-trigger="" hx-get="/auth/login" >Login</div>
+        <div hx-trigger="load" hx-get="/auth/login" >Login</div>
         <a href="./templates/Cadastro.html">CADASTRO</a>
         <a href="./templates/login.html">Login</a>
 

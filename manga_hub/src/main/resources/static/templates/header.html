@@ -3,15 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" th:href="@{/static/CSS/header.css}" />
+    <link rel="stylesheet" href="../CSS/header.css" />
+    <link rel="stylesheet" href="../CSS/All_definitions_.css">
     <title>Seu Sistema</title>
 </head>
 <body>
     <header>
         <nav>
             <ul>
-                <li><a th:href="@{/login}" href="/">Home</a></li>
+                <li><a th:href="@{}" href="/">Home</a></li>
                 <li><a th:href="@{/pagina}" href="/pagina">Página</a></li>
+                <li><a th:href="@{/auth/login}" href="/login">Fazer Login</a></li>
                 <!-- Adicione mais links conforme necessário -->
             </ul>
         </nav>
