@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login Mangá Hub</title>
+  <title>Login Manhá Hub</title>
   <link rel="stylesheet" href="../CSS/Login.css">
 </head>
 <body>
@@ -11,13 +11,29 @@
         <form action="" name="login" class="loginForm">
             <h2 class="FormTitle">Login</h2> <br>
             
-            <input type="email" placeholder="Email" name="email" class="email" required> <br>   
-            <input type="password" placeholder="Senha" name="password" class="password" required> <br>
-            <p>Esqueceu a senha? Redefina <a href="#">aqui</a></p>
+            <input type="email" placeholder="Email" name="email" class="email" required>
+
+            <div class="FaviconUserLogin">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                    <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+                  </svg> 
+            </div> 
+  
+            <br>
+
+            <input type="password" placeholder="Senha" name="password" class="password" required> 
+            <div class="FaviconPasswordLogin">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-lock-fill" viewBox="0 0 16 16">
+                    <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2m3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2"/>
+                  </svg>
+            </div>
+
+            <br>
+            
+            <p>Esqueceu a senha? Redefina <a href="#">aqui</a></p> <br>
             <input type="submit" value="Logar" name="submit" class="submit"> <br>
-            <p>Novo aqui? Clique <a href="../HTML/Cadastro.html">aqui</a> para se cadastrar</p>
+            <p>Novo aqui? Clique <a href="Cadastro.html" class="LinkCadastro">aqui</a> para se cadastrar</p>
         </form>
     </div>
-    <script src="../JS/Login.js"></script>
 </body>
 </html>
