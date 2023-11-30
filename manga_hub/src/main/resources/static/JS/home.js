@@ -120,3 +120,98 @@ const products = [
         id_vendedor: 789
       },
   ];
+
+    //ACESSANDO A SECTION
+    const productMangaWrapper = document.querySelector('#manga');
+
+    //LISTANDO Mangás
+    products.forEach(product => {
+    const card = document.createElement('div');
+    card.classList.add('card-product');
+  
+    const image = document.createElement('img');
+    image.src = product.imagem;
+    image.alt = '';
+  
+    const content = document.createElement('div');
+    content.classList.add('product-content');
+  
+    const title = document.createElement('h5');
+    title.classList.add('title');
+    title.textContent = product.titulo;
+  
+    const subtitle = document.createElement('p');
+    subtitle.classList.add('subtitle');
+    subtitle.textContent = product.subtitulo;
+  
+    const price = document.createElement('p');
+    price.classList.add('price');
+    price.textContent = `RS$ ${product.preco.toFixed(2)}`;
+  
+    const vendedor = document.createElement('p');
+    vendedor.classList.add('vendedor');
+    vendedor.textContent = product.vendedor;
+  
+    const desc = document.createElement('p');
+    desc.classList.add('desc');
+    desc.textContent = product.descricao;
+  
+    content.appendChild(title);
+    content.appendChild(subtitle);
+    content.appendChild(price);
+    content.appendChild(vendedor);
+    content.appendChild(desc);
+  
+    card.appendChild(image);
+    card.appendChild(content);
+  
+    productMangaWrapper.appendChild(card);
+  });
+
+  
+  //ACESSANDO A SECTION
+  const productLightWrapper = document.querySelector('#lightNovels');
+
+  //LISTANDO LIGHT NOVELS
+  products.forEach(product => {
+  const card = document.createElement('div');
+  card.classList.add('card-product');
+
+  const image = document.createElement('img');
+  image.src = product.imagem;
+  image.alt = '';
+
+  const content = document.createElement('div');
+  content.classList.add('product-content');
+
+  const title = document.createElement('h5');
+  title.classList.add('title');
+  title.textContent = product.titulo;
+
+  const subtitle = document.createElement('p');
+  subtitle.classList.add('subtitle');
+  subtitle.textContent = product.subtitulo;
+
+  const price = document.createElement('p');
+  price.classList.add('price');
+  price.textContent = `RS$ ${product.preco.toFixed(2)}`;
+
+  const vendedor = document.createElement('p');
+  vendedor.classList.add('vendedor');
+  vendedor.textContent = product.vendedor;
+
+  const desc = document.createElement('p');
+  desc.classList.add('desc');
+  desc.textContent = product.descricao;
+
+  content.appendChild(title);
+  content.appendChild(subtitle);
+  content.appendChild(price);
+  content.appendChild(vendedor);
+  content.appendChild(desc);
+
+  card.appendChild(image);
+  card.appendChild(content);
+
+  productLightWrapper.appendChild(card);
+});
