@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8" xmlns:th="http://www.thymeleaf.org" >
+    <meta charset="UTF-8"  >
     <script src="https://unpkg.com/htmx.org@1.9.9" integrity="sha384-QFjmbokDn2DjBjq+fM+8LUIVrAgqcNW2s0PjAxHETgRn9l4fvX31ZxDxvwQnyMOX" crossorigin="anonymous"></script>
     <script src="/path/to/htmx.min.js"></script>
     <link rel="stylesheet" href="./CSS/home.css">
@@ -9,7 +9,7 @@
 </head>
 <body>
 
-    <div th:replace="/templates/header :: header"></div>
+    <div th:include="/templates/fragments/header :: header">
 
     <!-- CONTEÚDO MAIS PROCURADO -->
     <main>

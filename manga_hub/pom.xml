@@ -31,6 +31,17 @@
         <artifactId>postgresql</artifactId>
         <version>42.2.23</version>
     </dependency>
+
+	
+
+	<dependencies>
+   <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-thymeleaf</artifactId>
+   </dependency>
+</dependencies>
+
+	
 		
 		<dependency>
 			<groupId>org.projectlombok</groupId>
