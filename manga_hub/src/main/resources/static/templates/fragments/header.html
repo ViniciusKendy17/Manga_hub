@@ -1,22 +1,45 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
+<head th:fragment="html-head" >
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../CSS/header.css" />
     <link rel="stylesheet" th:href= "@{/CSS/header.css}" >
-    <link rel="stylesheet" href="../CSS/All_definitions_.css">
+    <link rel="stylesheet" href="../../CSS/All_definitions_.css">
+    <link href="../../CSS/header.css"
+    th:href="@{/CSS/header.css}" rel="stylesheet" />
     <title>Seu Sistema</title>
 </head>
 <body>
-    <header>
+    <header th:fragment="header" >
         <nav>
-            <ul>
-                <li><a th:href="@{}" href="/">Home</a></li>
-                <li><a th:href="@{/pagina}" href="/pagina">Página</a></li>
-                <li><a th:href="@{/auth/login}" href="/login">Fazer Login</a></li>
+            <div id="nav-bar">
+                <div>
+                    <img src="" alt="">
+                </div>
+
+                <ul>
+                    <li><a th:href="@{}" href="/">Home</a></li>
+                    <li><a href=""></a></li>
+                    <li><a href=""></a></li>
+                </ul>
+            </div>
+  
+            <div id="seacrh-bar">
+
+                <div id="bar">
+                    <input type="text" placeholder="Search">
+                </div>
+
+                <div>
+                    <button>
+                        <a id="botao-in" th:href="@{/auth/login}" href="/login">Fazer Login</a>
+                    </button>
+                </div>
+
                
-            </ul>
+            </div>
+           
         </nav>
     </header>
 
