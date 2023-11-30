@@ -3,25 +3,57 @@
 <head th:fragment="html-head" >
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../CSS/header.css" />
+    <link rel="stylesheet" href="../../static/CSS/header.css" />
     <link rel="stylesheet" th:href= "@{/CSS/header.css}" >
-    <link rel="stylesheet" href="../../CSS/All_definitions_.css">
+    <link rel="stylesheet" href="../../static/CSS/All_definitions_.css">
     <link href="../../CSS/header.css"
     th:href="@{/CSS/header.css}" rel="stylesheet" />
     <title>Seu Sistema</title>
 </head>
 <body>
-    <header >
+    <header>
         <nav>
             <div id="nav-bar">
+                
                 <div>
                     <img src="" alt="">
                 </div>
 
                 <ul>
-                    <li><a th:href="@{}" href="/">Home</a></li>
-                    <li><a href=""></a></li>
-                    <li><a href=""></a></li>
+                    <div class="navbar">
+                        <div class="dropdown">
+                          <button class="dropbtn">Mangás
+                            <i class="fa fa-caret-down"></i>
+                          </button>
+                          <div class="dropdown-content">
+                            <a href="#">Link 1</a>
+                            <a href="#">Link 2</a>
+                            <a href="#">Link 3</a>
+                          </div>
+                        </div>
+
+                        <div class="dropdown">
+                            <button class="dropbtn">Action Figures
+                              <i class="fa fa-caret-down"></i>
+                            </button>
+                            <div class="dropdown-content">
+                              <a href="#">Link 1</a>
+                              <a href="#">Link 2</a>
+                              <a href="#">Link 3</a>
+                            </div>
+                          </div>
+
+                          <div class="dropdown">
+                            <button class="dropbtn">Populares
+                              <i class="fa fa-caret-down"></i>
+                            </button>
+                            <div class="dropdown-content">
+                              <a href="#">Link 1</a>
+                              <a href="#">Link 2</a>
+                              <a href="#">Link 3</a>
+                            </div>
+                          </div>
+                      </div>
                 </ul>
             </div>
   
@@ -31,9 +63,9 @@
                     <input type="text" placeholder="Search">
                 </div>
 
-                <div>
-                    <button>
-                        <a id="botao-in" th:href="@{/auth/login}" href="/login">Fazer Login</a>
+                <div id="botao-out-out" >
+                    <button id="botao-out" >
+                        <a id="botao-in" th:href="@{/auth/login}" href="/login">Entrar</a>
                     </button>
                 </div>
 
