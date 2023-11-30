@@ -1,0 +1,57 @@
+body{
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+header{
+    position: absolute;
+    background-color: rgba(44, 0, 139, 0.9);
+    width: 100%;    
+    display: flex;
+    justify-content: center;
+}
+
+nav{
+    height: 100%;
+    width:90%;
+    max-height: 80px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#nav-bar{
+    border: red solid 2px;
+    width: 50%;
+}
+
+#seacrh-bar{
+    border: blue solid 2px;
+    width: 50%;
+    display: flex;
+    justify-content:flex-end;
+    align-items: center;
+    gap: 3rem;
+}
+
+ul{
+    display: flex;
+}
+
+li{
+    list-style: none;
+    margin-left: 40px;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+#botao-in{
+    color: black;
+}
+
+#bar{
+    width: 50vw;
+}
+
