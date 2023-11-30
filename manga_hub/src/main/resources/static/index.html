@@ -4,25 +4,215 @@
     <meta charset="UTF-8" xmlns:th="http://www.thymeleaf.org" >
     <script src="https://unpkg.com/htmx.org@1.9.9" integrity="sha384-QFjmbokDn2DjBjq+fM+8LUIVrAgqcNW2s0PjAxHETgRn9l4fvX31ZxDxvwQnyMOX" crossorigin="anonymous"></script>
     <script src="/path/to/htmx.min.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./CSS/home.css">
     <title>Manga Hub</title>
 </head>
 <body>
 
     <div th:replace="/templates/header :: header"></div>
 
-    <!-- Conteúdo específico da página aqui -->
+    <!-- CONTEÚDO MAIS PROCURADO -->
     <main>
-        <h1>Home</h1>
-        <div hx-trigger="load" hx-get="/auth/login" >Login</div>
-        <a href="./templates/Cadastro.html">CADASTRO</a>
-        <a href="./templates/login.html">Login</a>
+        <section id="more-searched">
+            <h2>DESTAQUES</h2>
+            <div class="product-destaque">
+                <div class="card-dest">
+                    <img src="./IMGs/gutsPopozudo - Copia.jpg" alt="">
+                    <h3 class="title-dest">Título</h3>
+    
+                </div>
+                <div class="card-dest">
+                    <img src="./IMGs/gutsPopozudo - Copia.jpg" alt="">
+                    <h3 class="title-dest">Título</h3>
+    
+                </div>
+                <div class="card-dest">
+                    <img src="./IMGs/gutsPopozudo - Copia.jpg" alt="">
+                    <h3 class="title-dest">Título</h3>
+    
+                </div>
+                <div class="card-dest">
+                    <img src="./IMGs/gutsPopozudo - Copia.jpg" alt="">
+                    <h3 class="title-dest">Título</h3>
+    
+                </div>
+                <div class="card-dest">
+                    <img src="./IMGs/gutsPopozudo - Copia.jpg" alt="">
+                    <h3 class="title-dest">Título</h3>
+    
+                </div>
+                <div class="card-dest">
+                    <img src="./IMGs/gutsPopozudo - Copia.jpg" alt="">
+                    <h3 class="title-dest">Título</h3>
+    
+                </div>
+            </div>
+        </section>
 
-        <h2>Bem-vindo à Página Inicial</h2>
-        <p>Esta é a sua página inicial. Adicione mais conteúdo conforme necessário.</p>
+        <!-- Mangás -->
+        <section>
+            <h2>Mangás</h2>
+            <div class="product-wrapper">
+                <div class="card-product">
+                    <img src="./IMGs/olhaEssaPorrakkkkkk - Copia.png" alt="">
+                    <div class="product-content">
+                        <h5 class="title">One Pice</h5>
+                        <p class="subtitle"> Mangá de One Piece novo</p>
+                        <p class="price">RS$ 100,00</p>
+                        <P class="vendedor">Rafael Picka de Mel</P>
+                        <p class="desc">
+                            After being reborn, Zhao Mingxi had no choice but to mooch off of Fu group's young master's luck to avoid death by terminal illness. Although his ears would turn so red as if they're bleeding whenever he sees her, he still keeps up an act of prideful indifference: "Can you stop being so clingy?" The next day.
+                        </p>
+                    </div>
+                </div>
+                <div class="card-product">
+                    <img src="./IMGs/olhaEssaPorrakkkkkk - Copia.png" alt="">
+                    <div class="product-content">
+                        <h5 class="title">One Pice</h5>
+                        <p class="subtitle"> Mangá de One Piece novo</p>
+                        <p class="price">RS$ 100,00</p>
+                        <P class="vendedor">Rafael Picka de Mel</P>
+                        <p class="desc">
+                            After being reborn, Zhao Mingxi had no choice but to mooch off of Fu group's young master's luck to avoid death by terminal illness. Although his ears would turn so red as if they're bleeding whenever he sees her, he still keeps up an act of prideful indifference: "Can you stop being so clingy?" The next day.
+                        </p>
+                    </div>
+                </div>
+                <div class="card-product">
+                    <img src="./IMGs/olhaEssaPorrakkkkkk - Copia.png" alt="">
+                    <div class="product-content">
+                        <h5 class="title">One Pice</h5>
+                        <p class="subtitle"> Mangá de One Piece novo</p>
+                        <p class="price">RS$ 100,00</p>
+                        <P class="vendedor">Rafael Picka de Mel</P>
+                        <p class="desc">
+                            After being reborn, Zhao Mingxi had no choice but to mooch off of Fu group's young master's luck to avoid death by terminal illness. Although his ears would turn so red as if they're bleeding whenever he sees her, he still keeps up an act of prideful indifference: "Can you stop being so clingy?" The next day.
+                        </p>
+                    </div>
+                </div>
+                <div class="card-product">
+                    <img src="./IMGs/olhaEssaPorrakkkkkk - Copia.png" alt="">
+                    <div class="product-content">
+                        <h5 class="title">One Pice</h5>
+                        <p class="subtitle"> Mangá de One Piece novo</p>
+                        <p class="price">RS$ 100,00</p>
+                        <P class="vendedor">Rafael Picka de Mel</P>
+                        <p class="desc">
+                            After being reborn, Zhao Mingxi had no choice but to mooch off of Fu group's young master's luck to avoid death by terminal illness. Although his ears would turn so red as if they're bleeding whenever he sees her, he still keeps up an act of prideful indifference: "Can you stop being so clingy?" The next day.
+                        </p>
+                    </div>
+                </div>
+                <div class="card-product">
+                    <img src="./IMGs/olhaEssaPorrakkkkkk - Copia.png" alt="">
+                    <div class="product-content">
+                        <h5 class="title">One Pice</h5>
+                        <p class="subtitle"> Mangá de One Piece novo</p>
+                        <p class="price">RS$ 100,00</p>
+                        <P class="vendedor">Rafael Picka de Mel</P>
+                        <p class="desc">
+                            After being reborn, Zhao Mingxi had no choice but to mooch off of Fu group's young master's luck to avoid death by terminal illness. Although his ears would turn so red as if they're bleeding whenever he sees her, he still keeps up an act of prideful indifference: "Can you stop being so clingy?" The next day.
+                        </p>
+                    </div>
+                </div>
+                <div class="card-product">
+                    <img src="./IMGs/olhaEssaPorrakkkkkk - Copia.png" alt="">
+                    <div class="product-content">
+                        <h5 class="title">One Pice</h5>
+                        <p class="subtitle"> Mangá de One Piece novo</p>
+                        <p class="price">RS$ 100,00</p>
+                        <P class="vendedor">Rafael Picka de Mel</P>
+                        <p class="desc">
+                            After being reborn, Zhao Mingxi had no choice but to mooch off of Fu group's young master's luck to avoid death by terminal illness. Although his ears would turn so red as if they're bleeding whenever he sees her, he still keeps up an act of prideful indifference: "Can you stop being so clingy?" The next day.
+                        </p>
+                    </div>
+                </div>
+                
+            </div> 
+            <button class="show-more">Ver mais</button>
+        </section>
+        <!-- Light Novels -->
+        <section>
+            <h2>Light Novels</h2>
+            <div class="product-wrapper">
+                <div class="card-product">
+                    <img src="./IMGs/olhaEssaPorrakkkkkk - Copia.png" alt="">
+                    <div class="product-content">
+                        <h5 class="title">One Pice</h5>
+                        <p class="subtitle"> Mangá de One Piece novo</p>
+                        <p class="price">RS$ 100,00</p>
+                        <P class="vendedor">Rafael Picka de Mel</P>
+                        <p class="desc">
+                            After being reborn, Zhao Mingxi had no choice but to mooch off of Fu group's young master's luck to avoid death by terminal illness. Although his ears would turn so red as if they're bleeding whenever he sees her, he still keeps up an act of prideful indifference: "Can you stop being so clingy?" The next day.
+                        </p>
+                    </div>
+                </div>
+                <div class="card-product">
+                    <img src="./IMGs/olhaEssaPorrakkkkkk - Copia.png" alt="">
+                    <div class="product-content">
+                        <h5 class="title">One Pice</h5>
+                        <p class="subtitle"> Mangá de One Piece novo</p>
+                        <p class="price">RS$ 100,00</p>
+                        <P class="vendedor">Rafael Picka de Mel</P>
+                        <p class="desc">
+                            After being reborn, Zhao Mingxi had no choice but to mooch off of Fu group's young master's luck to avoid death by terminal illness. Although his ears would turn so red as if they're bleeding whenever he sees her, he still keeps up an act of prideful indifference: "Can you stop being so clingy?" The next day.
+                        </p>
+                    </div>
+                </div>
+                <div class="card-product">
+                    <img src="./IMGs/olhaEssaPorrakkkkkk - Copia.png" alt="">
+                    <div class="product-content">
+                        <h5 class="title">One Pice</h5>
+                        <p class="subtitle"> Mangá de One Piece novo</p>
+                        <p class="price">RS$ 100,00</p>
+                        <P class="vendedor">Rafael Picka de Mel</P>
+                        <p class="desc">
+                            After being reborn, Zhao Mingxi had no choice but to mooch off of Fu group's young master's luck to avoid death by terminal illness. Although his ears would turn so red as if they're bleeding whenever he sees her, he still keeps up an act of prideful indifference: "Can you stop being so clingy?" The next day.
+                        </p>
+                    </div>
+                </div>
+                <div class="card-product">
+                    <img src="./IMGs/olhaEssaPorrakkkkkk - Copia.png" alt="">
+                    <div class="product-content">
+                        <h5 class="title">One Pice</h5>
+                        <p class="subtitle"> Mangá de One Piece novo</p>
+                        <p class="price">RS$ 100,00</p>
+                        <P class="vendedor">Rafael Picka de Mel</P>
+                        <p class="desc">
+                            After being reborn, Zhao Mingxi had no choice but to mooch off of Fu group's young master's luck to avoid death by terminal illness. Although his ears would turn so red as if they're bleeding whenever he sees her, he still keeps up an act of prideful indifference: "Can you stop being so clingy?" The next day.
+                        </p>
+                    </div>
+                </div>
+                <div class="card-product">
+                    <img src="./IMGs/olhaEssaPorrakkkkkk - Copia.png" alt="">
+                    <div class="product-content">
+                        <h5 class="title">One Pice</h5>
+                        <p class="subtitle"> Mangá de One Piece novo</p>
+                        <p class="price">RS$ 100,00</p>
+                        <P class="vendedor">Rafael Picka de Mel</P>
+                        <p class="desc">
+                            After being reborn, Zhao Mingxi had no choice but to mooch off of Fu group's young master's luck to avoid death by terminal illness. Although his ears would turn so red as if they're bleeding whenever he sees her, he still keeps up an act of prideful indifference: "Can you stop being so clingy?" The next day.
+                        </p>
+                    </div>
+                </div>
+                <div class="card-product">
+                    <img src="./IMGs/olhaEssaPorrakkkkkk - Copia.png" alt="">
+                    <div class="product-content">
+                        <h5 class="title">One Pice</h5>
+                        <p class="subtitle"> Mangá de One Piece novo</p>
+                        <p class="price">RS$ 100,00</p>
+                        <P class="vendedor">Rafael Picka de Mel</P>
+                        <p class="desc">
+                            After being reborn, Zhao Mingxi had no choice but to mooch off of Fu group's young master's luck to avoid death by terminal illness. Although his ears would turn so red as if they're bleeding whenever he sees her, he still keeps up an act of prideful indifference: "Can you stop being so clingy?" The next day.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <button class="show-more">Ver mais</button>
+        </section>
     </main>
 
     <!-- Incluir o footer -->
     <div th:replace="fragments/footer :: footer"></div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="./JS/home.js"></script>
 </body>
 </html>

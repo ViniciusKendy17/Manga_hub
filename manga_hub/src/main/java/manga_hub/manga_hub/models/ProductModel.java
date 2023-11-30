@@ -33,10 +33,12 @@ public class ProductModel {
     private String nome;
     private Double preco;
     private int estoque;
+
     @ElementCollection(targetClass = Genero.class)
     @CollectionTable(name = "produto_genero", joinColumns = @JoinColumn(name = "produto_id"))
     @Enumerated(EnumType.STRING)
     private List<Genero> genero = new ArrayList<>();
+    
     private TipoProduto tipo_produto;
     private String isbn;
     private String imagem;
