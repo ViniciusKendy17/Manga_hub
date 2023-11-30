@@ -4,28 +4,68 @@
     <meta charset="UTF-8"  >
     <script src="https://unpkg.com/htmx.org@1.9.9" integrity="sha384-QFjmbokDn2DjBjq+fM+8LUIVrAgqcNW2s0PjAxHETgRn9l4fvX31ZxDxvwQnyMOX" crossorigin="anonymous"></script>
     <script src="/path/to/htmx.min.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./CSS/home.css">
     <title>Manga Hub</title>
 </head>
 <body>
 
     <div th:include="/templates/fragments/header :: header">
 
-    <!-- Conteúdo específico da página aqui -->
+    <!-- CONTEÚDO MAIS PROCURADO -->
     <main>
-        <h1>Home</h1>
-        <a href="/login" th:href="@{/login}" >Login</a>
+        <section id="destaques">
+            <h2>DESTAQUES</h2>
+            <div class="product-destaque">
+                <div class="card-dest">
+                    <img src="./IMGs/gutsPopozudo - Copia.jpg" alt="">
+                    <h3 class="title-dest">Título</h3>
+    
+                </div>
+                <div class="card-dest">
+                    <img src="./IMGs/gutsPopozudo - Copia.jpg" alt="">
+                    <h3 class="title-dest">Título</h3>
+    
+                </div>
+                <div class="card-dest">
+                    <img src="./IMGs/gutsPopozudo - Copia.jpg" alt="">
+                    <h3 class="title-dest">Título</h3>
+    
+                </div>
+                <div class="card-dest">
+                    <img src="./IMGs/gutsPopozudo - Copia.jpg" alt="">
+                    <h3 class="title-dest">Título</h3>
+    
+                </div>
+                <div class="card-dest">
+                    <img src="./IMGs/gutsPopozudo - Copia.jpg" alt="">
+                    <h3 class="title-dest">Título</h3>
+    
+                </div>
+                <div class="card-dest">
+                    <img src="./IMGs/gutsPopozudo - Copia.jpg" alt="">
+                    <h3 class="title-dest">Título</h3>
+    
+                </div>
+            </div>
+        </section>
 
-        <a href="./templates/Cadastro.html">CADASTRO</a>
-        <a href="./templates/login.html">Login</a>
-
-        <h2>Bem-vindo à Página Inicial</h2>
-        <p>Esta é a sua página inicial. Adicione mais conteúdo conforme necessário.</p>
+        <!-- Mangás -->
+        <section>
+            <h2>Mangás</h2>
+            <div class="product-wrapper" id="manga"></div> 
+            <button class="show-more">Ver mais</button>
+        </section>
+        <!-- Light Novels -->
+        <section>
+            <h2>Light Novels</h2>
+            <div class="product-wrapper" id="lightNovels"></div>
+            <button class="show-more">Ver mais</button>
+        </section>
     </main>
 
     <!-- Incluir o footer -->
     <div th:replace="fragments/footer :: footer"></div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="./JS/home.js"></script>
 </body>
 </html>

@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+main{
+    width: 100%;
+}
+
+section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    font-family: Poppins;
+}
+
+section h2{
+    margin: 30px 0 30px 0;
+    text-align: center;
+}
+
+#destaques{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+/* PRODUTOS EM DETAQUE*/
+.product-destaque{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    justify-content: space-evenly;
+    gap: 16px;
+    padding: 1%;
+    width: 90%;
+}
+
+.card-dest{
+    min-width: 80px;
+    max-width: 300px;
+    padding: 3%;
+    border: 1px solid black;
+}
+
+.title-dest{
+font-size: 1rem;
+}
+.desc-dest{
+
+}
+.price-dest{
+    font-weight: bold;
+}
+
+.card-dest img{
+    width: 100%;
+}
+
+/* PRODUTOS */
+.product-wrapper{
+    display: grid;
+    grid-template-columns: repeat(2, minmax(200px, 1fr));
+    justify-content: space-between;
+    width: 88%;
+    gap: 16px;
+    border: 1px solid black;
+}
+
+.card-product{
+    display: flex;
+    width: 100%;
+    border: 1px solid rgb(255, 0, 0);
+    padding: 1%;
+}
+
+.card-product img{
+    width: 35%;
+}
+
+.product-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 2%;
+}
+
+.title{
+    font-size: 1.5rem;
+}
+
+.desc{
+    font-size: 0.7rem;
+}
+
+.show-more{
+    width: 15%;
+    font-family: Poppins;
+    font-weight: bold;
+    background-color: rgb(5, 5, 75);
+    color: white;
+    padding: 20px;
+    margin: 30px 0 30px 0;
+}
