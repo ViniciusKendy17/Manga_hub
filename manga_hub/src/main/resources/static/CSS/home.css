@@ -13,7 +13,20 @@ body {
 }
 
 main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
+}
+
+.main-post{
+    background-image: url("../IMGs/fundoSiteMH.png");
+    background-position: center;
+    width: 100%;
+    padding: 5%;
+    color: white;
+    text-align: center;
+    font-family: Poppins;
 }
 
 section{
@@ -25,8 +38,9 @@ section{
 }
 
 section h2{
-    margin: 30px 0 30px 0;
+    margin: 30px 0 50px 0;
     text-align: center;
+    color: rgb(2, 2, 100);
 }
 
 #destaques{
@@ -34,6 +48,7 @@ section h2{
     flex-direction: column;
     align-items: center;
     width: 100%;
+
 }
 
 /* PRODUTOS EM DETAQUE*/
@@ -49,8 +64,16 @@ section h2{
 .card-dest{
     min-width: 80px;
     max-width: 300px;
+    text-align: center;
     padding: 3%;
-    border: 1px solid black;
+    background-color: rgb(2, 2, 100);
+    box-shadow: 0px 3px 10px 0px #ccc;
+    color: white;
+    border-radius: 15px;
+}
+
+.card-dest img{
+    border-radius: 15px;
 }
 
 .title-dest{
@@ -72,20 +95,26 @@ font-size: 1rem;
     display: grid;
     grid-template-columns: repeat(2, minmax(200px, 1fr));
     justify-content: space-between;
-    width: 88%;
+    width: 80%;
     gap: 16px;
-    border: 1px solid black;
 }
 
 .card-product{
     display: flex;
     width: 100%;
-    border: 1px solid rgb(255, 0, 0);
+    background-color: rgb(249, 249, 249);
+    box-shadow: 0px 3px 10px 0px #ccc;
+    border-radius: 15px;
     padding: 1%;
+}
+
+.card-product .title{
+    color: darkblue;
 }
 
 .card-product img{
     width: 35%;
+    border-radius: 15px;
 }
 
 .product-content{
@@ -111,4 +140,5 @@ font-size: 1rem;
     color: white;
     padding: 20px;
     margin: 30px 0 30px 0;
+    border-radius: 15px;
 }
