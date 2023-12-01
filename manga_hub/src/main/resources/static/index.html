@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
+<head th:replace="fragments :: html-head" >
     <meta charset="UTF-8"  >
     <script src="https://unpkg.com/htmx.org@1.9.9" integrity="sha384-QFjmbokDn2DjBjq+fM+8LUIVrAgqcNW2s0PjAxHETgRn9l4fvX31ZxDxvwQnyMOX" crossorigin="anonymous"></script>
     <script src="/path/to/htmx.min.js"></script>
@@ -9,10 +9,11 @@
 </head>
 <body>
 
-    <div th:include="./templates/fragments/header :: header">
+    <div th:include="/templates/fragments/header :: header">
 
     <!-- CONTEÚDO MAIS PROCURADO -->
     <main>
+        <a href="./Cadastro.html">cadastro</a>
         <section id="destaques">
             <h2>DESTAQUES</h2>
             <div class="product-destaque">
