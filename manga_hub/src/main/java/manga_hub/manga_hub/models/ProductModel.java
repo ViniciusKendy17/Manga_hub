@@ -17,8 +17,7 @@ import jakarta.persistence.ManyToOne;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import manga_hub.manga_hub.Enums.Genero;
-import manga_hub.manga_hub.Enums.TipoProduto;
+import manga_hub.manga_hub.DTO.ProductRegDTO;
 
 @Entity(name = "produto")
 @Data
@@ -34,16 +33,23 @@ public class ProductModel {
     private Double preco;
     private int estoque;
 
-    @ElementCollection(targetClass = Genero.class)
-    @CollectionTable(name = "produto_genero", joinColumns = @JoinColumn(name = "produto_id"))
-    @Enumerated(EnumType.STRING)
-    private List<Genero> genero = new ArrayList<>();
+    private List<String> genero;
     
-    private TipoProduto tipo_produto;
+    private String tipo_produto;
     private String isbn;
     private String imagem;
 
     @ManyToOne
     @JoinColumn(name = "id_vendedor")
     private UserModel id_vendedor;
+
+    public ProductModel(ProductRegDTO productRegDTO){
+        nome = productRegDTO.nome();
+        preco = productRegDTO.preco();
+        estoque = productRegDTO.estoque();
+        genero = productRegDTO.genero();
+        tipo_produto = productRegDTO.tipo();
+        isbn = productRegDTO.isbn();
+        imagem = productRegDTO.imagem();
+    }
 }

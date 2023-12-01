@@ -15,6 +15,7 @@ import jakarta.persistence.OneToMany;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import manga_hub.manga_hub.DTO.UserRegDTO;
 
 @Entity(name = "usuario")
 @Data
@@ -36,6 +37,22 @@ public class UserModel implements UserDetails {
 
     @OneToMany(mappedBy = "id_vendedor")
     private List<ProductModel> produtos; 
+
+    public UserModel(String name, String login, String senha, String cep, String telefone) {
+        this.name = name;
+        this.login = login;
+        this.senha = senha;
+        this.cep = cep;
+        this.telefone = telefone;
+    }
+
+    public UserModel(UserRegDTO userRegDTO) {
+        this.name = userRegDTO.nome();
+        this.login = userRegDTO.login();
+        this.senha = userRegDTO.senha();
+        this.cep = userRegDTO.cep();
+        this.telefone = userRegDTO.telefone();
+    }
 
     @Override
     public String getPassword() {
