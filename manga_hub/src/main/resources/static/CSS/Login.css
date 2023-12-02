@@ -24,9 +24,10 @@
       position: absolute;
       width: 90%;
       left: 3%;
-      padding: 15px;
+      padding: 5px;
       border-radius: 10px;
       background-color: #D9D9D9;
+      border: rgba(44, 0, 139, 0.9) 1px solid;
       
   
     }
@@ -44,8 +45,7 @@
     
     .loginForm .FormTitle{ /** Estilização do título do formulário **/
       position: relative;
-      text-align: initial;
-      left:14.5%;
+      text-align: center;
       color: rgba(44, 0, 139, 0.9);
       font-weight: 600;
       font-size: x-large;
@@ -89,6 +89,17 @@
       left: 15%;
       background-color: rgba(44, 0, 139, 90%);
       color: white;
+      border-radius: 5px;
+    }
+
+    .FaviconUserLogin{
+      position: absolute;
+      color: transparent;
+    }
+
+    .FaviconPasswordLogin{
+    position: absolute;
+      color: transparent;
     }
 
     .loginForm p{
@@ -135,6 +146,7 @@
       left: 13%;
       border-radius: 10px;
       background-color: #D9D9D9;
+      border: rgba(44, 0, 139, 0.9) 1px solid;
       
   
     }
@@ -152,8 +164,7 @@
   
     .loginForm .FormTitle{ /** Estilização do título do formulário **/
       position: relative;
-      text-align: initial;
-      left:14.5%;
+      text-align: center;
       color: rgba(44, 0, 139, 0.9);
       font-weight: 600;
       font-size: x-large;
@@ -195,6 +206,26 @@
       left: 15%;
       background-color: rgba(44, 0, 139, 90%);
       color: white;
+      border-radius: 5px;
+    }
+
+    .FaviconUserLogin{
+      position: relative;
+      width: fit-content;
+      height: fit-content;
+      left: 88%;
+      margin-top: -4.5%;
+      color: rgba(44, 0, 139, 90%);
+    }
+
+    .FaviconPasswordLogin{
+    
+      position: relative;
+      width: fit-content;
+      height: fit-content;
+      left: 88%;
+      margin-top: -4.5%;
+      color: rgba(44, 0, 139, 90%);
     }
     
     .loginForm p{
@@ -239,6 +270,7 @@
       left: 20%;
       border-radius: 10px;
       background-color: #D9D9D9;
+      border: rgba(44, 0, 139, 0.9) 1px solid;
       
   
     }
@@ -256,8 +288,7 @@
   
     .loginForm .FormTitle{ /** Estilização do título do formulário **/
       position: relative;
-      text-align: initial;
-      left:14.5%;
+      text-align: center;
       color: rgba(44, 0, 139, 0.9);
       font-weight: 600;
       font-size: x-large;
@@ -284,13 +315,22 @@
       }
 
       .FaviconUserLogin{
-        position: absolute;
-        color: transparent;
+        position: relative;
+        width: fit-content;
+        height: fit-content;
+        left: 88%;
+        margin-top: -4.5%;
+        color: rgba(44, 0, 139, 90%);
       }
 
       .FaviconPasswordLogin{
-        position: absolute;
-        color: transparent;
+      
+        position: relative;
+        width: fit-content;
+        height: fit-content;
+        left: 88%;
+        margin-top: -4.5%;
+        color: rgba(44, 0, 139, 90%);
       }
   
     .loginForm .submit{ /** Estilização do botão "Logar" **/
@@ -299,6 +339,7 @@
       left: 15%;
       background-color: rgba(44, 0, 139, 90%);
       color: white;
+      border-radius: 5px;
     }
   
     .loginForm p{
@@ -343,6 +384,7 @@
       left: 20%;
       border-radius: 10px;
       background-color: #D9D9D9;
+      border: rgba(44, 0, 139, 0.9) 1px solid;
       
   
     }
@@ -360,8 +402,7 @@
   
     .loginForm .FormTitle{ /** Estilização do título do formulário **/
       position: relative;
-      text-align: initial;
-      left:14.5%;
+      text-align: center;
       color: rgba(44, 0, 139, 0.9);
       font-weight: 600;
       font-size: x-large;
@@ -392,7 +433,7 @@
         width: fit-content;
         height: fit-content;
         left: 88%;
-        margin-top: -5.5%;
+        margin-top: -4.5%;
         color: rgba(44, 0, 139, 90%);
       }
 
@@ -402,16 +443,17 @@
         width: fit-content;
         height: fit-content;
         left: 88%;
-        margin-top: -5.5%;
+        margin-top: -4.5%;
         color: rgba(44, 0, 139, 90%);
       }
-  
+      
     .loginForm .submit{ /** Estilização do botão "Logar" **/
       position: relative;
       width: 70%;
       left: 15%;
       background-color: rgba(44, 0, 139, 90%);
       color: white;
+      border-radius: 5px;
     }
   
     .loginForm p{
@@ -434,7 +476,8 @@
       margin: 0;
       padding: 0;
       font-family: Poppins,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
-      font-size: medium;
+
+      
       
     }
   
@@ -473,36 +516,33 @@
   
     .loginForm .FormTitle{ /** Estilização do título do formulário **/
       position: relative;
-      text-align: initial;
-      left:14.5%;
+      text-align: center;
       color: rgba(44, 0, 139, 0.9);
       font-weight: 600;
       font-size: x-large;
     }
     
       .loginForm input{ /** Estilização dos campos que recebem valores (email e senha) **/
-        position: relative;
-        width: 70%;
-        left: 15%;
-        height: 25px;
+        
+        height: 100%;
+        border-bottom:  rgba(44, 0, 139, 0.92) 2px solid;
+        transition: .2s;
         border-top: none;
         border-left: none;
         border-right: none;
-        border-radius: 0;
-        border-bottom: 2px solid rgba(44, 0, 139, 90%);
-        background-color: transparent;
-        outline: none;
+        background-color:  #D9D9D9; 
         
       }
-      input::placeholder{
+      .loginForm input::placeholder{
         color: gray;
+        font-weight: 500;
       }
 
-      input:focus-within::-webkit-input-placeholder {
+      .loginForm input:focus-within::-webkit-input-placeholder {
         color:  rgba(44, 0, 139, 0.92);
        }
 
-       .inputs:focus {
+       .loginForm:focus {
         outline: none;
        }
 
@@ -511,7 +551,7 @@
         width: fit-content;
         height: fit-content;
         left: 88%;
-        margin-top: -5.5%;
+        margin-top: -4.5%;
         color: rgba(44, 0, 139, 90%);
       }
 
@@ -521,7 +561,7 @@
         width: fit-content;
         height: fit-content;
         left: 88%;
-        margin-top: -5.5%;
+        margin-top: -4.5%;
         color: rgba(44, 0, 139, 90%);
       }
     .loginForm .submit{ /** Estilização do botão "Logar" **/
@@ -530,6 +570,7 @@
       left: 15%;
       background-color: rgba(44, 0, 139, 90%);
       color: white;
+      border-radius: 5px;
     }
     
     .loginForm p{
