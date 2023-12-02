@@ -25,7 +25,7 @@ import manga_hub.manga_hub.repositories.UserRepository;
 
 @Service
 public class ProductService {
-    
+
     @Autowired
     ProductRepository repository;
 
@@ -35,16 +35,16 @@ public class ProductService {
     @Autowired
     TokenService service;
 
-     public void saveProduct(ProductRegDTO produtoDTO, String Token){
+    public void saveProduct(ProductRegDTO produtoDTO, String Token) {
         UserModel user = getUserFromToken(Token);
-        System.out.println("Poduruto name="+user.getName());
+        System.out.println("Poduruto name=" + user.getName());
         ProductModel produto = new ProductModel(produtoDTO);
-        System.out.println("cUserName="+produto.getNome());
+        System.out.println("cUserName=" + produto.getNome());
         produto.setId_vendedor(user);
         repository.save(produto);
     }
 
-    public List<ProductModel> listProducts(){
+    public List<ProductModel> ListProducts(){
        return repository.findAll();
     }
 
