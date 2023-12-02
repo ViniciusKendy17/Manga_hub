@@ -1,5 +1,6 @@
 package manga_hub.manga_hub.DTO;
 
-public record HomeDTO(Long id, String nome, Double preco, String imagem, Long id_vendedor) {
-    
-}
+import manga_hub.manga_hub.models.ProductModel;
+import manga_hub.manga_hub.models.UserModel;
+
+public record HomeDTO(Long id, String nome, Double preco, String imagem, HomeUserDTO usuario) {}

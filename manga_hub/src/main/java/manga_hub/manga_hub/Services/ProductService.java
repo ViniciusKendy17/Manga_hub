@@ -1,12 +1,9 @@
 package manga_hub.manga_hub.Services;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.BadCredentialsException;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import manga_hub.manga_hub.DTO.ProductRegDTO;
@@ -35,9 +32,9 @@ public class ProductService {
         System.out.println("cUserName="+produto.getNome());
         produto.setId_vendedor(user);
         repository.save(produto);
-     }
+    }
 
-    public List<ProductModel> ListProducts(){
+    public List<ProductModel> listProducts(){
        return repository.findAll();
     }
 
