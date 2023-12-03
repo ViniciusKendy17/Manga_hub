@@ -1,14 +1,13 @@
 package manga_hub.manga_hub.models;
 
-import java.util.ArrayList;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import jakarta.persistence.CollectionTable;
+import jakarta.persistence.Column;
 import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -32,13 +31,12 @@ public class ProductModel {
     private String nome;
     private Double preco;
     private int estoque;
-
-    private List<String> genero;
-    
+    private String genero;
     private String tipo_produto;
     private String isbn;
     private String imagem;
 
+    @JsonBackReference
     @ManyToOne
     @JoinColumn(name = "id_vendedor")
     private UserModel id_vendedor;
