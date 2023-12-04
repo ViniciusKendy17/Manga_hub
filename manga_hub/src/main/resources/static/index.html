@@ -1,13 +1,72 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments :: html-head" >
+    <meta charset="UTF-8"  >
+    <script src="https://unpkg.com/htmx.org@1.9.9" integrity="sha384-QFjmbokDn2DjBjq+fM+8LUIVrAgqcNW2s0PjAxHETgRn9l4fvX31ZxDxvwQnyMOX" crossorigin="anonymous"></script>
+    <script src="/path/to/htmx.min.js"></script>
+    <link rel="stylesheet" href="./CSS/home.css">
     <title>Manga Hub</title>
 </head>
 <body>
-    <h1>Home</h1>
-    <a href="./HTML/Cadastro.html">CADASTRO</a>
-    <a href="./HTML/Login.html">Login</a>
+
+    <div th:include="/templates/fragments/header :: header">
+
+    <!-- CONTEÚDO MAIS PROCURADO -->
+    <main>
+        <a href="./Cadastro.html">cadastro</a>
+        <section id="destaques">
+            <h2>DESTAQUES</h2>
+            <div class="product-destaque">
+                <div class="card-dest">
+                    <img src="./IMGs/gutsPopozudo - Copia.jpg" alt="">
+                    <h3 class="title-dest">Título</h3>
+    
+                </div>
+                <div class="card-dest">
+                    <img src="./IMGs/gutsPopozudo - Copia.jpg" alt="">
+                    <h3 class="title-dest">Título</h3>
+    
+                </div>
+                <div class="card-dest">
+                    <img src="./IMGs/gutsPopozudo - Copia.jpg" alt="">
+                    <h3 class="title-dest">Título</h3>
+    
+                </div>
+                <div class="card-dest">
+                    <img src="./IMGs/gutsPopozudo - Copia.jpg" alt="">
+                    <h3 class="title-dest">Título</h3>
+    
+                </div>
+                <div class="card-dest">
+                    <img src="./IMGs/gutsPopozudo - Copia.jpg" alt="">
+                    <h3 class="title-dest">Título</h3>
+    
+                </div>
+                <div class="card-dest">
+                    <img src="./IMGs/gutsPopozudo - Copia.jpg" alt="">
+                    <h3 class="title-dest">Título</h3>
+    
+                </div>
+            </div>
+        </section>
+
+        <!-- Mangás -->
+        <section>
+            <h2>Mangás</h2>
+            <div class="product-wrapper" id="manga"></div> 
+            <button class="show-more">Ver mais</button>
+        </section>
+        <!-- Light Novels -->
+        <section>
+            <h2>Light Novels</h2>
+            <div class="product-wrapper" id="lightNovels"></div>
+            <button class="show-more">Ver mais</button>
+        </section>
+    </main>
+
+    <!-- Incluir o footer -->
+    <div th:replace="fragments/footer :: footer"></div>
+   
+    <script src="./JS/home.js"></script>
 </body>
 </html>
