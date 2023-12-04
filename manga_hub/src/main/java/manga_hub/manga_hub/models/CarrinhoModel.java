@@ -1,5 +1,7 @@
 package manga_hub.manga_hub.models;
 
+import java.util.List;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -7,10 +9,12 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+//Embedded, Embeddeble
 @Entity(name="carrinho")
 @Data
 @AllArgsConstructor
@@ -33,12 +37,7 @@ public class CarrinhoModel {
     @Column(name = "total_produto")
     private double totalProduto;
 
-    @ManyToOne
-    @JoinColumn(name = "id_usuario")
-    private UserModel usuario;
-
-    @ManyToOne
-    @JoinColumn(name = "id_produto")
-    private ProductModel produto;
+    @OneToMany(mappedBy = "pedido")
+    private List<ItensPedidoModel> itens;
 
 }
