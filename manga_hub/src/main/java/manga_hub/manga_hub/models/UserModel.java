@@ -57,62 +57,6 @@ public class UserModel implements UserDetails {
         this.telefone = userRegDTO.telefone();
     }
 
-    public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public String getLogin() {
-		return login;
-	}
-
-	public void setLogin(String login) {
-		this.login = login;
-	}
-
-	public String getSenha() {
-		return senha;
-	}
-
-	public void setSenha(String senha) {
-		this.senha = senha;
-	}
-
-	public String getCep() {
-		return cep;
-	}
-
-	public void setCep(String cep) {
-		this.cep = cep;
-	}
-
-	public String getTelefone() {
-		return telefone;
-	}
-
-	public void setTelefone(String telefone) {
-		this.telefone = telefone;
-	}
-
-	public List<ProductModel> getProdutos() {
-		return produtos;
-	}
-
-	public void setProdutos(List<ProductModel> produtos) {
-		this.produtos = produtos;
-	}
-
 	@Override
     public String getPassword() {
         return senha;
