@@ -93,7 +93,7 @@ font-size: 1rem;
 /* PRODUTOS */
 .product-wrapper{
     display: grid;
-    grid-template-columns: repeat(1, minmax(200px, 1fr));
+    grid-template-columns: repeat(3, minmax(200px, 1fr));
     justify-content: space-between;
     width: 80%;
     gap: 16px;

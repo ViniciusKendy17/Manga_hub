@@ -1,3 +1,5 @@
+alert(localStorage.getItem('token'));
+
 const products = [
     {
       id: 1,

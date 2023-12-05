@@ -7,12 +7,15 @@ document.forms["login"].addEventListener('submit', function(event) {
     // Recupera os valores dos campos de entrada
     const login = document.forms["login"]["email"].value;
     const senha = document.forms["login"]["password"].value;
+
+    console.log(login)
+    console.log(senha)
   
     //requisição usando fetch:
-    fetch('http://localhost:8080/auth/login', {
-      method: 'POST',
+    fetch("http://localhost:8080/auth/login", {
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json"
       },
       body: JSON.stringify({login, senha}),
     })
@@ -21,12 +24,12 @@ document.forms["login"].addEventListener('submit', function(event) {
       //Manipular a resposta do servidor
       const token = data.token;
       localStorage.setItem('token', token);
-      console.log(response.status);
-      alert(response.status());
+    
       
-      window.location.href = "index.html";
+      alert(token);
+        window.location.href = "index.html";
+      
+    
     })
-    .catch(error => {
-      console.error('Erro:', error);
-    });
+  
   });
