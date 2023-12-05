@@ -21,24 +21,12 @@ public class CarrinhoModel {
     @Column(name = "id")
     private Long id;
     
-    @Column(name = "id_produto")
-    private Long idProduto;
-
-    @Column(name = "id_usuario")
-    private Long idUsuario;
-
-    @Column(name = "quantidade")
-    private int quantidade;
-
-    @Column(name = "total_produto")
-    private double totalProduto;
-
     @ManyToOne
     @JoinColumn(name = "id_usuario")
     private UserModel usuario;
 
-    @ManyToOne
-    @JoinColumn(name = "id_produto")
-    private ProductModel produto;
+
+    @Column(name = "total_produto")
+    private double totalProduto;
 
 }
