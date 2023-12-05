@@ -20,9 +20,11 @@ document.forms["login"].addEventListener('submit', function(event) {
     .then(data => {
       //Manipular a resposta do servidor
       const token = data.token;
-      console.log('Token recebido:', token);
+      localStorage.setItem('token', token);
+      console.log(response.status);
+      alert(response.status());
       
-      // window.location.href = '/outra-pagina';
+      window.location.href = "index.html";
     })
     .catch(error => {
       console.error('Erro:', error);
