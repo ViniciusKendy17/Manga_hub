@@ -1,3 +1,5 @@
+var autenticado = false;
+
 
 
 document.forms["login"].addEventListener('submit', function(event) {
@@ -24,10 +26,18 @@ document.forms["login"].addEventListener('submit', function(event) {
       //Manipular a resposta do servidor
       const token = data.token;
       localStorage.setItem('token', token);
-    
       
-      alert(token);
+
         window.location.href = "index.html";
+
+        const loginn = document.getElementById('login');
+        const cadastro = document.getElementById('cadastro');
+
+        if (autenticado) {
+          loginn.style.display = 'none';
+          cadastro.style.display = 'none';
+        }
+     
       
     
     })

@@ -1,4 +1,4 @@
-@media(min-width:1px){
+  @media(min-width:1px){
 
 }
 
@@ -17,6 +17,7 @@ header{
     width: 100%;    
     display: flex;
     justify-content: center;
+    padding:2% ;
 }
 
 nav{
@@ -120,18 +121,18 @@ nav{
    margin-left: 50px;
 }
 
-input{
+.inputsh{
   transition: .3s;
     width: 100%;
     height: 100%;
     border-radius: 5px;
-    border: none;
+   
 }
 
 input:focus{
     transition: .3s;
     outline: none;
-    padding: 3px;
+    padding: 0.1%;
 }
 
 
@@ -146,6 +147,13 @@ input:focus{
   transition: .1s;
   color: rgba(55, 2, 169, 0.9);
   font-weight: 600;
+}
+
+input:hover{
+  -webkit-box-shadow: 2px 1px 38px -3px rgba(179,179,179,1);
+-moz-box-shadow: 2px 1px 38px -3px rgba(179,179,179,1);
+box-shadow: 2px 1px 38px -3px rgba(179,179,179,1);
+
 }
 
 input:focus::placeholder {

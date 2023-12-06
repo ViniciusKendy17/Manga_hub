@@ -1,4 +1,4 @@
-alert(localStorage.getItem('token'));
+
 
 const products = [
     {
