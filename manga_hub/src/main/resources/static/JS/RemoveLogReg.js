@@ -1,8 +1,10 @@
 document.addEventListener('DOMContentLoaded', function () {
     var isAuthenticated = false;
 
-    var registro = document.getElementById('registro');
+   
     var logar = document.getElementById('logar');
+    var logout = document.getElementById('botaoout');
+    var cadasatroP = document.getElementById('CadastroProduto');
     
       var token = localStorage.getItem('token');
       if(token){
@@ -12,8 +14,12 @@ document.addEventListener('DOMContentLoaded', function () {
       
     function updateUI() {
       if (isAuthenticated) {
-        registro.style.display = 'none';
+       
         logar.style.display = 'none';
+        logout.style.display = 'flex';
+        cadasatroP.style.display = 'flex'
+
+
       } 
     }
   });

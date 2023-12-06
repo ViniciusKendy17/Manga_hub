@@ -110,7 +110,13 @@ nav{
   transform: translateY(-2px);
 }
 
+#botaoout{
+  display: none;
+}
 
+#CadastroProduto{
+  display: none;
+}
 
 
 #bar{
@@ -129,39 +135,39 @@ nav{
    
 }
 
-input:focus{
+.inputsh:focus{
     transition: .3s;
     outline: none;
     padding: 0.1%;
 }
 
 
-#bar input::placeholder{
+#bar .inputsh::placeholder{
   transition: .5s;
   position: relative;
   left: 2%;
   
 }
 
-#bar input:hover::placeholder {
+#bar .inputsh:hover::placeholder {
   transition: .1s;
   color: rgba(55, 2, 169, 0.9);
   font-weight: 600;
 }
 
-input:hover{
+.inputsh:hover{
   -webkit-box-shadow: 2px 1px 38px -3px rgba(179,179,179,1);
 -moz-box-shadow: 2px 1px 38px -3px rgba(179,179,179,1);
 box-shadow: 2px 1px 38px -3px rgba(179,179,179,1);
 
 }
 
-input:focus::placeholder {
+.inputsh:focus::placeholder {
   color: rgba(55, 2, 169, 0.9);
   font-weight: 600;
 }
 
-#bar input:-ms-input-placeholder{
+#bar .inputsh:-ms-input-placeholder{
   position: relative;
   left: 5%;
 }
@@ -181,15 +187,18 @@ ul{
 }
 
 
-a{
+.botaoH{
     text-decoration: none;
     color: white;
 }
 
-a:hover{
+.botaoH:hover{
   background-color: rgba(96, 61, 171, 0.9);
-  
-  
+    
+}
+
+.button-66{
+  text-decoration: none;
 }
 /* Navbar container */
 .navbar {

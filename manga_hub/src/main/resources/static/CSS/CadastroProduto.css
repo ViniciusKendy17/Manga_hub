@@ -1,0 +1,101 @@
+/*pop-up product register nigga fellow */
+
+.container 		{ 
+  width:100vw; 
+  height: 100vh;
+  top: 0;
+  left: 0;
+  display:none; 
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  background:#FFF;
+  background-color: transparent;
+  position: absolute;
+  transition: .3s;
+ 
+}
+
+
+
+
+#pupForm{
+    width: 45%;
+    min-width:450px ;
+    min-height: 600px;
+    padding: 50px;
+    border-radius: 20px ;
+    backdrop-filter: blur(15px);
+    background-color: #ffffff96;
+    border: rgba(44, 0, 139, 0.9) solid 2px ;
+}
+
+section{
+  width: 100%;
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.inputPop{
+  width: 75%;
+  height: 5%;
+  margin-top: 20px;
+}
+
+.inputs-in{
+  width: 100%;
+  height: 100%;
+}
+
+.inputs-in:hover{
+  border: rgba(44, 0, 139, 0.9) solid 1.5px ;
+}
+.inputs-in:focus{
+  outline: none;
+  border: rgba(44, 0, 139, 0.9) solid 1.5px;
+}
+
+.inputs-in:focus,.inputs-in:valid{
+  padding: 0 7px 0 7px;
+}
+
+.inputs-in:focus-within::-webkit-input-placeholder {
+  color:  rgba(44, 0, 139, 0.92);
+ }
+
+#botao-reg{
+  margin-top: 6% !important;
+  border: rgba(44, 0, 139, 0.9) solid 2px;
+  background-color: white;
+  transition: all 0.25s ease;
+  color:rgba(44, 0, 139, 0.9) ;
+  font-weight:900;
+  border-radius: 5px;
+}
+
+#botao-reg:hover{
+  cursor: pointer;
+  background-color: rgba(44, 0, 139, 0.9);
+  color: white;
+  font-weight:900;
+}
+.fechar{
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  width: 30px;
+  height:30px ;
+  border-radius: 50%;
+  border: 0;
+  background-color: red;
+  cursor: pointer;
+  font-size: 20px;
+  color: #fff;
+
+}
+
+.container.abrir{
+  display: flex;
+}

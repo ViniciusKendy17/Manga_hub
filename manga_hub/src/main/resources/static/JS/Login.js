@@ -27,16 +27,8 @@ document.forms["login"].addEventListener('submit', function(event) {
       const token = data.token;
       localStorage.setItem('token', token);
       
-
         window.location.href = "index.html";
 
-        const loginn = document.getElementById('login');
-        const cadastro = document.getElementById('cadastro');
-
-        if (autenticado) {
-          loginn.style.display = 'none';
-          cadastro.style.display = 'none';
-        }
      
       
     
