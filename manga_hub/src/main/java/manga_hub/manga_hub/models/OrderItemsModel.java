@@ -5,7 +5,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 
 @Embeddable
-public class ItensPedidoModel {
+public class OrderItemsModel {
 
     @ManyToOne
     @JoinColumn(name = "id_produto")

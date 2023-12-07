@@ -9,23 +9,26 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Entity
+@Entity(name = "carrinho")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class PedidoModel {
+public class CartModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @ManyToOne
     @JoinColumn(name = "id_cliente")
-    private UserModel cliente;
+    private UserModel usuario;
 
     @ElementCollection
-    private ArrayList<ItensPedidoModel> itens = new ArrayList<>();
+    private ArrayList<OrderItemsModel> itens = new ArrayList<>();
+
+
 }

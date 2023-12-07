@@ -8,20 +8,22 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import manga_hub.manga_hub.Services.PedidoService;
-import manga_hub.manga_hub.models.PedidoModel;
+import manga_hub.manga_hub.Services.OrderService;
+import manga_hub.manga_hub.models.OrderModel;
 
 @RestController
-@RequestMapping("/carrinho")
+@RequestMapping("/order")
 @CrossOrigin("*")
-public class PedidoController {
+public class OrderController {
  
     @Autowired
-    private PedidoService pedidoService;
+    private OrderService service;
 
     @PostMapping
-    public PedidoModel criarPedido(@RequestBody PedidoModel pedido) {
-        return pedidoService.criarPedido(pedido);
+    public OrderModel criarPedido(@RequestBody OrderModel order) {
+        return service.createOrder(order);
     }
+
+
 
 }
