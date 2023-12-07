@@ -1,3 +1,311 @@
+/*DeskTop*/
+@media(min-width:1px){
+  body{
+      margin: 0 auto;
+      box-sizing: border-box;
+  }
+  
+  header{
+      position: absolute;
+      background-color: rgba(55, 2, 169, 0.9);
+      width: 100%;    
+      display: flex;
+      justify-content: center;
+      padding:1% ;
+  }
+  
+  #nav-bar{
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  #img-out{
+    width: 100%;
+    max-width: 180px;
+    height: 100%;
+    max-height: 80px;
+  }
+  
+  #img-in{
+    height: 100%;
+    width: 100%;
+    border-radius: 2px;
+  }
+  
+  
+  ul{
+    display: flex;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 60%;
+  }
+  
+  .botaoH{
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+    border: 0;
+    background-color:  rgba(55, 2, 169, 0.9);
+    font-size:16px;
+    font-weight:500;
+    border-radius: 10px;
+  }
+  
+  .botaoH:hover{
+  
+    cursor: pointer;
+    box-shadow: black 0 0 1px 1px;
+  }
+  
+  
+  /* Navbar container */
+  .navbar {
+    overflow: hidden;
+    width: 80%;
+    font-family: Arial;
+    display: flex;
+    justify-content: space-around;
+  
+  }
+  
+  /* Links inside the navbar */
+  .navbar a {
+    float: left;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  /* The dropdown container */
+  .dropdown {
+    float: left;
+    overflow: hidden;
+  }
+  
+  /* Dropdown button */
+  .dropdown .dropbtn {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 5px 5px;
+    background-color: inherit;
+    font-family: inherit; /* Important for vertical align on mobile phones */
+    margin: 0; /* Important for vertical align on mobile phones */
+  }
+  
+  /* Add a red background color to navbar links on hover */
+  .navbar a:hover, .dropdown:hover .dropbtn {
+    background-color:rgba(30, 0, 95, 0.523) ;
+    border-radius: 5px;
+    cursor: pointer;
+    border-radius: 2px;
+  }
+  
+  /* Dropdown content (hidden by default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  
+  /* Add a grey background color to dropdown links on hover */
+  .dropdown-content a:hover {
+    background-color: #ddd;
+  }
+  
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  /*Botaõ hamburger*/
+  
+  .hamburger {
+    
+    border: none;
+    background: none;
+    border-top: 3px solid #fff;
+    cursor: pointer;
+  }
+  
+  .hamburger::after,
+  .hamburger::before {
+    content: " ";
+    display: block;
+    width: 30px;
+    height: 3px;
+    background: #fff;
+    margin-top: 5px;
+    position: relative;
+    transition: 0.3s;
+  }
+  
+  
+  
+  
+  /*Barra de pesquisa*/
+  
+  #bar{
+    width: 80%;
+    height: 35px;
+    max-width: 650px;
+    max-height: 35px;
+    margin-left: 100px;
+    display: flex;
+  }
+  
+  
+
+  #bar svg{
+    position: relative;
+    text-align: center;
+    top: 25%;
+    right: 5%;
+  }
+  
+  
+  /*Botão de login*/
+  #botao-out-out{
+      width: 150px;
+      height: 100%;
+      max-height: 25px;
+      
+      
+  }
+  
+  
+  #botao-out:hover{
+    background-color: rgba(96, 61, 171, 0.9);
+    border: white solid 1px;
+    color: #f9f9f9;
+  }
+  
+  #botao-in{
+      color: black;
+  }
+  
+  .button-66 {
+    background-color:rgba(30, 0, 95, 0.523);
+    border-radius: 4px;
+    border: 0;
+    width: 100%;
+    box-shadow: rgba(1,60,136,.5) 0 -1px 3px 0 inset,rgba(0,44,97,.1) 0 3px 6px 0;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inherit;
+    font-family: "Space Grotesk",-apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0;  
+    position: relative;
+    height: 100%;
+    text-align: center;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: baseline;
+    transition: all .2s cubic-bezier(.22, .61, .36, 1);
+  }
+  
+  .button-66:hover {
+    background-color: white;
+    color: rgba(44, 0, 139, 0.9);
+    
+    transform: translateY(-2px);
+  }
+  
+  .button-66{
+    text-decoration: none;
+  }
+  
+  #botaoout{
+    display: none;
+  }
+  
+  /*Botão Cadastro de produto*/
+  #outRegP{
+    
+   
+  }
+  #CadastroProduto{
+    display: none;
+  
+  }
+  
+  
+  
+  
+  .inputsh{
+    
+      width: 60%;
+      height: 100%;
+      border-radius: 5px;
+      
+     
+  }
+  
+  
+  .inputsh:focus{
+      padding: 0px 50px 0px 10px;
+      outline: none;
+      
+  }
+  
+  .inputsh:not(:placeholder-shown) {
+    padding: 0 50px 0 10px; /* Padding de 0px 10px 0px 10px */
+  }
+  
+  #bar .inputsh::placeholder{
+    position: relative;
+    left: 2%;
+    
+  }
+  
+  
+  
+  
+  
+  .inputsh:focus::placeholder {
+    color: rgba(55, 2, 169, 0.9);
+  
+  }
+  
+  #bar .inputsh:-ms-input-placeholder{
+    position: relative;
+    left: 5%;
+  }
+  
+  /*Links*/
+  
+  
+  
+  
+  
+  
+  }
+
 @media (max-width: 750px){
 
   body{
@@ -518,15 +826,24 @@ ul{
   max-width: 650px;
   max-height: 35px;
   margin-left: 100px;
+  display: flex;
+}
+
+#bar svg{
+  position: relative;
+  text-align: center;
+  top: 25%;
+  right: 5%;
 }
 
 
 /*Botão de login*/
 #botao-out-out{
+  position: relative;
     width: 150px;
     height: 100%;
     max-height: 25px;
-    
+    right: 10%;
     
 }
 
@@ -544,6 +861,7 @@ ul{
 .button-66 {
   background-color:rgba(30, 0, 95, 0.523);
   border-radius: 4px;
+  
   border: 0;
   width: 100%;
   box-shadow: rgba(1,60,136,.5) 0 -1px 3px 0 inset,rgba(0,44,97,.1) 0 3px 6px 0;
@@ -602,12 +920,16 @@ ul{
    
 }
 
+
 .inputsh:focus{
-    
+    padding: 0px 50px 0px 10px;
     outline: none;
-    padding: 0.1%;
+    
 }
 
+.inputsh:not(:placeholder-shown) {
+  padding: 0 50px 0 10px; /* Padding de 0px 10px 0px 10px */
+}
 
 #bar .inputsh::placeholder{
   position: relative;
