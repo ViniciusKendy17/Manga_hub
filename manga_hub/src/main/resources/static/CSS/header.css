@@ -1,12 +1,6 @@
-  @media(min-width:1px){
+@media (max-width: 750px){
 
-}
-
-
-
-/*DeskTop*/
-@media(min-width:1000px){
-body{
+  body{
     margin: 0 auto;
     box-sizing: border-box;
 }
@@ -20,15 +14,12 @@ header{
     padding:2% ;
 }
 
-nav{
-    height: 100%;
-    width:90%;
-    max-height: 80px;
-    display: flex;
-    justify-content: space-between;
+.hamburger {
+  display: block;
+  z-index: 1;
 }
 
-
+/*Barra de pesquisa*/
 
 #seacrh-bar{
     
@@ -39,6 +30,13 @@ nav{
    
 }
 
+#bar{
+  width: 100%;
+  height: 100%;
+  max-width: 390px;
+  max-height: 25px;
+ margin-left: 50px;
+}
 
 
 .searchIcon{
@@ -49,7 +47,7 @@ nav{
   top: 39%;
 }
 
-
+/*Botão de login*/
 #botao-out-out{
     width: 100%;
     height: 100%;
@@ -110,6 +108,10 @@ nav{
   transform: translateY(-2px);
 }
 
+.button-66{
+  text-decoration: none;
+}
+
 #botaoout{
   display: none;
 }
@@ -119,13 +121,7 @@ nav{
 }
 
 
-#bar{
-    width: 100%;
-    height: 100%;
-    max-width: 390px;
-    max-height: 25px;
-   margin-left: 50px;
-}
+
 
 .inputsh{
   transition: .3s;
@@ -172,10 +168,15 @@ box-shadow: 2px 1px 38px -3px rgba(179,179,179,1);
   left: 5%;
 }
 
+/*Links*/
+
 #nav-bar{
     width: 50%;
     display: flex;
-    justify-content: flex-end;
+    border: black solid 2px;
+    max-height: 80px;
+    display: flex;
+    justify-content: space-between;
 }
 
 ul{
@@ -197,9 +198,7 @@ ul{
     
 }
 
-.button-66{
-  text-decoration: none;
-}
+
 /* Navbar container */
 .navbar {
     overflow: hidden;
@@ -274,5 +273,367 @@ ul{
   .dropdown:hover .dropdown-content {
     display: block;
   }
+
+.hamburger {
+  display: block;
+  z-index: 1;
+}
+
+.nav-list {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #a5c;
+  clip-path: circle(100px at 90% -15%);
+  transition: 1s ease-out;
+
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  gap: 0;
+
+  pointer-events: none;
+}
+
+.nav-list a {
+  font-size: 24px;
+  opacity: 0;
+}
+
+.nav-list li:nth-child(1) a {
+  transition: 0.5s 0.2s;
+}
+
+.nav-list li:nth-child(2) a {
+  transition: 0.5s 0.4s;
+}
+
+.nav-list li:nth-child(3) a {
+  transition: 0.5s 0.6s;
+}
+
+/* Estilos ativos */
+
+.nav.active .nav-list {
+  clip-path: circle(1500px at 90% -15%);
+  pointer-events: all;
+}
+
+.nav.active .nav-list a {
+  opacity: 1;
+}
+
+.nav.active .hamburger {
+  position: fixed;
+  top: 26px;
+  right: 16px;
+  border-top-color: transparent;
+}
+
+.nav.active .hamburger::before {
+  transform: rotate(135deg);
+}
+
+.nav.active .hamburger::after {
+  transform: rotate(-135deg);
+  top: -7px;
+}
+
+}
+
+
+/*DeskTop*/
+@media(min-width:750px){
+body{
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+header{
+    position: absolute;
+    background-color: rgba(55, 2, 169, 0.9);
+    width: 100%;    
+    display: flex;
+    justify-content: center;
+    padding:1% ;
+}
+
+#nav-bar{
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#img-out{
+  width: 100%;
+  max-width: 180px;
+  height: 100%;
+  max-height: 80px;
+}
+
+#img-in{
+  height: 100%;
+  width: 100%;
+  border-radius: 2px;
+}
+
+
+ul{
+  display: flex;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 60%;
+}
+
+.botaoH{
+  text-decoration: none;
+  color: white;
+  padding: 10px;
+  border: 0;
+  background-color:  rgba(55, 2, 169, 0.9);
+  font-size:16px;
+  font-weight:500;
+  border-radius: 10px;
+}
+
+.botaoH:hover{
+
+  cursor: pointer;
+  box-shadow: black 0 0 1px 1px;
+}
+
+
+/* Navbar container */
+.navbar {
+  overflow: hidden;
+  width: 80%;
+  font-family: Arial;
+  display: flex;
+  justify-content: space-around;
+
+}
+
+/* Links inside the navbar */
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* The dropdown container */
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+/* Dropdown button */
+.dropdown .dropbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 5px 5px;
+  background-color: inherit;
+  font-family: inherit; /* Important for vertical align on mobile phones */
+  margin: 0; /* Important for vertical align on mobile phones */
+}
+
+/* Add a red background color to navbar links on hover */
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color:rgba(30, 0, 95, 0.523) ;
+  border-radius: 5px;
+  cursor: pointer;
+  border-radius: 2px;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+/* Add a grey background color to dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/*Botaõ hamburger*/
+
+.hamburger {
+  display: none;
+  border: none;
+  background: none;
+  border-top: 3px solid #fff;
+  cursor: pointer;
+}
+
+.hamburger::after,
+.hamburger::before {
+  content: " ";
+  display: block;
+  width: 30px;
+  height: 3px;
+  background: #fff;
+  margin-top: 5px;
+  position: relative;
+  transition: 0.3s;
+}
+
+
+
+
+/*Barra de pesquisa*/
+
+#bar{
+  width: 100%;
+  height: 35px;
+  max-width: 650px;
+  max-height: 35px;
+  margin-left: 100px;
+}
+
+
+/*Botão de login*/
+#botao-out-out{
+    width: 150px;
+    height: 100%;
+    max-height: 25px;
+    
+    
+}
+
+
+#botao-out:hover{
+  background-color: rgba(96, 61, 171, 0.9);
+  border: white solid 1px;
+  color: #f9f9f9;
+}
+
+#botao-in{
+    color: black;
+}
+
+.button-66 {
+  background-color:rgba(30, 0, 95, 0.523);
+  border-radius: 4px;
+  border: 0;
+  width: 100%;
+  box-shadow: rgba(1,60,136,.5) 0 -1px 3px 0 inset,rgba(0,44,97,.1) 0 3px 6px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inherit;
+  font-family: "Space Grotesk",-apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0;  
+  position: relative;
+  height: 100%;
+  text-align: center;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  transition: all .2s cubic-bezier(.22, .61, .36, 1);
+}
+
+.button-66:hover {
+  background-color: white;
+  color: rgba(44, 0, 139, 0.9);
+  
+  transform: translateY(-2px);
+}
+
+.button-66{
+  text-decoration: none;
+}
+
+#botaoout{
+  display: none;
+}
+
+/*Botão Cadastro de produto*/
+#outRegP{
+  
+ 
+}
+#CadastroProduto{
+  display: none;
+
+}
+
+
+
+
+.inputsh{
+  
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    
+   
+}
+
+.inputsh:focus{
+    
+    outline: none;
+    padding: 0.1%;
+}
+
+
+#bar .inputsh::placeholder{
+  position: relative;
+  left: 2%;
+  
+}
+
+
+
+
+
+.inputsh:focus::placeholder {
+  color: rgba(55, 2, 169, 0.9);
+
+}
+
+#bar .inputsh:-ms-input-placeholder{
+  position: relative;
+  left: 5%;
+}
+
+/*Links*/
+
+
+
+
+
 
 }
