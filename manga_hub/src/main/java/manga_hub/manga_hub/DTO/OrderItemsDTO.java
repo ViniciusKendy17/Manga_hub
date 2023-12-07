@@ -1,3 +1,5 @@
 package manga_hub.manga_hub.DTO;
 
-public record OrderItemsDTO(String nome, int quantidade, int preco){}
+import manga_hub.manga_hub.models.ProductModel;
+
+public record OrderItemsDTO(ProductModel produto, int quantidade, int preco){}
