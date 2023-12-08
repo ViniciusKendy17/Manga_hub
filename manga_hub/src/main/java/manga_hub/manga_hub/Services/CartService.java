@@ -14,7 +14,7 @@ import manga_hub.manga_hub.repositories.ProductRepository;
 @Service
 public class CartService {
     @Autowired
-    private CartRepository carrinhoRepository;
+    private CartRepository cartRepository;
     @Autowired
     private ProductRepository productRepository;
 
@@ -25,12 +25,12 @@ public class CartService {
 
         OrderItemsModel orderItemsModel = new OrderItemsModel(produto, orderItemsDTO.quantidade(), orderItemsDTO.preco());
 
-        CartModel carrinho = carrinhoRepository.findByUserId(userId)
+        CartModel carrinho = cartRepository.findByUserId(userId)
                 .orElseGet(() -> new CartModel(userId));
 
         carrinho.adicionarItem(orderItemsModel);
 
-        carrinhoRepository.save(carrinho);
+        cartRepository.save(carrinho);
     }
     
 
