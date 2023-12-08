@@ -1,6 +1,7 @@
 package manga_hub.manga_hub.models;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Entity;
@@ -27,15 +28,12 @@ public class CartModel {
     private UserModel usuario;
 
     @ElementCollection
-    private ArrayList<OrderItemsModel> itens = new ArrayList<>();
+    private List<OrderItemsModel> itens = new ArrayList<>();
 
     public CartModel(Long userId) {
         this.usuario.setId(userId);
     }
 
-    public void adicionarItem(OrderItemsModel item) {
-        itens.add(item);
-    }
 
 
 

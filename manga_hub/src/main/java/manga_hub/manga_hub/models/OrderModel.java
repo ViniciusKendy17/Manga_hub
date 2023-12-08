@@ -2,6 +2,7 @@ package manga_hub.manga_hub.models;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.List;
 
 import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Entity;
@@ -28,7 +29,7 @@ public class OrderModel {
     private UserModel usuario;
 
     @ElementCollection
-    private ArrayList<OrderItemsModel> itens = new ArrayList<>();
+    private List<OrderItemsModel> itens = new ArrayList<>();
 
     private double total;
 
