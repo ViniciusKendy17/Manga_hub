@@ -15,7 +15,6 @@ body {
 main{
     display: flex;
     flex-direction: column;
-    align-items: center;
     width: 100%;
     margin-top: 200px;
 }
@@ -93,46 +92,8 @@ font-size: 1rem;
 }
 
 /* PRODUTOS */
-.product-wrapper{
-    display: grid;
-    grid-template-columns: repeat(3, minmax(200px, 1fr));
-    justify-content: space-between;
-    width: 80%;
-    gap: 16px;
-}
-
-.card-product{
-    display: flex;
-    width: 100%;
-    background-color: rgb(249, 249, 249);
-    box-shadow: 0px 3px 10px 0px #ccc;
-    border-radius: 15px;
-    padding: 1%;
-}
-
-.card-product .title{
-    color: darkblue;
-}
-
-.card-product img{
-    width: 35%;
-    border-radius: 15px;
-}
-
-.product-content{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    padding: 2%;
-}
-
-.title{
-    font-size: 1.5rem;
-}
-
-.desc{
-    font-size: 0.7rem;
-}
+/*CARDS HOME*/
+/* PRODUTOS DO CARROSSEL */
 
 .show-more{
     width: 15%;
@@ -145,3 +106,110 @@ font-size: 1rem;
     border-radius: 15px;
 }
 
+/*pop-up product register nigga fellow */
+
+.container 		{ 
+    width:600px; 
+    margin:30px auto 0; 
+    display:block; 
+    background:#FFF;
+    padding:10px 50px 50px;
+    border: black solid 2px;
+  }
+  h2 		 { 
+    text-align:center; 
+    margin-bottom:50px; 
+  }
+  h2 small { 
+    font-weight:normal; 
+    color:#888; 
+    display:block; 
+  }
+  .footer 	{ text-align:center; }
+  .footer a  { color:#53B2C8; }
+  
+  /* form starting stylings ------------------------------- */
+  .group 			  { 
+    position:relative; 
+    margin-bottom:45px; 
+  }
+  input 				{
+    font-size:18px;
+    padding:10px 10px 10px 5px;
+    display:block;
+    width:300px;
+    border:none;
+    border-bottom:1px solid #757575;
+  }
+  input:focus 		{ outline:none; }
+  
+  /* LABEL ======================================= */
+  label 				 {
+    color:#999; 
+    font-size:18px;
+    font-weight:normal;
+    position:absolute;
+    pointer-events:none;
+    left:5px;
+    top:10px;
+    transition:0.2s ease all; 
+    -moz-transition:0.2s ease all; 
+    -webkit-transition:0.2s ease all;
+  }
+  
+  /* active state */
+  input:focus ~ label, input:valid ~ label 		{
+    top:-20px;
+    font-size:14px;
+    color:#5264AE;
+  }
+  
+  /* BOTTOM BARS ================================= */
+  .bar 	{ position:relative; display:block; width:300px; }
+  .bar:before, .bar:after 	{
+    content:'';
+    height:2px; 
+    width:0;
+    bottom:1px; 
+    position:absolute;
+    background:#5264AE; 
+    transition:0.2s ease all; 
+    -moz-transition:0.2s ease all; 
+    -webkit-transition:0.2s ease all;
+  }
+  .bar:before {
+    left:50%;
+  }
+  .bar:after {
+    right:50%; 
+  }
+  
+  /* active state */
+  input:focus ~ .bar:before, input:focus ~ .bar:after {
+    width:50%;
+  }
+  
+  /* HIGHLIGHTER ================================== */
+  .highlight {
+    position:absolute;
+    height:60%; 
+    width:100px; 
+    top:25%; 
+    left:0;
+    pointer-events:none;
+    opacity:0.5;
+  }
+  
+  /* active state */
+  input:focus ~ .highlight {
+    -webkit-animation:inputHighlighter 0.3s ease;
+    -moz-animation:inputHighlighter 0.3s ease;
+    animation:inputHighlighter 0.3s ease;
+  }
+  
+  /* ANIMATIONS ================ */
+  @-webkit-keyframes inputHighlighter {
+      from { background:#5264AE; }
+    to 	{ width:0; background:transparent; }
+  }
+ 

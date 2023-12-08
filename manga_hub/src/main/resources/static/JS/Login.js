@@ -1,7 +1,5 @@
 var autenticado = false;
 
-
-
 document.forms["login"].addEventListener('submit', function(event) {
     console.log("entrou");
     event.preventDefault(); // Impede o envio do formulário padrão
@@ -28,10 +26,5 @@ document.forms["login"].addEventListener('submit', function(event) {
       localStorage.setItem('token', token);
       
         window.location.href = "index.html";
-
-     
-      
-    
     })
-  
   });
