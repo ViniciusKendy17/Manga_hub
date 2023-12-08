@@ -37,9 +37,5 @@ document.forms["login"].addEventListener('submit', function(event) {
           loginn.style.display = 'none';
           cadastro.style.display = 'none';
         }
-     
-      
-    
     })
-  
   });
