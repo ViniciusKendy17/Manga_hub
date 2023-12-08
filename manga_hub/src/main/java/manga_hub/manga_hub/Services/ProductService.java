@@ -34,9 +34,7 @@ public class ProductService {
 
     public void saveProduct(ProductRegDTO produtoDTO, String Token) {
         UserModel user = getUserFromToken(Token);
-        System.out.println("Poduruto name=" + user.getName());
         ProductModel produto = new ProductModel(produtoDTO);
-        System.out.println("cUserName=" + produto.getNome());
         produto.setId_vendedor(user);
         repository.save(produto);
     }

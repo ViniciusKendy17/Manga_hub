@@ -25,6 +25,7 @@ public class ProductModel {
     private long id;
 
     private String nome;
+    private String descricao;
     private Double preco;
     private int estoque;
     private String genero;
@@ -39,6 +40,7 @@ public class ProductModel {
 
     public ProductModel(ProductRegDTO productRegDTO){
         nome = productRegDTO.nome();
+        descricao = productRegDTO.descricao();
         preco = productRegDTO.preco();
         estoque = productRegDTO.estoque();
         genero = productRegDTO.genero();

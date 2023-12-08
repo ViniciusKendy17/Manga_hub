@@ -40,7 +40,6 @@ public class AuthenticationController {
         var token = tokenService.generateToken((UserModel) auth.getPrincipal());
 
         return (ResponseEntity) ResponseEntity.ok(new LoginTokenDTO(token));
-
     }
 
     // localhost:8080/auth/register
