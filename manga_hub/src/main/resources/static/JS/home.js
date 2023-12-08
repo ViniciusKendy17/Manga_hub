@@ -1,3 +1,5 @@
+      
+      
       document.addEventListener('DOMContentLoaded', function () {
       const cardList = document.getElementById('carousel');
       const products = [

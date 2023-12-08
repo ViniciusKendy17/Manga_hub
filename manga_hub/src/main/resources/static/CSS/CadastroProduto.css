@@ -1,7 +1,7 @@
 /*pop-up product register nigga fellow */
 
 .container 		{ 
-  width:100vw; 
+  width: 100vw;
   height: 100vh;
   top: 0;
   left: 0;
@@ -11,8 +11,9 @@
   z-index: 999;
   background:#FFF;
   background-color: transparent;
-  position: absolute;
+  position: fixed;
   transition: .3s;
+  border: none;
  
 }
 
@@ -25,8 +26,8 @@
     min-height: 600px;
     padding: 50px;
     border-radius: 20px ;
-    backdrop-filter: blur(15px);
-    background-color: #ffffff96;
+
+    background-color: white;
     border: rgba(44, 0, 139, 0.9) solid 2px ;
 }
 
@@ -82,18 +83,17 @@ section{
   font-weight:900;
 }
 .fechar{
-  position: absolute;
+  position: relative;
   top: -5px;
-  right: -5px;
-  width: 30px;
-  height:30px ;
+  right: -500px;
+  width: 40px;
+  height:40px ;
   border-radius: 50%;
   border: 0;
-  background-color: red;
+  background-color:  rgba(44, 0, 139, 0.9);
   cursor: pointer;
   font-size: 20px;
   color: #fff;
-
 }
 
 .container.abrir{

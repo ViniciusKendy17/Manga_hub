@@ -2,7 +2,7 @@
 @media(min-width:1px) and (max-width:750px){
   body{
       margin: 0 auto;
-      box-sizing: border-box; 
+      box-sizing: border-box;   
   }
   
   header{
@@ -314,7 +314,7 @@
 }
 
 header{
-    position: absolute;
+    
     background-color: rgba(55, 2, 169, 0.9);
     width: 100%;    
     display: flex;
@@ -517,137 +517,13 @@ ul{
   }
   
   /* Links inside the navbar */
-  .navbar a {
-    float: left;
-    font-size: 16px;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-  }
-  
-  /* The dropdown container */
-  .dropdown {
-    float: left;
-    overflow: hidden;
-  }
-  
-  /* Dropdown button */
-  .dropdown .dropbtn {
-    font-size: 16px;
-    border: none;
-    outline: none;
-    color: white;
-    padding: 5px 5px;
-    background-color: inherit;
-    font-family: inherit; /* Important for vertical align on mobile phones */
-    margin: 0; /* Important for vertical align on mobile phones */
-  }
-  
-  /* Add a red background color to navbar links on hover */
-  .navbar a:hover, .dropdown:hover .dropbtn {
-    background-color:rgba(30, 0, 95, 0.523) ;
-    border-radius: 5px;
-    cursor: pointer;
-    border-radius: 2px;
-  }
-  
-  /* Dropdown content (hidden by default) */
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-  }
-  
-  /* Links inside the dropdown */
-  .dropdown-content a {
-    float: none;
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-  }
-  
-  /* Add a grey background color to dropdown links on hover */
-  .dropdown-content a:hover {
-    background-color: #ddd;
-  }
-  
-  /* Show the dropdown menu on hover */
-  .dropdown:hover .dropdown-content {
-    display: block;
-  }
 
 .hamburger {
   display: block;
   z-index: 1;
 }
 
-.nav-list {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: #a5c;
-  clip-path: circle(100px at 90% -15%);
-  transition: 1s ease-out;
 
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  gap: 0;
-
-  pointer-events: none;
-}
-
-.nav-list a {
-  font-size: 24px;
-  opacity: 0;
-}
-
-.nav-list li:nth-child(1) a {
-  transition: 0.5s 0.2s;
-}
-
-.nav-list li:nth-child(2) a {
-  transition: 0.5s 0.4s;
-}
-
-.nav-list li:nth-child(3) a {
-  transition: 0.5s 0.6s;
-}
-
-/* Estilos ativos */
-
-.nav.active .nav-list {
-  clip-path: circle(1500px at 90% -15%);
-  pointer-events: all;
-}
-
-.nav.active .nav-list a {
-  opacity: 1;
-}
-
-.nav.active .hamburger {
-  position: fixed;
-  top: 26px;
-  right: 16px;
-  border-top-color: transparent;
-}
-
-.nav.active .hamburger::before {
-  transform: rotate(135deg);
-}
-
-.nav.active .hamburger::after {
-  transform: rotate(-135deg);
-  top: -7px;
-}
 
 }
 
@@ -665,7 +541,7 @@ header{
     width: 100%;    
     display: flex;
     justify-content: center;
-    padding:1% ;
+    padding:1.2% ;
 }
 
 #nav-bar{
@@ -701,41 +577,26 @@ ul{
 
 .botaoH{
   text-decoration: none;
-  color: white;
+  color:  rgba(44, 0, 139, 0.9);
+  font-weight:bolder;
   padding: 10px;
   border: 0;
-  background-color:  rgba(55, 2, 169, 0.9);
+  background-color: white;
   font-size:16px;
-  font-weight:500;
   border-radius: 10px;
+  transition: .4s;
 }
 
 .botaoH:hover{
-
+  background-color:  rgba(44, 0, 139, 0.9);
+  color: white;
   cursor: pointer;
-  box-shadow: black 0 0 1px 1px;
+  
 }
 
 
 /* Navbar container */
-.navbar {
-  overflow: hidden;
-  width: 80%;
-  font-family: Arial;
-  display: flex;
-  justify-content: space-around;
 
-}
-
-/* Links inside the navbar */
-.navbar a {
-  float: left;
-  font-size: 16px;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
 
 /* The dropdown container */
 
@@ -772,20 +633,15 @@ ul{
 
 /*Botão de login*/
 #botao-out-out{
-  position: relative;
     width: 150px;
     height: 100%;
     max-height: 25px;
-    right: 10%;
+
     
 }
 
 
-#botao-out:hover{
-  background-color: rgba(96, 61, 171, 0.9);
-  border: white solid 1px;
-  color: #f9f9f9;
-}
+
 
 #botao-in{
     color: black;
@@ -828,6 +684,7 @@ ul{
 
 #botaoout{
   display: none;
+  
 }
 
 /*Botão Cadastro de produto*/

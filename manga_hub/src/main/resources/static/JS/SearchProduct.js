@@ -38,14 +38,15 @@ function displayResults(results) {
 
     if (results.length >= 0) {
         results.forEach(product => {
-            var card = document.createElement('div');
-            card.className = 'card';
-            card.innerHTML = `<h3>${product.nome}</h3>`;
+            const card = document.createElement('div');
+            card.classList.add('card-product');
+            card.dataset.productId = product.id;
+            
             // Adicione aqui outros detalhes do produto que você deseja exibir no card
             resultsContainer.appendChild(card);
         });
     } else {
-        resultsContainer.innerHTML = '<p>Nenhum resultado encontrado.</p>';
+        alert("Nenhum resultado encontrado");
     }
 }
 
