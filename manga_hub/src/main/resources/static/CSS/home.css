@@ -16,7 +16,7 @@ main{
     display: flex;
     flex-direction: column;
     width: 100%;
-    margin-top: 100px;
+    margin-top: 200px;
 }
 
 .main-post{
@@ -88,6 +88,7 @@ font-size: 1rem;
 
 .card-dest img{
     width: 100%;
+
 }
 
 /* PRODUTOS */
@@ -210,18 +211,5 @@ font-size: 1rem;
   @-webkit-keyframes inputHighlighter {
       from { background:#5264AE; }
     to 	{ width:0; background:transparent; }
-  }
-
-  
-
-  @media screen and (max-width: 900px) {
-    .wrapper .carousel {
-      grid-auto-columns: calc((100% / 2) - 9px);
-    }
-  }
-  @media screen and (max-width: 600px) {
-    .wrapper .carousel {
-      grid-auto-columns: 100%;
-    }
   }
  

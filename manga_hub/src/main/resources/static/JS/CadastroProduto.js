@@ -1,6 +1,6 @@
 
 
-document.getElementById('botao').addEventListener('click', cadastrarp);
+document.getElementById('botao-reg').addEventListener('click', cadastrarp);
 
 function cadastrarp(){
     // Recuperar o token do localStorage
@@ -46,6 +46,7 @@ function cadastrarp(){
     
     .then(response => {
         console.log(response.status);
+        alert("Produto Registrado com sucesso !!")
         
         // Lógica adicional de tratamento de resposta aqui
     })
