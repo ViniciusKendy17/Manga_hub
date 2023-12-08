@@ -29,6 +29,8 @@ public class CartModel {
 
     @ElementCollection
     private List<OrderItemsModel> itens = new ArrayList<>();
+    
+    private double total;
 
     public CartModel(Long userId) {
         this.usuario.setId(userId);
