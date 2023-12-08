@@ -30,5 +30,15 @@ public class CartModel {
     @ElementCollection
     private ArrayList<OrderItemsModel> itens = new ArrayList<>();
 
+    public CartModel(Long userId) {
+        this.usuario.setId(userId);
+    }
+
+    public void adicionarItem(OrderItemsModel item) {
+        itens.add(item);
+    }
+
+
+
 
 }

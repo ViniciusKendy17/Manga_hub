@@ -1,29 +1,31 @@
 package manga_hub.manga_hub.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import manga_hub.manga_hub.Services.OrderService;
-import manga_hub.manga_hub.models.OrderModel;
+import manga_hub.manga_hub.DTO.OrderItemsDTO;
+import manga_hub.manga_hub.Services.CartService;
+
 
 @RestController
-@RequestMapping("/cart")
+@RequestMapping("/carrinho")
 @CrossOrigin("*")
 public class CartController {
- 
     @Autowired
-    private OrderService service;
+    private CartService shoppingCartService;
 
-    @PostMapping
-    public OrderModel criarPedido(@RequestBody OrderModel cart) {
-        return service.createOrder(cart);
+    @PostMapping("/adicionar")
+    public ResponseEntity<Void> adicionarProdutoNoCarrinho(@RequestBody OrderItemsDTO orderItemsDTO, @RequestParam Long userId) {
+        shoppingCartService.adicionarProdutoNoCarrinho(orderItemsDTO, userId);
+        return new ResponseEntity<>(HttpStatus.CREATED);
     }
-
 
 
 }
