@@ -1,14 +1,13 @@
 package manga_hub.manga_hub.models;
 
-import java.util.ArrayList;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import jakarta.persistence.CollectionTable;
+import jakarta.persistence.Column;
 import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -17,8 +16,7 @@ import jakarta.persistence.ManyToOne;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import manga_hub.manga_hub.Enums.Genero;
-import manga_hub.manga_hub.Enums.TipoProduto;
+import manga_hub.manga_hub.DTO.ProductRegDTO;
 
 @Entity(name = "produto")
 @Data
@@ -33,17 +31,23 @@ public class ProductModel {
     private String nome;
     private Double preco;
     private int estoque;
-
-    @ElementCollection(targetClass = Genero.class)
-    @CollectionTable(name = "produto_genero", joinColumns = @JoinColumn(name = "produto_id"))
-    @Enumerated(EnumType.STRING)
-    private List<Genero> genero = new ArrayList<>();
-    
-    private TipoProduto tipo_produto;
+    private String genero;
+    private String tipo_produto;
     private String isbn;
     private String imagem;
 
+    @JsonBackReference
     @ManyToOne
     @JoinColumn(name = "id_vendedor")
     private UserModel id_vendedor;
+
+    public ProductModel(ProductRegDTO productRegDTO){
+        nome = productRegDTO.nome();
+        preco = productRegDTO.preco();
+        estoque = productRegDTO.estoque();
+        genero = productRegDTO.genero();
+        tipo_produto = productRegDTO.tipo();
+        isbn = productRegDTO.isbn();
+        imagem = productRegDTO.imagem();
+    }
 }
