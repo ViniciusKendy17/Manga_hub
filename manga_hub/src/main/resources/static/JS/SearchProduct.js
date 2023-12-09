@@ -52,5 +52,5 @@ function displayResults(results) {
 
 function displayError(errorMessage) {
     var resultsContainer = document.getElementById('resultsContainer');
-    resultsContainer.innerHTML = `<p>${errorMessage}</p>`;
+    alert("erro")
 }
