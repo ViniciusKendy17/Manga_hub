@@ -20,7 +20,7 @@
             
                 <div id="bar">
                     <input class="inputsh" type="text" id="SearchProduct" placeholder="O que você está buscando ?">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                    <svg id="search-svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
                       <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
                     </svg>
                 </div>
@@ -44,64 +44,67 @@
           </div>
         
     </header>
-
-<div class="container-main">
+<!-- CONTEÚDO MAIS PROCURADO -->
+<div id="container-main">
     <!-- CONTEÚDO MAIS PROCURADO -->
-    <div class="container-main">
-      <!-- CONTEÚDO MAIS PROCURADO -->
-      <main class=".main-post">
-          <section id="destaques">
-              <h2>DESTAQUES</h2>
-              <div class="product-destaque">
-                  <div class="card-dest">
-                      <img src="https://m.media-amazon.com/images/I/71PBZJaSmAL.AC_UF1000,1000_QL80.jpg" alt="">
-                      <h3 class="title-dest">Jujutsu Kaizen</h3>
-                  </div>
-                  <div class="card-dest">
-                      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSow6FvDA9_iTZ_04zQV2fYBZ22Bcrt_NqTOw&usqp=CAU" alt="">
-                      <h3 class="title-dest">Tokyo Ghoul</h3>
-                  </div>
-                  <div class="card-dest">
-                      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQjPMvoUIyHkPmi5WxhQnikr73yd6lB4Zv3g&usqp=CAU" alt="">
-                      <h3 class="title-dest">Hunter x Hunter</h3>
-                  </div>
-                  <div class="card-dest">
-                      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqlqFy5m6iezzIVQgXkAzOSZlxJPKkF2o0JQ&usqp=CAU" alt="">
-                      <h3 class="title-dest">Kimetsu no Yaiba</h3>
-                  </div>
-                  <div class="card-dest">
-                      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZAiOzNMEBAd0Hush3L38Ih9VSBnEQOlgJPAqFn7E0FysGm0YKjwvMXomlFdjfIzIDGXc&usqp=CAU" alt="">
-                      <h3 class="title-dest">Blue Lock</h3>
-                  </div>
-                  <div class="card-dest">
-                      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQChyVYeBZBCxp3ULODEmoqDXT1KZsnidoqJw&usqp=CAU" alt="">
-                      <h3 class="title-dest">Boku no Hero</h3>
-                  </div>
-              </div>
-          </section>
-  
-          <!-- Últimos adicionados-->
-          <section class="product-section" id="last-products">
-              <h2>Últimos adicionados</h2>
-              <div class="product-list"></div>    
-          </section>
-          <!-- Mangás-->
-          <section class="product-section" id="mangas">
-              <h2>Mangás</h2>
-              <div class="manga-list"></div>    
-          </section>
-          <section class="product-section" id="lightNovels">
-              <h2>Light Novels</h2>
-              <div class="light-list"></div>    
-          </section>
-          <section class="product-section" id="acts">
-              <h2>Action Figures</h2>
-              <div class="act-list"></div>    
-          </section>
-  </div>
-  <div id="resultsContainer" >
+    <main class=".main-post">
+        <section id="destaques">
+            <h2>DESTAQUES</h2>
+            <div class="product-destaque">
+                <div class="card-dest">
+                    <img src="https://m.media-amazon.com/images/I/71PBZJaSmAL.AC_UF1000,1000_QL80.jpg" alt="">
+                    <h3 class="title-dest">Jujutsu Kaizen</h3>
+                </div>
+                <div class="card-dest">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSow6FvDA9_iTZ_04zQV2fYBZ22Bcrt_NqTOw&usqp=CAU" alt="">
+                    <h3 class="title-dest">Tokyo Ghoul</h3>
+                </div>
+                <div class="card-dest">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQjPMvoUIyHkPmi5WxhQnikr73yd6lB4Zv3g&usqp=CAU" alt="">
+                    <h3 class="title-dest">Hunter x Hunter</h3>
+                </div>
+                <div class="card-dest">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqlqFy5m6iezzIVQgXkAzOSZlxJPKkF2o0JQ&usqp=CAU" alt="">
+                    <h3 class="title-dest">Kimetsu no Yaiba</h3>
+                </div>
+                <div class="card-dest">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZAiOzNMEBAd0Hush3L38Ih9VSBnEQOlgJPAqFn7E0FysGm0YKjwvMXomlFdjfIzIDGXc&usqp=CAU" alt="">
+                    <h3 class="title-dest">Blue Lock</h3>
+                </div>
+                <div class="card-dest">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQChyVYeBZBCxp3ULODEmoqDXT1KZsnidoqJw&usqp=CAU" alt="">
+                    <h3 class="title-dest">Boku no Hero</h3>
+                </div>
+            </div>
+        </section>
 
+        <!-- Últimos adicionados-->
+        <section class="product-section" id="last-products">
+            <h2>Últimos adicionados</h2>
+            <div class="product-list"></div>    
+        </section>
+        <!-- Mangás-->
+        <section class="product-section" id="mangas">
+            <h2>Mangás</h2>
+            <div class="manga-list"></div>    
+        </section>
+        <section class="product-section" id="lightNovels">
+            <h2>Light Novels</h2>
+            <div class="light-list"></div>    
+        </section>
+        <section class="product-section" id="acts">
+            <h2>Action Figures</h2>
+            <div class="act-list"></div>    
+        </section>
   </div>
+    
+      <div id="results-container-home">
+        <!-- Aqui é onde seus produtos são exibidos inicialmente -->
+        <div class="product-list"></div>
+      </div>
+      <div id="pagination-info">
+        <!-- Aqui é onde as informações da paginação serão exibidas -->
+      </div>
    
     <div class="container" id="out-form" >
         <form id="pupForm" >

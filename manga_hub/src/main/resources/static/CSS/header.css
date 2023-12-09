@@ -6,7 +6,6 @@
   }
   
   header{
-      position: absolute;
       background-color: rgba(55, 2, 169, 0.9);
       width: 100%;    
       display: flex;
@@ -534,7 +533,6 @@ body{
 }
 
 header{
-    position: absolute;
     background-color: rgba(55, 2, 169, 0.9);
     width: 100%;    
     display: flex;
@@ -621,7 +619,7 @@ ul{
   display: flex;
 }
 
-#bar svg{
+#bar #search-svg{
   position: relative;
   text-align: center;
   top: 25%;
