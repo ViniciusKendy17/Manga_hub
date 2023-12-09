@@ -24,14 +24,12 @@ public class CartModel {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "id_cliente")
+    @JoinColumn(name = "id_usuario")
     private UserModel usuario;
 
     @ElementCollection
     private List<OrderItemsModel> itens = new ArrayList<>();
     
-    private double total;
-
     public CartModel(Long userId) {
         this.usuario.setId(userId);
     }

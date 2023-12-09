@@ -1,15 +1,20 @@
 package manga_hub.manga_hub.Services;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.stereotype.Service;
 
 import manga_hub.manga_hub.DTO.CartDTO;
+import manga_hub.manga_hub.DTO.HomeDTO;
+import manga_hub.manga_hub.DTO.HomeUserDTO;
 import manga_hub.manga_hub.DTO.OrderItemsDTO;
 import manga_hub.manga_hub.Security.TokenService;
-import manga_hub.manga_hub.exceptions.NotFoundProductException;
+import manga_hub.manga_hub.exceptions.NotFoundExpetion;
 import manga_hub.manga_hub.models.CartModel;
 import manga_hub.manga_hub.models.OrderItemsModel;
 import manga_hub.manga_hub.models.ProductModel;
@@ -33,7 +38,7 @@ public class CartService {
     public void addProduct(OrderItemsDTO orderItemsDTO, String Token) {
         UserModel user = getUserFromToken(Token);
         ProductModel produto = productRepository.findById(orderItemsDTO.id())
-                .orElseThrow(() -> new NotFoundProductException("Produto não encontrado"));
+                .orElseThrow(() -> new NotFoundExpetion("Produto não encontrado"));
 
         OrderItemsModel orderItemsModel = new OrderItemsModel(produto, orderItemsDTO.quantidade(), orderItemsDTO.preco() * orderItemsDTO.quantidade());
 
@@ -48,21 +53,47 @@ public class CartService {
     public void deleteProduct(Long productId, String Token) {
         UserModel user = getUserFromToken(Token);
         CartModel carrinho = cartRepository.findById(user.getId())
-                .orElseThrow(() -> new NotFoundProductException("Carrinho não encontrado"));
+                .orElseThrow(() -> new NotFoundExpetion("Carrinho não encontrado"));
         OrderItemsModel orderItemsModel = carrinho.getItens().stream()
                 .filter(oi -> oi.getProduto().getId() == productId)
                 .findFirst()
-                .orElseThrow(() -> new NotFoundProductException("Produto não encontrado no carrinho"));
+                .orElseThrow(() -> new NotFoundExpetion("Produto não encontrado no carrinho"));
         carrinho.getItens().remove(orderItemsModel);
         cartRepository.save(carrinho);
     }
 
-    //listar produtos do carrinho
-    public List<OrderItemsModel> listProductsInCart(String Token) {
-        UserModel user = getUserFromToken(Token);
-        CartModel carrinho = cartRepository.findById(user.getId())
-                .orElseThrow(() -> new NotFoundProductException("Carrinho não encontrado"));
-        return carrinho.getItens();
+    //LISTAR DTO
+    public List<HomeDTO> listCartProducts(String token) {
+        UserModel user = getUserFromToken(token);
+        CartModel cart = cartRepository.findById(user.getId())
+                .orElseThrow(() -> new NotFoundExpetion("Carrinho não encontrado"));    
+        List<HomeDTO> listProductsDTO = new ArrayList<>();
+        for (OrderItemsModel orderItem : cart.getItens()) {
+            ProductModel product = orderItem.getProduto();
+            HomeDTO homeDTO = new HomeDTO(
+                    product.getId(),
+                    product.getNome(),
+                    product.getPreco(),
+                    product.getImagem(),
+                    new HomeUserDTO(user.getId(), user.getName(), user.getTelefone())
+            );
+            listProductsDTO.add(homeDTO);
+        }
+        return listProductsDTO;
+    }
+
+    //total do carrinho
+    public Double calculateCartTotal(String token) {
+        UserModel user = getUserFromToken(token);
+        CartModel cart = cartRepository.findById(user.getId())
+                .orElseThrow(() -> new NotFoundExpetion("Carrinho não encontrado"));
+
+        double total = 0.0;
+        for (OrderItemsModel orderItem : cart.getItens()) {
+            total += orderItem.getTotal();
+        }
+
+        return total;
     }
 
     public UserModel getUserFromToken(String token) {

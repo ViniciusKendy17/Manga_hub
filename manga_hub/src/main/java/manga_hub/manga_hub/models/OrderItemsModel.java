@@ -19,5 +19,5 @@ public class OrderItemsModel {
     private ProductModel produto;
 
     private int quantidade;
-    private double subTotalProduto;
+    private double total;
 }

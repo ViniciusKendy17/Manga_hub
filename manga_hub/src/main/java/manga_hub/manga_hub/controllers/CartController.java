@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import jakarta.servlet.http.HttpServletRequest;
+import manga_hub.manga_hub.DTO.HomeDTO;
 import manga_hub.manga_hub.DTO.OrderItemsDTO;
 import manga_hub.manga_hub.Services.CartService;
 import manga_hub.manga_hub.models.OrderItemsModel;
@@ -32,9 +33,9 @@ public class CartController {
     private CartService shoppingCartService;
 
     @GetMapping("/list")
-    public ResponseEntity<List<OrderItemsModel>> listProductsInCart( @RequestParam HttpServletRequest request) {
+    public ResponseEntity<List<HomeDTO>> listProductsInCart( @RequestParam HttpServletRequest request) {
         String token = extractToken(request);
-        return ResponseEntity.status(200).body(shoppingCartService.listProductsInCart(token));
+        return ResponseEntity.status(200).body(shoppingCartService.listCartProducts(token));
     }
 
     @PostMapping("/add")
