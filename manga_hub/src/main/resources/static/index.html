@@ -45,6 +45,7 @@
         
     </header>
 
+<div class="container-main">
     <!-- CONTEÚDO MAIS PROCURADO -->
     <main class=".main-post">
         <section id="destaques">
@@ -76,6 +77,28 @@
                 </div>
             </div>
         </section>
+
+        <!-- Últimos adicionados-->
+        <section class="product-section">
+            <h2>Últimos adicionados</h2>
+            <div class="product-list"></div>    
+        </section>
+        <!-- Mangás-->
+        <section class="product-section">
+            <h2>Mangás</h2>
+            <div class="manga-list"></div>    
+        </section>
+        <section class="product-section">
+            <h2>Light Novels</h2>
+            <div class="light-list"></div>    
+        </section>
+        <section class="product-section">
+            <h2>Action Figures</h2>
+            <div class="act-list"></div>    
+        </section>
+
+</div>
+    
         <div id="resultsContainer">
           <!-- Os resultados da pesquisa serão exibidos aqui -->
         </div>
@@ -84,36 +107,37 @@
     <div class="container" id="out-form" >
         <form id="pupForm" >
           <button class="fechar" id="fechar" >X</button>
-          <section>
-          <div  >
-            <h2>Cadastro Produto</h2>
-          </div>
-          <div class="inputPop" >
-            <input class="inputs-in" id="nome"  type="text" placeholder="Nome Produto">
-          </div>
-          <div class="inputPop">
-            <input class="inputs-in" id="preco" type="text" placeholder="Preço">
-          </div>
-          <div class="inputPop">
-            <input class="inputs-in" id="estoque" type="text" placeholder="Estoque">
-          </div>
-          <div class="inputPop">
-            <input class="inputs-in" id="genero" type="text" placeholder="Gênero">
-          </div>
-          <div class="inputPop">
-            <input class="inputs-in" id="tipo_produto" type="text" placeholder="Tipo Produto. Exemplo: Mangá ou action figure" >
-          </div>
-          <div class="inputPop">
-            <input class="inputs-in" id="isbn" type="text" placeholder="ISBN" >
-          </div>
-          <div class="inputPop">
-            <input class="inputs-in" id="imagem" type="text" placeholder="Imagem do Produto" >
-          </div>
-          <button class="inputPop" id="botao-reg" >Cadastrar Produto</button>
+          <section id="cad-produ-sec">
+            <div  >
+                <h2>Cadastro Produto</h2>
+            </div>
+            <div class="inputPop" >
+                <input class="inputs-in" id="nome"  type="text" placeholder="Nome Produto">
+            </div>
+            <div class="inputPop">
+                <input class="inputs-in" id="preco" type="text" placeholder="Preço">
+            </div>
+            <div class="inputPop">
+                <input class="inputs-in" id="estoque" type="text" placeholder="Estoque">
+            </div>
+            <div class="inputPop">
+                <input class="inputs-in" id="genero" type="text" placeholder="Gênero">
+            </div>
+            <div class="inputPop">
+                <input class="inputs-in" id="tipo_produto" type="text" placeholder="Tipo Produto. Exemplo: Mangá ou action figure" >
+            </div>
+            <div class="inputPop">
+                <input class="inputs-in" id="isbn" type="text" placeholder="ISBN" >
+            </div>
+            <div class="inputPop">
+                <input class="inputs-in" id="imagem" type="text" placeholder="Imagem do Produto" >
+            </div>
+            <button class="inputPop" id="botao-reg" >Cadastrar Produto</button>
         </section>
         </form>
       </div>
-      <script src="./JS/home.js"></script>
+
+    <script src="./JS/home.js"></script>
     <script src="./JS/RemoveLogReg.js" ></script>
     <script src="./JS/PopUp.js" ></script>
     <script src="./JS/Logout.js" ></script>

@@ -17,9 +17,6 @@
  
 }
 
-
-
-
 #pupForm{
     width: 45%;
     min-width:450px ;
@@ -31,7 +28,7 @@
     border: rgba(44, 0, 139, 0.9) solid 2px ;
 }
 
-section{
+#cad-produ-sec{
   width: 100%;
   height: 70vh;
   display: flex;
