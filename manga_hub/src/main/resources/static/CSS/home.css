@@ -29,6 +29,8 @@ main, .container-main{
     font-family: Poppins;
 }
 
+
+
 section{
     display: flex;
     flex-direction: column;
@@ -97,14 +99,14 @@ font-size: 1rem;
 }
 
 /* PRODUTOS */
-.product-section{
+#last-products, #mangas, #light-novels, #act{
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
   font-family: Poppins;
 }
-/*CARDS HOME*/
+
 .product-list, .manga-list, .light-list, .act-list {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -114,19 +116,32 @@ font-size: 1rem;
 }
 
 .card-product {
+
   flex: 0 0 auto;
   width: 250px;
   margin-right: 16px;
   margin-bottom: 16px;
   background-color: #f2efef;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 1%;
   opacity: 1;
   box-sizing: border-box;
+}
+
+.card-product:hover {
+  transform: scale(1.1) ;
+  -webkit-transform: scale(1.1) ;
+  transition: transform 0.3s ease;
+  -moz-transform: scale(1.1) ;
+  box-shadow: 0px 5px 16px -1px rgba(68,65,65,0.6);
+  -webkit-box-shadow: 0px 5px 16px -1px rgba(68,65,65,0.6);
+  -moz-box-shadow: 0px 5px 16px -1px rgba(68,65,65,0.6);
 }
 
 .card-product img {
   width: 100%;
   height: auto;
+  border-radius: 10px;
 }
 
 .product-name, .vendedor{
@@ -156,6 +171,29 @@ font-size: 1rem;
 #first-card {
   margin-left: 200px;
 }
+/*CARDS HOME*/
+.product-list, .manga-list, .light-list, .act-list {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 25px;
+  list-style: none;
+  transition: transform 0.3s ease;
+}
+
+.add-to-cart{
+  width: 100%;
+  padding: 2%;
+  background-color: rgb(5, 5, 75);
+  color: white;
+  border-radius: 10px;
+  border: none;
+}
+.add-to-cart:hover{
+  color: rgb(5, 5, 75);
+  background-color: white;
+  border: 2px solid rgb(5, 5, 75);
+}
+
 .show-more{
     width: 15%;
     font-family: Poppins;

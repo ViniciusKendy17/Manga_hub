@@ -4,10 +4,11 @@ document.getElementById('botao-reg').addEventListener('click', cadastrarp);
 
 function cadastrarp(){
     // Recuperar o token do localStorage
+    const token = localStorage.getItem('token');
     
-
     event.preventDefault();
     const nome = document.getElementById('nome').value;
+    const descricao = document.getElementById('descricao').value;
     const preco = document.getElementById('preco').value;
     const estoque = document.getElementById('estoque').value;
     const genero = document.getElementById('genero').value;
@@ -25,6 +26,7 @@ function cadastrarp(){
 
     const data = {
         nome: nome,
+        descricao: descricao,
         preco: preco,
         estoque: estoque,
         genero: genero,
@@ -33,7 +35,6 @@ function cadastrarp(){
         imagem: imagem
     };
     
-    const token = localStorage.getItem('token');
     fetch("http://localhost:8080/product/register", {
         method: "POST",
         

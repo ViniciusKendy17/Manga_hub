@@ -1,163 +1,74 @@
-const products = [
-        {
-          id: 1,
-          titulo: "One Piece",
-          subtitulo: "Mangá de One Piece novo",
-          imagem: "./IMGs/olhaEssaPorrakkkkkk - Copia.png",
-          preco: 100.00,
-          vendedor: "Rafael Correa",
-          descricao: "After being reborn, Zhao Mingxi had no choice but to mooch off of Fu group's young master's luck to avoid death by terminal illness. Although his ears would turn so red as if they're bleeding whenever he sees her, he still keeps up an act of prideful indifference: 'Can you stop being so clingy?' The next day.",
-          id_vendedor: 123
-        },
-        {
-          id: 2,
-          titulo: "Naruto",
-          subtitulo: "Mangá de Naruto",
-          imagem: "./IMGs/olhaEssaPorrakkkkkk - Copia.png",
-          preco: 8.99,
-          vendedor: "Sasuke Uchiha",
-          descricao: "Description for Naruto manga.",
-          id_vendedor: 456
-        },
-        {
-          id: 3,
-          titulo: "Naruto",
-          subtitulo: "Mangá de Naruto",
-          imagem: "./IMGs/olhaEssaPorrakkkkkk - Copia.png",
-          preco: 8.99,
-          vendedor: "Sasuke Uchiha",
-          descricao: "Description for Naruto manga.",
-          id_vendedor: 456
-        },
-        {
-          id: 4,
-          titulo: "Naruto",
-          subtitulo: "Mangá de Naruto",
-          imagem: "./IMGs/olhaEssaPorrakkkkkk - Copia.png",
-          preco: 8.99,
-          vendedor: "Sasuke Uchiha",
-          descricao: "Description for Naruto manga.",
-          id_vendedor: 456
-        },
-        {
-          id: 5,
-          titulo: "Naruto",
-          subtitulo: "Mangá de Naruto",
-          imagem: "./IMGs/olhaEssaPorrakkkkkk - Copia.png",
-          preco: 8.99,
-          vendedor: "Sasuke Uchiha",
-          descricao: "Description for Naruto manga.",
-          id_vendedor: 456
-        },
-        {
-          id: 5,
-          titulo: "Naruto",
-          subtitulo: "Mangá de Naruto",
-          imagem: "./IMGs/olhaEssaPorrakkkkkk - Copia.png",
-          preco: 8.99,
-          vendedor: "Sasuke Uchiha",
-          descricao: "Description for Naruto manga.",
-          id_vendedor: 456
-        } ,
-        {
-          id: 5,
-          titulo: "Naruto",
-          subtitulo: "Mangá de Naruto",
-          imagem: "./IMGs/olhaEssaPorrakkkkkk - Copia.png",
-          preco: 8.99,
-          vendedor: "Sasuke Uchiha",
-          descricao: "Description for Naruto manga.",
-          id_vendedor: 456
-        },
-        {
-          id: 5,
-          titulo: "Naruto",
-          subtitulo: "Mangá de Naruto",
-          imagem: "./IMGs/olhaEssaPorrakkkkkk - Copia.png",
-          preco: 8.99,
-          vendedor: "Sasuke Uchiha",
-          descricao: "Description for Naruto manga.",
-          id_vendedor: 456
-        } 
-      ];
-    
-     // Função para criar um card de produto
-     function createProductCard(product) {
-      const card = document.createElement('div');
-      card.classList.add('card-product');
-      card.dataset.productId = product.id;
+document.addEventListener('DOMContentLoaded', () => {
+  let productsLast = [];
+  let productsMangas = [];
+  let productsLightNovels = [];
+  let productsActionFigures = [];
 
-      const imgDiv = document.createElement('div');
-      imgDiv.classList.add('image');
-      const img = document.createElement('img');
-      img.src = product.imagem;
-      img.alt = 'Product Image';
-      imgDiv.appendChild(img);
-    
-      const content = document.createElement('div');
-      content.classList.add('content');
-    
-      const title = document.createElement('h3');
-      title.classList.add('product-name');
-      title.textContent = product.titulo;
-    
-      const price = document.createElement('p');
-      price.classList.add('price');
-      price.textContent = `RS$ ${product.preco ? product.preco.toFixed(2) : 'N/A'}`;
-    
-      const vendedor = document.createElement('p');
-      vendedor.classList.add('vendedor');
-      vendedor.textContent = `Vendedor: ${product.vendedor}`;
-    
-      const addButton = document.createElement('button');
-      addButton.classList.add('add-to-cart-button');
-      addButton.textContent = 'Adicionar ao Carrinho';
-    
-      addButton.addEventListener('click', function () {
-        const productId = card.dataset.productId;
-        console.log('Botão de adicionar clicado para o produto ID:', productId);
-        // Adicione aqui a lógica para adicionar ao carrinho
+  fetch('http://localhost:8080/home/')
+      .then(response => response.json())
+      .then(data => {
+          productsLast = data;
+          renderizarProdutos(productsLast, 'last-products');
+      })
+      .catch(error => console.error('Erro na requisição para últimos produtos:', error));
+
+  fetch('http://localhost:8080/home/')
+      .then(response => response.json())
+      .then(data => {
+          productsMangas = data;
+          renderizarProdutos(productsMangas, 'mangas');
+      })
+      .catch(error => console.error('Erro na requisição para mangás:', error));
+
+  fetch('http://localhost:8080/home/')
+      .then(response => response.json())
+      .then(data => {
+          productsLightNovels = data;
+          renderizarProdutos(productsLightNovels, 'lightNovels');
+      })
+      .catch(error => console.error('Erro na requisição para light novels:', error));
+
+  fetch('http://localhost:8080/home/')
+      .then(response => response.json())
+      .then(data => {
+          productsActionFigures = data;
+          renderizarProdutos(productsActionFigures, 'acts');
+      })
+      .catch(error => console.error('Erro na requisição para action figures:', error));
+
+  function renderizarProdutos(products, sectionId) {
+      const secao = document.getElementById(sectionId);
+      const divLista = secao.querySelector('.product-list, .manga-list, .light-list, .act-list');
+
+      products.forEach((product) => {
+          const card = document.createElement('div');
+          card.classList.add('card-product');
+          card.innerHTML = `
+              <img src="${product.imagem}" alt="${product.nome}">
+              <div class="content">
+                  <h3 class="product-name">${product.nome}</h3>
+                  <p>Preço: R$ ${product.preco}</p>
+                  <p>Vendedor: ${product.usuario.nome}</p>
+              </div>
+              <button class="add-to-cart" data-product-id="${product.id}">Adicionar ao Carrinho</button>
+          `;
+
+           // Adiciona evento de clique à div do card
+          card.addEventListener('click', () => {
+            const productId = product.id;
+            console.log('Clique na div do card. ID do produto:', productId);
+            // Adicione aqui a lógica desejada ao clicar na div do card
+        });
+
+        // Adiciona evento de clique ao botão "Adicionar ao Carrinho"
+        card.querySelector('.add-to-cart').addEventListener('click', (event) => {
+            event.stopPropagation(); // Impede a propagação do evento para a div do card
+            const productId = card.querySelector('.add-to-cart').dataset.productId;
+            console.log('Produto adicionado ao carrinho. ID do produto:', productId);
+            // Adicione aqui a lógica para adicionar ao carrinho, se necessário
+        });
+
+          divLista.appendChild(card);
       });
-    
-      content.appendChild(title);
-      content.appendChild(price);
-      content.appendChild(vendedor);
-      content.appendChild(addButton);
-    
-      card.appendChild(imgDiv);
-      card.appendChild(content);
-    
-      // Adiciona um ouvinte de evento de clique ao card
-      card.addEventListener('click', function () {
-        const productId = this.dataset.productId;
-        console.log('ID do produto clicado:', productId);
-      });
-    
-      return card;
-    }
-
-// Adiciona os cards à lista
-const cardList = document.querySelector('.product-list');
-products.forEach((product) => {
-  const card = createProductCard(product);
-  cardList.appendChild(card);
+  }
 });
-
-const mangaList = document.querySelector('.manga-list');
-products.forEach((product) => {
-  const card = createProductCard(product);
-  mangaList.appendChild(card);
-});
-
-const lightList = document.querySelector('.light-list');
-products.forEach((product) => {
-  const card = createProductCard(product);
-  lightList.appendChild(card);
-});
-
-const actList = document.querySelector('.act-list');
-products.forEach((product) => {
-  const card = createProductCard(product);
-  actList.appendChild(card);
-});
-

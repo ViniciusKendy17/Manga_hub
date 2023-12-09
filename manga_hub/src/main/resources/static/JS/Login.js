@@ -25,6 +25,6 @@ document.forms["login"].addEventListener('submit', function(event) {
       const token = data.token;
       localStorage.setItem('token', token);
       
-        window.location.href = "index.html";
+      window.location.href = "index.html";
     })
   });

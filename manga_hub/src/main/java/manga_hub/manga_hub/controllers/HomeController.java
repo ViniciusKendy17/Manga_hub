@@ -22,5 +22,4 @@ public class HomeController {
     public List<HomeDTO> listHome() {
         return service.listAll();
     }
-
 }
