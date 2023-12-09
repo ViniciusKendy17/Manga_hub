@@ -26,6 +26,7 @@ public class ProductController {
 
     @GetMapping("/{id}")
     public ResponseEntity<HomeDTO> getProductDTOById(@PathVariable Long id) {
+       // System.out.println("-->"+productService.getProduct(id).usuario().telefone());
         return ResponseEntity.ok(productService.getProduct(id));
     }
 
