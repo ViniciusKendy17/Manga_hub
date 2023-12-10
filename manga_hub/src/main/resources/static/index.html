@@ -14,8 +14,8 @@
     <header>
             <div id="nav-bar">
                 
-                <div id="img-out"  >
-                    <img id="img-in" src="./IMGs/mHlgo.png" alt="">
+                <div id="img-out"   >
+                    <a href="index.html"><img id="img-in" src="./IMGs/mHlgo.png" alt=""></a>
                 </div>
             
                 <div id="bar">
@@ -32,11 +32,11 @@
                 <div>
                   <button id="botaoout">LogOut</button>
                 </div>
-              
+            
             <div id="botao-out-out"  >
               <a class="button-66" id="logar" role="button" href="./login.html">LogIn/Register</a>
             </div>
-       
+            
             <button class="hamburger"></button>
 
            </div>
@@ -51,27 +51,27 @@
         <section id="destaques">
             <h2>DESTAQUES</h2>
             <div class="product-destaque">
-                <div class="card-dest">
+                <div class="card-dest" onclick="searchProductsHighlights('Jujutsu kaisen')" >
                     <img src="https://m.media-amazon.com/images/I/71PBZJaSmAL.AC_UF1000,1000_QL80.jpg" alt="">
-                    <h3 class="title-dest">Jujutsu Kaizen</h3>
+                    <h3 class="title-dest">Jujutsu Kaisen</h3>
                 </div>
-                <div class="card-dest">
+                <div class="card-dest" onclick="searchProductsHighlights('tokyo ghoul')" >
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSow6FvDA9_iTZ_04zQV2fYBZ22Bcrt_NqTOw&usqp=CAU" alt="">
                     <h3 class="title-dest">Tokyo Ghoul</h3>
                 </div>
-                <div class="card-dest">
+                <div class="card-dest" onclick="searchProductsHighlights('hunter x hunter')">
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQjPMvoUIyHkPmi5WxhQnikr73yd6lB4Zv3g&usqp=CAU" alt="">
                     <h3 class="title-dest">Hunter x Hunter</h3>
                 </div>
-                <div class="card-dest">
+                <div class="card-dest" onclick="searchProductsHighlights('demon slayer')">
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqlqFy5m6iezzIVQgXkAzOSZlxJPKkF2o0JQ&usqp=CAU" alt="">
                     <h3 class="title-dest">Kimetsu no Yaiba</h3>
                 </div>
-                <div class="card-dest">
+                <div class="card-dest" onclick="searchProductsHighlights('blue lock')">
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZAiOzNMEBAd0Hush3L38Ih9VSBnEQOlgJPAqFn7E0FysGm0YKjwvMXomlFdjfIzIDGXc&usqp=CAU" alt="">
                     <h3 class="title-dest">Blue Lock</h3>
                 </div>
-                <div class="card-dest">
+                <div class="card-dest" onclick="searchProductsHighlights('boku no hero')">
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQChyVYeBZBCxp3ULODEmoqDXT1KZsnidoqJw&usqp=CAU" alt="">
                     <h3 class="title-dest">Boku no Hero</h3>
                 </div>
@@ -163,5 +163,6 @@
     <script src="./JS/Logout.js" ></script>
     <script src="./JS/CadastroProduto.js" ></script>
     <script src="./JS/SearchProduct.js" ></script>
+  
 </body>
 </html>

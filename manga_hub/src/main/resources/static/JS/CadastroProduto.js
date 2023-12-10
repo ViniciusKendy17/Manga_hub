@@ -7,7 +7,10 @@ function cadastrarp(){
     const token = localStorage.getItem('token');
     
     event.preventDefault();
-    const nome = document.getElementById('nome').value;
+    let nome1 = document.getElementById('nome');
+
+    const nome = nome1.value.toUpperCase(); 
+
     const descricao = document.getElementById('descricao').value;
     const preco = document.getElementById('preco').value;
     const estoque = document.getElementById('estoque').value;
@@ -15,14 +18,6 @@ function cadastrarp(){
     const tipo = document.getElementById('tipo_produto').value;
     const isbn = document.getElementById('isbn').value;
     const imagem = document.getElementById('imagem').value;
-
-    console.log(nome);
-    console.log(preco);
-    console.log(estoque);
-    console.log(genero);
-    console.log(tipo);
-    console.log(isbn);
-    console.log(imagem);
 
     const data = {
         nome: nome,
