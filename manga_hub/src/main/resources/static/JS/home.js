@@ -188,15 +188,12 @@ async function searchProducts() {
         const modalPrice = document.getElementById('modal-product-price');
         const modalUser = document.getElementById('modal-product-user');
         const modalUserTel = document.getElementById('modal-product-user-tel');
-        const addToCartButton = document.getElementsByClassName('add-to-cart-button');
     
         modalImage.src = productDetails.imagem;
         modalName.textContent = productDetails.nome;
         modalPrice.textContent = `Preço: R$ ${productDetails.preco}`;
         modalUser.textContent = productDetails.usuario.nome;
         modalUserTel.textContent = "31996494415";//productDetails.telefone;
-        
-        // Adicione mais informações conforme necessário
     
         // Exiba o modal
         modal.style.display = 'block';
