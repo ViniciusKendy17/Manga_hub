@@ -33,20 +33,20 @@ public class CartController {
     private CartService shoppingCartService;
 
     @GetMapping("/list")
-    public ResponseEntity<List<HomeDTO>> listProductsInCart( @RequestParam HttpServletRequest request) {
+    public ResponseEntity<List<HomeDTO>> listProductsInCart(HttpServletRequest request) {
         String token = extractToken(request);
         return ResponseEntity.status(200).body(shoppingCartService.listCartProducts(token));
     }
 
     @PostMapping("/add")
-    public ResponseEntity<Void> addProduct(@RequestBody OrderItemsDTO orderItemsDTO, @RequestParam HttpServletRequest request) {
+    public ResponseEntity<Void> addProduct(@RequestBody OrderItemsDTO orderItemsDTO, HttpServletRequest request) {
         String token = extractToken(request);
         shoppingCartService.addProduct(orderItemsDTO, token);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
     @DeleteMapping("/delete/{productId}")
-    public ResponseEntity<?> deleteProduct(@PathVariable Long productId, @RequestParam HttpServletRequest request) {
+    public ResponseEntity<?> deleteProduct(@PathVariable Long productId, HttpServletRequest request) {
         String token = extractToken(request);
         shoppingCartService.deleteProduct(productId, token);
         return ResponseEntity.status(204).build();
