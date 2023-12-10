@@ -195,17 +195,27 @@ cardDestElements.forEach(cardElement => {
     }
   });
 
+// Adiciona um ouvinte de evento de tecla pressionada (keydown) à janela inteira
+window.addEventListener('keydown', function (event) {
+  // Verifica se a tecla pressionada é a tecla Enter (código 13)
+  if (event.key === 'Enter') {
+    searchProducts();
+  }
+});
+
+
 // PESQUISA
 let currentPage = 0;
 
 // Função para pesquisar produtos paginados
 async function searchProducts() {
-  const searchTerm = document.getElementById('SearchProduct').value;
- 
+  const searchTerm = document.getElementById('SearchProduct');
+
+  const searchTermUpperCase = searchTerm.value.toUpperCase();
   try {
-    const response = await fetch(`http://localhost:8080/product/search/${searchTerm}?page=${currentPage}`);
+    const response = await fetch(`http://localhost:8080/product/search/${searchTermUpperCase}?page=${currentPage}`);
     if (!response.ok) {
-      throw new Error('Erro ao obter dados da API');
+        throw new Error('Erro ao obter dados da API');
     }
 
     const page = await response.json();
@@ -232,7 +242,7 @@ async function searchProducts() {
 
       const descriptionElement = document.createElement('p');
       descriptionElement.classList.add('search-p');
-      descriptionElement.textContent = `Resultados para: ${searchTerm}`;
+      descriptionElement.textContent = `Resultados para: ${searchTermUpperCase}`;
       resultsContainer.appendChild(descriptionElement);
 
       // Acessa a div com a classe "product-list" dentro do resultsContainer
