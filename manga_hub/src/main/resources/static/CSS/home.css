@@ -88,6 +88,10 @@ section h2{
     border-radius: 15px;
 }
 
+.card-dest:hover{
+  cursor: pointer;
+}
+
 .card-dest img{
     border-radius: 15px;
     height: 90%;
@@ -149,6 +153,7 @@ font-size: 1rem;
   box-shadow: 0px 5px 16px -1px rgba(68,65,65,0.6);
   -webkit-box-shadow: 0px 5px 16px -1px rgba(68,65,65,0.6);
   -moz-box-shadow: 0px 5px 16px -1px rgba(68,65,65,0.6);
+  cursor: pointer;
 }
 
 .card-product img {
@@ -205,6 +210,7 @@ font-size: 1rem;
   color: rgb(5, 5, 75);
   background-color: white;
   border: 2px solid rgb(5, 5, 75);
+  cursor: pointer;
 }
 
 .show-more{

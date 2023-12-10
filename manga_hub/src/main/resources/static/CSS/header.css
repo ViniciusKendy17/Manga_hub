@@ -624,6 +624,11 @@ ul{
   text-align: center;
   top: 25%;
   right: 5%;
+
+}
+
+#bar #search-svg:hover{
+  cursor: pointer;
 }
 
 
