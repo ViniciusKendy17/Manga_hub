@@ -209,7 +209,7 @@ async function searchProducts() {
   try {
     const response = await fetch(`http://localhost:8080/product/search/${searchTermUpperCase}?page=${currentPage}`);
     if (!response.ok) {
-      throw new Error('Erro ao obter dados da API');
+        throw new Error('Erro ao obter dados da API');
     }
 
     const page = await response.json();
