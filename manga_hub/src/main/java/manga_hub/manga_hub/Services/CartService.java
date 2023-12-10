@@ -15,6 +15,7 @@ import manga_hub.manga_hub.models.CartItemModel;
 import manga_hub.manga_hub.models.CartModel;
 import manga_hub.manga_hub.models.ProductModel;
 import manga_hub.manga_hub.models.UserModel;
+import manga_hub.manga_hub.repositories.CartItemRepository;
 import manga_hub.manga_hub.repositories.CartRepository;
 import manga_hub.manga_hub.repositories.UserRepository;
 
@@ -23,6 +24,9 @@ public class CartService {
 
     @Autowired
     private CartRepository cartRepository;
+
+    @Autowired
+    private CartItemRepository cartItemRepository;
 
     @Autowired
     private ProductService productService;
@@ -81,6 +85,23 @@ public class CartService {
     
         // Retornar a lista de itens do carrinho
         return carrinho.getItens();
+    }
+
+    public void removerItemDoCarrinho(Long id, String token) throws NotFoundException {
+        // Obter o carrinho do usuário
+        CartModel carrinho = getCarrinhoFromToken(token);
+    
+        // Verificar se o usuário tem um carrinho
+        if (carrinho == null) {
+            throw new NotFoundException("Carrinho não encontrado para o usuário.");
+        }
+    
+        // Encontrar e remover o item com base no ID do produto
+        cartItemRepository.deleteById(id);
+        // Atualizar o total do carrinho
+        carrinho.setTotal(calcularTotalCarrinho(carrinho));
+        // Salvar ou atualizar o carrinho no banco de dados
+        cartRepository.save(carrinho);
     }
 
     private Double calcularTotalCarrinho(CartModel carrinho) {

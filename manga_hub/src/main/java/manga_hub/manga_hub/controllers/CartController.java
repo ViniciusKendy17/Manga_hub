@@ -23,7 +23,10 @@ import manga_hub.manga_hub.DTO.OrderItemsDTO;
 import manga_hub.manga_hub.DTO.ProductRegDTO;
 import manga_hub.manga_hub.Services.CartService;
 import manga_hub.manga_hub.models.CartItemModel;
+
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 
 @RestController
@@ -45,7 +48,12 @@ public class CartController {
         String token = extractToken(request);
         return ResponseEntity.ok(cartService.listItens(token));
     }
-    
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> removerItemDoCarrinho(@PathVariable Long id, HttpServletRequest request) throws NotFoundException {
+        String token = extractToken(request);
+        cartService.removerItemDoCarrinho(id, token);
+        return ResponseEntity.ok().build();
+    }
 
     private String extractToken(HttpServletRequest request) {
         String authorizationHeader = request.getHeader(HttpHeaders.AUTHORIZATION);
