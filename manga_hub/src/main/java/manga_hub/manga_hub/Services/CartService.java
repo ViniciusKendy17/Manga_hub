@@ -83,18 +83,18 @@ public class CartService {
     }
 
     //total do carrinho
-    public Double calculateCartTotal(String token) {
-        UserModel user = getUserFromToken(token);
-        CartModel cart = cartRepository.findById(user.getId())
-                .orElseThrow(() -> new NotFoundExpetion("Carrinho não encontrado"));
+    // public Double calculateCartTotal(String token) {
+    //     UserModel user = getUserFromToken(token);
+    //     CartModel cart = cartRepository.findById(user.getId())
+    //             .orElseThrow(() -> new NotFoundExpetion("Carrinho não encontrado"));
 
-        double total = 0.0;
-        for (OrderItemsModel orderItem : cart.getItens()) {
-            total += orderItem.getTotal();
-        }
+    //     double total = 0.0;
+    //     for (OrderItemsModel orderItem : cart.getItens()) {
+    //         total += orderItem.getTotal();
+    //     }
 
-        return total;
-    }
+    //     return total;
+    // }
 
     public UserModel getUserFromToken(String token) {
         String login = service.validateToken(token);
