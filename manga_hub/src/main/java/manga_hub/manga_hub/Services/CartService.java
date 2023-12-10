@@ -1,11 +1,13 @@
 package manga_hub.manga_hub.Services;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.stereotype.Service;
 
+import jakarta.servlet.http.HttpServletRequest;
 import javassist.NotFoundException;
 import manga_hub.manga_hub.DTO.OrderItemsDTO;
 import manga_hub.manga_hub.Security.TokenService;
@@ -34,19 +36,19 @@ public class CartService {
     public CartItemModel adicionarItemAoCarrinho(OrderItemsDTO orderItemsDTO, String token) throws NotFoundException {
         // Recuperar o usuário a partir do token (você precisará implementar isso)
         UserModel usuario = getUserFromToken(token);
-
+    
         Long idProduto = Long.parseLong(orderItemsDTO.id());
-
+    
         // Recuperar o produto pelo ID
         ProductModel produto = productService.getById(idProduto)
                 .orElseThrow(() -> new NotFoundException("Produto não encontrado"));
-
+    
         // Criar um novo item do pedido
         CartItemModel novoItem = new CartItemModel();
         novoItem.setProduto(produto);
         novoItem.setQuantidade(orderItemsDTO.quantidade());
         novoItem.setTotal(orderItemsDTO.quantidade() * produto.getPreco());
-
+    
         // Verificar se o usuário já possui um carrinho
         CartModel carrinho = getCarrinhoFromToken(token);
         if (carrinho == null) {
@@ -54,18 +56,31 @@ public class CartService {
             carrinho.setUsuario(usuario);
             carrinho.setItens(new ArrayList<>()); // Inicializar a lista de itens se for nula
         }
-
+        // SETANDO CARRINHO EM ITEM
+        novoItem.setCarrinho(carrinho);
+    
         // Adicionar o novo item ao carrinho
-        carrinho.getItens().add(novoItem);
-
+        carrinho.addItem(novoItem);
+    
         // Atualizar o total do carrinho
         carrinho.setTotal(calcularTotalCarrinho(carrinho));
-
-        // Salvar ou atualizar o carrinho no banco de dados
-        //carrinhoRepository.save(carrinho);
-        System.out.println("Aqui:"+novoItem.getProduto());
-        System.out.println("Aqui:"+novoItem.getTotal());
+    
+        cartRepository.saveAndFlush(carrinho);
+    
         return novoItem;
+    }
+
+    public List<CartItemModel> listItens(String token) throws NotFoundException {
+        // Obter o carrinho do usuário
+        CartModel carrinho = getCarrinhoFromToken(token);
+    
+        // Verificar se o usuário tem um carrinho
+        if (carrinho == null) {
+            throw new NotFoundException("Carrinho não encontrado para o usuário.");
+        }
+    
+        // Retornar a lista de itens do carrinho
+        return carrinho.getItens();
     }
 
     private Double calcularTotalCarrinho(CartModel carrinho) {

@@ -7,7 +7,5 @@ import manga_hub.manga_hub.models.UserModel;
 
 
 public interface CartRepository extends JpaRepository<CartModel, Long>  {
-
     CartModel findByUsuario(UserModel user);
-    
 }

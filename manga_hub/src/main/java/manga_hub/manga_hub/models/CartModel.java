@@ -4,6 +4,8 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -30,8 +32,24 @@ public class CartModel {
     @JoinColumn(name = "id_usuario")
     private UserModel usuario;
 
-    @OneToMany(mappedBy = "carrinho", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<CartItemModel> itens = new ArrayList<>();
+    @OneToMany(mappedBy = "carrinho", cascade = CascadeType.ALL)
+    @JsonIgnore // Adicione esta anotação para evitar referências circulares
+    private List<CartItemModel> itens;
 
     private double total;
+
+    @Override
+    public String toString() {
+        return "CartModel{" +
+            "id=" + id +
+            ", total=" + total +
+            ", usuario=" + usuario +
+            ", itens=" + "itens (size: " + (itens != null ? itens.size() : 0) + ")" + // Evita a impressão completa dos itens
+            '}';
+    }
+
+    public void addItem(CartItemModel item) {
+        this.itens.add(item);
+        item.setCarrinho(this);
+    }
 }

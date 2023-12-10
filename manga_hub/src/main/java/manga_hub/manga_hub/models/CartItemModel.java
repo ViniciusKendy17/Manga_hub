@@ -1,5 +1,7 @@
 package manga_hub.manga_hub.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Embeddable;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -11,7 +13,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Entity
+@Entity(name = "order_items")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -30,5 +32,17 @@ public class CartItemModel {
 
     @ManyToOne
     @JoinColumn(name = "id_carrinho")
+    @JsonIgnore 
     private CartModel carrinho;
+
+    @Override
+    public String toString() {
+        return "CartItemModel{" +
+            "id=" + id +
+            ", quantidade=" + quantidade +
+            ", total=" + total +
+            ", produto=" + "produto (id: " + (produto != null ? produto.getId() : null) + ")" + // Evita a impressão completa do produto
+            ", carrinho=" + "carrinho (id: " + (carrinho != null ? carrinho.getId() : null) + ")" + // Evita a impressão completa do carrinho
+            '}';
+}
 }
