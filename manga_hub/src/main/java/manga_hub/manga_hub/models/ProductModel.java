@@ -53,4 +53,19 @@ public class ProductModel {
         isbn = productRegDTO.isbn();
         imagem = productRegDTO.imagem();
     }
+
+    @Override
+    public String toString(){
+        return "ProductModel{" +
+            "id=" + id +
+            ", nome='" + nome + '\'' +
+            ", descricao='" + descricao + '\'' +
+            ", preco=" + preco +
+            ", estoque=" + estoque +
+            ", genero='" + genero + '\'' +
+            ", tipo_produto='" + tipo_produto + '\'' +
+            ", isbn='" + isbn + '\'' +
+            ", imagem='" + imagem + '\'' +
+            '}';
+    }
 }

@@ -85,14 +85,18 @@ public class ProductService {
         return new PageImpl<>(listproductsDTOs, pageable, result.getTotalElements());
     }
 
-    public UserModel getUserFromToken(String token) {
-        String login = service.validateToken(token);
+        public UserModel getUserFromToken(String token) {
+            String login = service.validateToken(token);
 
-        if (!login.isEmpty()) {
-            UserModel user = (UserModel) uRepository.findByLogin(login);
-            return user;
+            if (!login.isEmpty()) {
+                UserModel user = (UserModel) uRepository.findByLogin(login);
+                return user;
+            }
+
+            throw new BadCredentialsException("Token inválido");
         }
 
-        throw new BadCredentialsException("Token inválido");
-    }
+        public Optional<ProductModel> getById(Long id) {
+            return repository.findById(id);
+        }
 }

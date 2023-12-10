@@ -41,6 +41,10 @@ public class UserModel implements UserDetails {
     @OneToMany(mappedBy = "id_vendedor")
     private List<ProductModel> produtos; 
 
+//    @JsonManagedReference
+  //  @OneToMany(mappedBy = "id_cliente")
+    //private List<OrderModel> pedidos; 
+
     public UserModel(String name, String login, String senha, String cep, String telefone) {
         this.name = name;
         this.login = login;
