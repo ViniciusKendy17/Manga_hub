@@ -54,11 +54,9 @@ document.addEventListener('DOMContentLoaded', () => {
           `;
 
            // Adiciona evento de clique à div do card
-          card.addEventListener('click', () => {
-            const productId = product.id;
-            console.log('Clique na div do card. ID do produto:', productId);
-            // Adicione aqui a lógica desejada ao clicar na div do card
-        });
+           card.addEventListener('click', () => {
+            openProductModal(product.id);
+           });
 
         // Adiciona evento de clique ao botão "Adicionar ao Carrinho"
         card.querySelector('.add-to-cart').addEventListener('click', (event) => {

@@ -22,7 +22,8 @@ main, #container-main{
     flex-direction: column;
     align-items: center;
     width: 100%;
-    margin-top: 70px;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 .main-post{
@@ -211,6 +212,7 @@ font-size: 1rem;
   background-color: white;
   border: 2px solid rgb(5, 5, 75);
   cursor: pointer;
+
 }
 
 .show-more{
@@ -224,6 +226,82 @@ font-size: 1rem;
     border-radius: 15px;
 }
 
+/*PRODUTCT MODAL*/
+.modal {
+  display: none;
+  position: fixed;
+  top: 5%;
+  left: 15%;
+  width: 70%;
+  height: 90%;
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  box-shadow: 0px 0px 45px -8px rgba(91,84,84,0.75);
+  -webkit-box-shadow: 0px 0px 45px -8px rgba(91,84,84,0.75);
+  -moz-box-shadow: 0px 0px 45px -8px rgba(91,84,84,0.75);
+}
+
+.modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fefefe;
+  padding: 20px;
+  
+}
+
+.modal-content{
+  display: flex;
+  justify-content: space-between;
+  height: 95%;
+  width: 98%;
+}
+
+#modal-product-details{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 48%;
+  padding: 3%;
+  border-radius: 10px;
+  background-color: #e7e7e7;
+}
+
+#modal-product-image{
+  width: 48%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+#modal-product-name{
+  color: rgb(5, 5, 75);
+  font-size: 2.5rem;
+  margin-top: 10px;
+}
+#modal-product-price{
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: 10px;
+}
+#modal-product-user{
+  margin-top: 10px;
+}
+#modal-product-user-tel{
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+#modal-product-price, #modal-product-user, #modal-product-user-tel{
+  margin-top: 10px;
+}
+
+#close {
+  position: absolute;
+  top: 10%;
+  right: 5%;
+  cursor: pointer;
+  z-index: 2;
+}
 /*pop-up product register nigga fellow */
 
 .container 		{ 
