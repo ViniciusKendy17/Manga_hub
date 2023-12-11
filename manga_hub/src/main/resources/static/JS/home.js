@@ -264,4 +264,31 @@ document.addEventListener('DOMContentLoaded', () => {
           console.error('Erro ao adicionar o produto ao carrinho:', error.message);
       }
   }
+
+    const cartIcon = document.getElementById('cart-out-icon');
+      if (cartIcon) {
+          cartIcon.addEventListener('click', openCartModal);
+      }
+
+      // Adiciona o evento de clique ao botão de fechar no modal
+      const closeCartButton = document.getElementById('close-cart-modal');
+      if (closeCartButton) {
+          closeCartButton.addEventListener('click', closeCartModal);
+      }
+
+  // Função para abrir o modal do carrinho
+    function openCartModal() {
+      const cartModal = document.getElementById('cart-modal');
+      if (cartModal) {
+          cartModal.style.display = 'block';
+      }
+    }
+
+    // Função para fechar o modal do carrinho
+    function closeCartModal() {
+      const cartModal = document.getElementById('cart-modal');
+      if (cartModal) {
+          cartModal.style.display = 'none';
+      }
+    }
 });
