@@ -276,13 +276,80 @@ document.addEventListener('DOMContentLoaded', () => {
           closeCartButton.addEventListener('click', closeCartModal);
       }
 
-  // Função para abrir o modal do carrinho
-    function openCartModal() {
-      const cartModal = document.getElementById('cart-modal');
-      if (cartModal) {
-          cartModal.style.display = 'block';
-      }
+    // Função para abrir o modal do carrinho
+    async function openCartModal() {
+    const cartModal = document.getElementById('cart-modal');
+    const cartItemTable = document.getElementById('cart-item-table');
+    const cartTotalElement = document.getElementById('cart-total');
+    const token = localStorage.getItem('token');
+
+    try {
+        // Realiza um fetch para obter os itens do carrinho
+        const response = await fetch('http://localhost:8080/cart/', {
+            method: 'GET',
+            headers: {
+                "Authorization": `Bearer ${token}`
+            },
+        });
+
+        if (!response.ok) {
+            throw new Error('Erro ao obter os itens do carrinho');
+        }
+
+        const cartItems = await response.json();
+
+        // Limpa a tabela antes de preenchê-la
+        cartItemTable.innerHTML = '';
+
+        // Adiciona a linha de cabeçalho à tabela
+        const headerRow = cartItemTable.insertRow(0);
+        const headerCells = ['Produto', 'Imagem', 'Preço', 'Quantidade', 'Total', 'Ação'];
+
+        headerCells.forEach((cellText, index) => {
+            const cell = headerRow.insertCell(index);
+            cell.textContent = cellText;
+        });
+
+        // Preenche a tabela de itens e calcula o total do carrinho
+        let cartTotal = 0;
+        cartItems.forEach(item => {
+            const row = cartItemTable.insertRow(-1);
+
+            row.innerHTML = `
+                <td>${item.produto.nome}</td>
+                <td><img src="${item.produto.imagem}" alt="${item.produto.nome}" class="img-cart"></td>
+                <td>R$ ${item.produto.preco.toFixed(2)}</td>
+                <td>${item.quantidade}</td>
+                <td>R$ ${item.total.toFixed(2)}</td>
+                <td><button class="remove-item-btn" data-item-id="${item.id}">Remover Item</button></td>
+            `;
+
+            // Adiciona evento de clique ao botão de remover item
+            const removeItemButton = row.querySelector('.remove-item-btn');
+            if (removeItemButton) {
+                removeItemButton.addEventListener('click', async () => {
+                    // Chama o endpoint de exclusão do item
+                    await removeItemFromCart(item.id);
+                    // Atualiza o modal após a remoção do item
+                    openCartModal();
+                });
+            }
+
+            // Atualiza o total do carrinho
+            cartTotal += item.total;
+        });
+
+        // Exibe o total do carrinho
+        cartTotalElement.textContent = `Total do Carrinho: R$ ${cartTotal.toFixed(2)}`;
+
+        // Exibe o modal
+        if (cartModal) {
+            cartModal.style.display = 'block';
+        }
+    } catch (error) {
+        console.error('Erro ao obter os itens do carrinho:', error.message);
     }
+}
 
     // Função para fechar o modal do carrinho
     function closeCartModal() {

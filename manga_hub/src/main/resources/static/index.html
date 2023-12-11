@@ -140,8 +140,22 @@
       <div id="cart-modal" class="modal">
         <img id="close-cart-modal" src="./IMGs/icons8-close-50.png" alt="Fechar Modal do Carrinho">
         <div class="modal-content">
-        <!-- INFOS AQUI -->
-            <p>Conteúdo do Carrinho...</p>
+            <h2>Itens no Carrinho</h2>
+            <table id="cart-item-table">
+                <thead>
+                    <tr>
+                        <th class="title-table">Produto</th>
+                        <th class="title-table">Imagem</th>
+                        <th class="title-table">Preço</th>
+                        <th class="title-table">Quantidade</th>
+                        <th class="title-table">Total</th>
+                        <th class="title-table">Ação</th>
+                    </tr>
+                </thead>
+                <tbody id="cart-item-list"></tbody>
+            </table>
+            <p id="cart-total">Total do Carrinho: R$ 0.00</p>
+            <button id="close-cart-order">Fechar Carrinho</button>
         </div>
     </div>
    
