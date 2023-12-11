@@ -27,11 +27,7 @@ main, #container-main{
 }
 
 .main-post{
-    background-image: url("../IMGs/fundoSiteMH.png");
-    background-position: center;
     width: 100%;
-    padding: 5%;
-    color: white;
     text-align: center;
     font-family: Poppins;
 }
@@ -320,7 +316,7 @@ font-size: 1rem;
   overflow: hidden; /* Impede que o conteúdo ultrapasse as bordas do modal */
 }
 
-.modal-content {
+#cart-content {
   display: flex;
   flex-direction: column;
   justify-content: space-between;

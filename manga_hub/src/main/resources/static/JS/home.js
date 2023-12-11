@@ -54,38 +54,46 @@ document.addEventListener('DOMContentLoaded', () => {
             <button class="add-to-cart" data-product-id="${product.id}">Adicionar ao Carrinho</button>
         `;
 
-         // Adiciona evento de clique à div do card
-         card.addEventListener('click', () => {
-          openProductModal(product.id);
-         });
+        // Adiciona evento de clique à div do card
+        card.addEventListener('click', () => {
+            openProductModal(product.id);
+        });
 
-      // Adiciona evento de clique ao botão "Adicionar ao Carrinho"
+        // Adiciona evento de clique ao botão "Adicionar ao Carrinho"
         card.querySelector('.add-to-cart').addEventListener('click', async (event) => {
-        event.stopPropagation(); // Impede a propagação do evento para a div do card
-        const productId = card.querySelector('.add-to-cart').dataset.productId;
-        // Chama a função para adicionar o produto ao carrinho
-        await adicionarProdutoAoCarrinho(productId);
-        // Adicione aqui a lógica para adicionar ao carrinho, se necessário
-        console.log('Produto adicionado ao carrinho. ID do produto:', productId);
+            event.stopPropagation(); // Impede a propagação do evento para a div do card
+            const productId = card.querySelector('.add-to-cart').dataset.productId;
+            // Chama a função para adicionar o produto ao carrinho
+            await adicionarProdutoAoCarrinho(productId);
+            // Adicione aqui a lógica para adicionar ao carrinho, se necessário
+            console.log('Produto adicionado ao carrinho. ID do produto:', productId);
         });
 
         divLista.appendChild(card);
     });
-  }
+}
 
   // Função para buscar produtos destacados
   async function searchProductsHighlights(search) {
       const destaque = search.toUpperCase();
-
       try {
           const response = await fetch(`http://localhost:8080/product/search/${destaque}?page=${currentPage}`);
           if (!response.ok) {
               throw new Error('Erro ao obter dados da API');
           }
 
-          const page = await response.json();
+        const page = await response.json();
 
-          const resultsContainer = document.getElementById('results-container-home');
+        const containerMain = document.getElementById('container-main');
+        const resultsContainer = document.getElementById('results-container-home');
+
+        if (containerMain) {
+            containerMain.style.display = 'none';
+        }
+
+        if (resultsContainer) {
+            resultsContainer.style.display = 'flex';
+        }
 
           // Limpa o conteúdo atual dentro de resultsContainer
           resultsContainer.innerHTML = '';
@@ -117,32 +125,34 @@ document.addEventListener('DOMContentLoaded', () => {
   const cardDestElements = document.querySelectorAll('.card-dest');
 
   // Adicione um ouvinte de evento de clique a cada elemento
+  let searchTerm;  // Declare searchTerm fora do escopo do evento de clique
+
   cardDestElements.forEach(cardElement => {
       cardElement.addEventListener('click', function () {
           // Obtenha o valor do atributo data-search-term
-          const searchTerm = this.dataset.searchTerm;
+          searchTerm = this.dataset.searchTerm;
           // Verifique se searchTerm não é nulo ou indefinido
           if (searchTerm) {
               searchProductsHighlights(searchTerm);
           }
       });
   });
-
+  
   // Obtém a referência para o SVG
   const searchSvg = document.getElementById('search-svg');
-
+  
   // Adiciona um ouvinte de evento de clique ao SVG
   searchSvg.addEventListener('click', function () {
       searchProducts();
   });
-
+  
   // Adiciona um ouvinte de evento de tecla pressionada (keydown) à janela inteira
   window.addEventListener('keydown', function (event) {
       // Verifica se a tecla pressionada é a tecla Enter (código 13)
       if (event.key === 'Enter') {
           searchProducts();
       }
-  });
+  })
 
   // PESQUISA
   let currentPage = 0;
@@ -152,6 +162,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const searchTerm = document.getElementById('SearchProduct');
 
       const searchTermUpperCase = searchTerm.value.toUpperCase();
+      console.log("aqui:"+searchTerm);
       try {
           const response = await fetch(`http://localhost:8080/product/search/${searchTermUpperCase}?page=${currentPage}`);
           if (!response.ok) {
@@ -160,7 +171,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
           const page = await response.json();
 
-          const resultsContainer = document.getElementById('results-container-home');
+        const containerMain = document.getElementById('container-main');
+        const resultsContainer = document.getElementById('results-container-home');
+
+        // Esconde container-main e mostra results-container
+        if (containerMain) {
+            containerMain.style.display = 'none';
+        }
+
+        if (resultsContainer) {
+            resultsContainer.style.display = 'flex';
+        }
 
           // Limpa o conteúdo atual dentro de resultsContainer
           resultsContainer.innerHTML = '';
