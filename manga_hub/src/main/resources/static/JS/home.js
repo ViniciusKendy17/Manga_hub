@@ -60,9 +60,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Adiciona evento de clique ao botão "Adicionar ao Carrinho"
         card.querySelector('.add-to-cart').addEventListener('click', (event) => {
-            event.stopPropagation(); // Impede a propagação do evento para a div do card
-            const productId = card.querySelector('.add-to-cart').dataset.productId;
-            console.log('Produto adicionado ao carrinho. ID do produto:', productId);
+        event.stopPropagation(); // Impede a propagação do evento para a div do card
+        const productId = card.querySelector('.add-to-cart').dataset.productId;
+        console.log('Produto adicionado ao carrinho. ID do produto:', productId);
             // Adicione aqui a lógica para adicionar ao carrinho, se necessário
         });
 
@@ -181,13 +181,19 @@ cardDestElements.forEach(cardElement => {
   });
 });
 
-// Obtém a referência para o SVG
-const searchSvg = document.getElementById('search-svg');
-
-// Adiciona um ouvinte de evento de clique ao SVG
-searchSvg.addEventListener('click', function () {
-  searchProducts();
-});
+  // Obtém a referência para o SVG
+  const searchSvg = document.getElementById('search-svg');
+  // Adiciona um ouvinte de evento de clique ao SVG
+  searchSvg.addEventListener('click', function () {
+    searchProducts();
+  });
+  // Adiciona um ouvinte de evento de tecla pressionada (keydown) à janela inteira
+  window.addEventListener('keydown', function (event) {
+    // Verifica se a tecla pressionada é a tecla Enter (código 13)
+    if (event.key === 'Enter') {
+      searchProducts();
+    }
+  });
 
 // Adiciona um ouvinte de evento de tecla pressionada (keydown) à janela inteira
 window.addEventListener('keydown', function (event) {

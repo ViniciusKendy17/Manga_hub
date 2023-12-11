@@ -91,6 +91,10 @@ section h2{
 
 .card-dest:hover{
   cursor: pointer;
+  transition: transform 0.3s ease;
+  transform: translate(-1px,-30px);
+  -webkit-transform: translate(-1px,-30px);
+  -moz-transform: translate(-1px,-30px);
 }
 
 .card-dest img{
@@ -133,7 +137,6 @@ font-size: 1rem;
 }
 
 .card-product {
-
   flex: 0 0 auto;
   width: 250px;
   margin-right: 16px;
