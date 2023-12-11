@@ -59,11 +59,11 @@ document.addEventListener('DOMContentLoaded', () => {
            });
 
         // Adiciona evento de clique ao botão "Adicionar ao Carrinho"
-        card.querySelector('.add-to-cart').addEventListener('click', (event) => {
-        event.stopPropagation(); // Impede a propagação do evento para a div do card
-        const productId = card.querySelector('.add-to-cart').dataset.productId;
-        console.log('Produto adicionado ao carrinho. ID do produto:', productId);
-            // Adicione aqui a lógica para adicionar ao carrinho, se necessário
+        card.addEventListener('click', async () => {
+          // Chama a função para adicionar o produto ao carrinho
+          await adicionarProdutoAoCarrinho(product.id);
+          // Abre o modal ou executa outras lógicas, se necessário
+          openProductModal(product.id);
         });
 
           divLista.appendChild(card);
@@ -139,12 +139,16 @@ document.addEventListener('DOMContentLoaded', () => {
           });
 
         // Adiciona evento de clique ao botão "Adicionar ao Carrinho"
-          card.querySelector('.add-to-cart').addEventListener('click', (event) => {
+          card.querySelector('.add-to-cart').addEventListener('click', async (event) => {
           event.stopPropagation(); // Impede a propagação do evento para a div do card
           const productId = card.querySelector('.add-to-cart').dataset.productId;
+          console.log("Aqui:"+productId);
+          // Chama a função para adicionar o produto ao carrinho
+          await adicionarProdutoAoCarrinho(productId);
+      
+          // Adicione aqui a lógica para adicionar ao carrinho, se necessário
           console.log('Produto adicionado ao carrinho. ID do produto:', productId);
-          // Adicione aqui a lógica para adicionar ao carrinho
-          });
+      });
 
         // Adiciona evento de clique ao botão "Adicionar ao Carrinho"
         card.querySelector('.add-to-cart').addEventListener('click', (event) => {
@@ -333,3 +337,28 @@ async function searchProducts() {
         const modal = document.getElementById('product-modal');
         modal.style.display = 'none';
     }
+
+    // Função para adicionar o produto ao carrinho
+  async function adicionarProdutoAoCarrinho(productId) {
+    const token = localStorage.getItem('token');
+    try {
+        const response = await fetch('http://localhost:8080/cart/', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                "Authorization": `Bearer ${token}`
+            },
+            body: JSON.stringify({
+                id: productId,
+                quantidade: 1, // ou a quantidade desejada
+            }),
+        });
+
+        if (!response.ok) {
+            throw new Error('Erro ao adicionar o produto ao carrinho');
+        }
+        console.log('Produto adicionado ao carrinho com sucesso!');
+    } catch (error) {
+        console.error('Erro ao adicionar o produto ao carrinho:', error.message);
+    }
+  }
