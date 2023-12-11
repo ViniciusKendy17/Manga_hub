@@ -508,38 +508,40 @@ td{
     to 	{ width:0; background:transparent; }
   }
 
-.out-Between-section{
-  
-  height: 400px;
+#out-Between-section{
+  height: 550px;
   width: 100%;
   background-color:  rgba(44, 0, 139, 0.9);
-
   display: flex;
   flex-direction: column;
   justify-content: center;
-  border: black  solid 2px;
+ 
 }
 
-.Between-section-product{
+#Between-section-product{
   border: blue solid 2px;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  
+  height: 100%;
 }
 
 .Between-img-product{
-  width: 200px;
-  height: 200px;
+  width: 25%;
+  height: 85%;
+  transform: rotate(8deg);
+ 
 }
 
 .Description-product{
-  border: black solid 2px;
+
   width: 30%;
+  height: 90%;
 }
 
 .title-manga, .text-manga{
   color: white;
+  font-size:x-large;
 }
 
 
@@ -547,5 +549,6 @@ td{
 .img-in{
   width: 100%;
   height: 100%;
+  border-radius: 5px;
 }
 

@@ -123,6 +123,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Selecione todos os elementos com a classe 'card-dest'
   const cardDestElements = document.querySelectorAll('.card-dest');
+ 
 
   // Adicione um ouvinte de evento de clique a cada elemento
   let searchTerm;  // Declare searchTerm fora do escopo do evento de clique
@@ -152,7 +153,10 @@ document.addEventListener('DOMContentLoaded', () => {
       if (event.key === 'Enter') {
           searchProducts();
       }
-  })
+  });
+
+
+
 
   // PESQUISA
   let currentPage = 0;
@@ -380,3 +384,93 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
 });
+
+
+
+async function searchProductsSection(Search) {
+  let currentPage = 0;
+
+const destaqueSection = Search.toUpperCase();
+
+console.log("aaaaa" + destaqueSection);
+try {
+    const response = await fetch(`http://localhost:8080/product/search/${destaqueSection}?page=${currentPage}`);
+    if (!response.ok) {
+        throw new Error('Erro ao obter dados da API');
+    }
+
+  const page = await response.json();
+
+  const containerMain = document.getElementById('container-main');
+  const resultsContainer = document.getElementById('results-container-home');
+
+  if (containerMain) {
+      containerMain.style.display = 'none';
+  }
+
+  if (resultsContainer) {
+      resultsContainer.style.display = 'flex';
+  }
+
+    // Limpa o conteúdo atual dentro de resultsContainer
+    resultsContainer.innerHTML = '';
+
+    // Adiciona o h2 e o p diretamente dentro do resultsContainer
+    const titleSearch = document.createElement('h2');
+    titleSearch.classList.add('search-h2');
+    titleSearch.textContent = 'Resultados da pesquisa:';
+    resultsContainer.appendChild(titleSearch);
+
+    const descriptionElement = document.createElement('p');
+    descriptionElement.classList.add('search-p');
+    descriptionElement.textContent = `Resultados para: ${destaqueSection}`;
+    resultsContainer.appendChild(descriptionElement);
+
+    // Acessa a div com a classe "product-list" dentro do resultsContainer
+    const productListContainer = document.createElement('div');
+    productListContainer.classList.add('product-list');
+    resultsContainer.appendChild(productListContainer);
+
+    // Renderiza os produtos encontrados
+    renderizarProdutos(page.content, 'results-container-home');
+} catch (error) {
+    console.error('Erro durante a solicitação:', error.message);
+}
+}
+
+// Selecione todos os elementos com a classe 'card-dest'
+const sectionproducts = document.getElementById('Between-section-product');
+
+
+// Adicione um ouvinte de evento de clique a cada elemento
+let searchTermSection;  // Declare searchTerm fora do escopo do evento de clique
+
+sectionproducts.forEach(cardElement => {
+cardElement.addEventListener('click', function () {
+    // Obtenha o valor do atributo data-search-term
+    searchTermSection = this.dataset.searchTermSection;
+    // Verifique se searchTerm não é nulo ou indefinido
+    if (searchTermSection) {
+        searchProducts(searchTermSection);
+    }
+});
+});
+
+// Obtém a referência para o SVG
+
+const clickSection = document.getElementById('out-Between-section');
+
+
+// Adiciona um ouvinte de evento de clique ao SVG
+clickSection.addEventListener('click', function () {
+searchProducts();
+});
+
+// Adiciona um ouvinte de evento de tecla pressionada (keydown) à janela inteira
+window.addEventListener('keydown', function (event) {
+// Verifica se a tecla pressionada é a tecla Enter (código 13)
+if (event.key === 'Enter') {
+    searchProducts();
+}
+})
+
