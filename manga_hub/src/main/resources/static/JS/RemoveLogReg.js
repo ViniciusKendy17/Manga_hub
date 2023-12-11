@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var logar = document.getElementById('logar');
     var logout = document.getElementById('botaoout');
     var cadasatroP = document.getElementById('CadastroProduto');
+    var user = document.getElementById('');
     
       var token = localStorage.getItem('token');
       if(token){

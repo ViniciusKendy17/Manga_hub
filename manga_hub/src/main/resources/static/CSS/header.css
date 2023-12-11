@@ -544,10 +544,12 @@ header{
   width: 100%;
   padding: 10px;
   display: flex;
-  display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-left: 50px;
 }
+
+
 
 #img-out{
   width: 100%;
@@ -590,12 +592,6 @@ ul{
   
 }
 
-
-/* Navbar container */
-
-
-/* The dropdown container */
-
 /*Botaõ hamburger*/
 
 .hamburger {
@@ -603,13 +599,7 @@ ul{
   
 }
 
-
-
-
-
-
 /*Barra de pesquisa*/
-
 #bar{
   width: 100%;
   height: 35px;
@@ -631,18 +621,12 @@ ul{
   cursor: pointer;
 }
 
-
 /*Botão de login*/
 #botao-out-out{
     width: 150px;
     height: 100%;
-    max-height: 25px;
-
-    
+    max-height: 30px; 
 }
-
-
-
 
 #botao-in{
     color: black;
@@ -663,13 +647,14 @@ ul{
   font-weight: 700;
   margin: 0;  
   position: relative;
-  height: 100%;
+  
   text-align: center;
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
   vertical-align: baseline;
   transition: all .2s cubic-bezier(.22, .61, .36, 1);
+  text-decoration: none;
 }
 
 .button-66:hover {
@@ -679,13 +664,71 @@ ul{
   transform: translateY(-2px);
 }
 
-.button-66{
-  text-decoration: none;
+
+
+
+/*Carrinho*/
+#cart-out-img{
+  width: 90px;
+  height: 40px;
+  
 }
 
-#botaoout{
+#cartImg{
+ color: white;
+  width: 100%;
+  height: 100%;
+}
+
+#cart-out-img:hover{
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+
+
+#user-icon{
+  width: 40px;
+  height: 100%;
+  color: white;
+}
+
+/* Estilizando o conteúdo do dropdown (a lista de opções) */
+.dropdown-content {
   display: none;
-  
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  z-index: 1;
+  border-radius: 10px;
+}
+
+/* Mudando a cor do texto quando passa o mouse sobre as opções */
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+/* Exibindo o dropdown quando o botão é hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+#botaoout{
+  display: none; 
+  width: 100%;
+  font-size: large;
+  color: rgba(44, 0, 139, 0.9) ;
+  height: 100%;
+}
+
+#botaoout:hover{
+  cursor: pointer;
 }
 
 /*Botão Cadastro de produto*/
