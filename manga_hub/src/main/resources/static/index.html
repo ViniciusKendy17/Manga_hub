@@ -30,7 +30,7 @@
                     <button id="CadastroProduto" class="botaoH" >Anunciar </button>  
                 </div>
 
-                <div id="cart-out-img" class="in-div-bar" >
+                <div id="cart-out-icon" class="in-div-bar" >
                     <svg xmlns="http://www.w3.org/2000/svg" id="cartImg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
                         <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
                     </svg>
@@ -62,9 +62,8 @@
       </div>
     </header>
 <!-- CONTEÚDO MAIS PROCURADO -->
-<div id="container-main">
+    <div id="container-main">
     <!-- CONTEÚDO MAIS PROCURADO -->
-    <main class=".main-post">
         <section id="destaques">
             <h2>DESTAQUES</h2>
             <div class="product-destaque">
@@ -155,7 +154,7 @@
       </div>
 
       <div id="product-modal" class="modal">
-        <img id="close" src="./IMGs/icons8-close-50.png" alt="" onclick="closeProductModal()">
+        <img id="close" src="./IMGs/icons8-close-50.png" alt="">
         <div class="modal-content">
           <img id="modal-product-image" src="" alt="Product Image">
           <div id="modal-product-details">
@@ -163,11 +162,32 @@
             <p id="modal-product-price"></p>
             <p id="modal-product-user"></p>
             <p id="modal-product-user-tel"></p>
-            <button class="add-to-cart">Adicionar ao Carrinho</button>
-            <!-- Adicione mais informações conforme necessário -->
+            <button id="cartModal" class="add-to-cart">Adicionar ao Carrinho</button>
           </div>
         </div>
       </div>
+
+      <div id="cart-modal" class="modal">
+        <img id="close-cart-modal" src="./IMGs/icons8-close-50.png" alt="Fechar Modal do Carrinho">
+        <div id="cart-content" class="modal-content">
+            <h2>Itens no Carrinho</h2>
+            <table id="cart-item-table">
+                <thead>
+                    <tr>
+                        <th class="title-table">Produto</th>
+                        <th class="title-table">Imagem</th>
+                        <th class="title-table">Preço</th>
+                        <th class="title-table">Quantidade</th>
+                        <th class="title-table">Total</th>
+                        <th class="title-table">Ação</th>
+                    </tr>
+                </thead>
+                <tbody id="cart-item-list"></tbody>
+            </table>
+            <p id="cart-total">Total do Carrinho: R$ 0.00</p>
+            <button id="close-cart-order">Fechar Carrinho</button>
+        </div>
+    </div>
    
     <div class="container" id="out-form" >
         <form id="pupForm" >
@@ -210,6 +230,5 @@
     <script src="./JS/PopUp.js" ></script>
     <script src="./JS/Logout.js" ></script>
     <script src="./JS/CadastroProduto.js" ></script>
-    <script src="./JS/SearchProduct.js" ></script>
 </body>
 </html>

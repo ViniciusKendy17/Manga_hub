@@ -665,13 +665,10 @@ ul{
 }
 
 
-
-
 /*Carrinho*/
-#cart-out-img{
+#cart-out-icon{
   width: 90px;
   height: 40px;
-  
 }
 
 #cartImg{
@@ -737,9 +734,6 @@ ul{
   display: none;
 
 }
-
-
-
 
 .inputsh{
   

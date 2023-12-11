@@ -40,9 +40,6 @@ public class HomeService {
             productModel.getImagem(), 
             userDTO));
         }
-        for (HomeDTO homeDTO : listResponse) {
-            System.out.println("-->"+homeDTO.nome());
-        }
         return listResponse;
     }
 }
