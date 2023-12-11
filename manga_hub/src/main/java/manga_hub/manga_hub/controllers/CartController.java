@@ -5,22 +5,18 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpStatus;
+
 import org.springframework.http.ResponseEntity;
-import org.springframework.http.ResponseEntity.BodyBuilder;
+
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.context.request.RequestContextHolder;
-import org.springframework.web.context.request.ServletRequestAttributes;
 
 import jakarta.servlet.http.HttpServletRequest;
 import javassist.NotFoundException;
 import manga_hub.manga_hub.DTO.OrderItemsDTO;
-import manga_hub.manga_hub.DTO.ProductRegDTO;
+
 import manga_hub.manga_hub.Services.CartService;
 import manga_hub.manga_hub.models.CartItemModel;
 
@@ -40,7 +36,6 @@ public class CartController {
     public void adicionarItemAoCarrinho(@RequestBody OrderItemsDTO itemDTO, HttpServletRequest request) throws NotFoundException{
         String token = extractToken(request);
         cartService.adicionarItemAoCarrinho(itemDTO, token);
-        //return ResponseEntity.ok();
     }
 
     @GetMapping("/")

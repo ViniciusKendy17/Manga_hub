@@ -110,7 +110,7 @@ public class CartService {
                 .sum();
     }
 
-    private UserModel getUserFromToken(String token) {
+    UserModel getUserFromToken(String token) {
         String login = tokenService.validateToken(token);
 
         if (!login.isEmpty()) {
@@ -124,7 +124,7 @@ public class CartService {
         throw new BadCredentialsException("Token inválido ou usuário não encontrado");
     }
 
-    private CartModel getCarrinhoFromToken(String token) {
+    public  CartModel getCarrinhoFromToken(String token) {
         UserModel user = getUserFromToken(token);
         return getCartFromUser(user);
     }
