@@ -374,7 +374,28 @@ document.addEventListener('DOMContentLoaded', () => {
     } catch (error) {
         console.error('Erro ao obter os itens do carrinho:', error.message);
     }
-}
+    }   
+
+    async function removeItemFromCart(itemId) {
+        const token = localStorage.getItem('token');
+    
+        try {
+            const response = await fetch(`http://localhost:8080/cart/${itemId}`, {
+                method: 'DELETE',
+                headers: {
+                    'Authorization': `Bearer ${token}`
+                }
+            });
+    
+            if (!response.ok) {
+                throw new Error('Erro ao remover o item do carrinho');
+            }
+    
+            console.log(`Item ${itemId} removido do carrinho com sucesso`);
+        } catch (error) {
+            console.error('Erro ao remover o item do carrinho:', error.message);
+        }
+    }
 
     // Função para fechar o modal do carrinho
     function closeCartModal() {
