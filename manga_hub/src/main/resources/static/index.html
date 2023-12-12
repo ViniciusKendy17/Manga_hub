@@ -171,7 +171,7 @@
         <!-- Aqui é onde as informações da paginação serão exibidas -->
       </div>
 
-      <footer id="out-Between-section" >
+      <footer id="out-Between-section" class="footer1" >
 
       </footer>
 
@@ -212,35 +212,34 @@
     </div>
    
     <div class="container" id="out-form" >
+        <button class="fechar" id="fechar" >X</button>
         <form id="pupForm" >
-          <button class="fechar" id="fechar" >X</button>
           <section id="cad-produ-sec">
             <div  >
                 <h2>Cadastro Produto</h2>
             </div>
             <div class="inputPop" >
-                <input class="inputs-in" id="nome"  type="text" placeholder="Nome Produto">
+                <input class="inputs-in" id="nome"  type="text" placeholder="Nome Produto" required >
+                <input class="inputs-in" id="descricao"  type="text" placeholder="Descrição" required >
+            </div>
+            <div class="inputPop">
+                <input class="inputs-in" id="preco" type="number" placeholder="Preço" required >
+                <input class="inputs-in" id="estoque" type="number" placeholder="Estoque" required >
+            </div>
+            <div class="inputPop">
+                <input class="inputs-in" id="genero" type="text" placeholder="Gênero" required >
+            </div>
+            <div class="inputPop">
+                <select name="" id="tipo_produto" class="inputs-in" >
+                    <option value="" selected >Tipo de produto</option>
+                    <option value="Mangá">Mangá</option>
+                    <option value="Action Figure">Action Figure</option>
+                    <option value="Ligh Novel">Light Novel</option>
+                </select>
             </div>
             <div class="inputPop" >
-                <input class="inputs-in" id="descricao"  type="text" placeholder="Descrição">
-            </div>
-            <div class="inputPop">
-                <input class="inputs-in" id="preco" type="text" placeholder="Preço">
-            </div>
-            <div class="inputPop">
-                <input class="inputs-in" id="estoque" type="text" placeholder="Estoque">
-            </div>
-            <div class="inputPop">
-                <input class="inputs-in" id="genero" type="text" placeholder="Gênero">
-            </div>
-            <div class="inputPop">
-                <input class="inputs-in" id="tipo_produto" type="text" placeholder="Tipo Produto. Exemplo: Mangá ou action figure" >
-            </div>
-            <div class="inputPop">
-                <input class="inputs-in" id="isbn" type="text" placeholder="ISBN" >
-            </div>
-            <div class="inputPop">
-                <input class="inputs-in" id="imagem" type="text" placeholder="Imagem do Produto" >
+                <input class="inputs-in" id="isbn" type="number" placeholder="ISBN" >
+                <input class="inputs-in" id="imagem" type="text" placeholder="Imagem do Produto" required >
             </div>
             <button class="inputPop" id="botao-reg" >Cadastrar Produto</button>
         </section>

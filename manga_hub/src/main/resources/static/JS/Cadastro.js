@@ -32,6 +32,6 @@ function cadastrar() {
         window.location.href = "login.html";
     })
     .catch(error => {
-    console.log("aqui");
+    console.log("Erro ao fazer cadastro");
     });
 }

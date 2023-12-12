@@ -8,14 +8,16 @@ function cadastrarp(){
     
     event.preventDefault();
     let nome1 = document.getElementById('nome');
-
     const nome = nome1.value.toUpperCase(); 
 
     const descricao = document.getElementById('descricao').value;
     const preco = document.getElementById('preco').value;
     const estoque = document.getElementById('estoque').value;
     const genero = document.getElementById('genero').value;
-    const tipo = document.getElementById('tipo_produto').value;
+
+    var selected = document.getElementById('tipo_produto');
+    const tipo = selected.value;
+
     const isbn = document.getElementById('isbn').value;
     const imagem = document.getElementById('imagem').value;
 
@@ -41,8 +43,9 @@ function cadastrarp(){
     })
     
     .then(response => {
-        console.log("Teste" + response.status);
-        alert("Produto Registrado com sucesso !!")
+        alert("Produto Registrado com sucesso !!");
+        location.reload();
+        
         
         // Lógica adicional de tratamento de resposta aqui
     })
