@@ -6,9 +6,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const tipo = {
     manga: "Mangá",
     lightNovel: "Ligh Novel",
-    actFigure: "Mangá",
+    actFigure: "Action Figure",
   }
-  fetch('http://localhost:8080/home/')
+    fetch("http://localhost:8080/home/")
       .then(response => response.json())
       .then(data => {
           productsLast = data;
@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
       })
       .catch(error => console.error('Erro na requisição para últimos produtos:', error));
 
-  fetch('http://localhost:8080/home/')
+    fetch(`http://localhost:8080/home/${tipo.manga}`)
       .then(response => response.json())
       .then(data => {
           productsMangas = data;
@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
       })
       .catch(error => console.error('Erro na requisição para mangás:', error));
 
-  fetch('http://localhost:8080/home/')
+    fetch(`http://localhost:8080/home/${tipo.lightNovel}`)
       .then(response => response.json())
       .then(data => {
           productsLightNovels = data;
@@ -32,7 +32,8 @@ document.addEventListener('DOMContentLoaded', () => {
       })
       .catch(error => console.error('Erro na requisição para light novels:', error));
 
-  fetch('http://localhost:8080/home/')
+    fetch(`http://localhost:8080/home/${tipo.actFigure}`)
+
       .then(response => response.json())
       .then(data => {
           productsActionFigures = data;
