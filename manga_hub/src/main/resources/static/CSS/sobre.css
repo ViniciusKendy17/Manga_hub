@@ -1,7 +1,4 @@
-.sobre-container {
-    display: none;
-    
-}
+
 .titulo-sobre {
     background-color: #333;
     color: #fff;
@@ -104,10 +101,5 @@
 
 .topicos-sobre .texto-topicos {
     text-align: justify;
-    /* background-color: #333; */
     width: 650px;
-}
-
-.img-topicos {
-    /* background-color: aqua; */
 }
