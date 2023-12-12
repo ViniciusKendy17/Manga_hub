@@ -3,7 +3,11 @@ document.addEventListener('DOMContentLoaded', () => {
   let productsMangas = [];
   let productsLightNovels = [];
   let productsActionFigures = [];
-
+  const tipo = {
+    manga: "Mangá",
+    lightNovel: "Ligh Novel",
+    actFigure: "Mangá",
+  }
   fetch('http://localhost:8080/home/')
       .then(response => response.json())
       .then(data => {
@@ -35,43 +39,6 @@ document.addEventListener('DOMContentLoaded', () => {
           renderizarProdutos(productsActionFigures, 'acts');
       })
       .catch(error => console.error('Erro na requisição para action figures:', error));
-
-  // Função para renderizar os produtos
-  function renderizarProdutos(products, sectionId) {
-    const secao = document.getElementById(sectionId);
-    const divLista = secao.querySelector('.product-list, .manga-list, .light-list, .act-list');
-
-    products.forEach((product) => {
-        const card = document.createElement('div');
-        card.classList.add('card-product');
-        card.innerHTML = `
-            <img src="${product.imagem}" alt="${product.nome}">
-            <div class="content">
-                <h3 class="product-name">${product.nome}</h3>
-                <p>Preço: R$ ${product.preco}</p>
-                <p>Vendedor: ${product.usuario.nome}</p>
-            </div>
-            <button class="add-to-cart" data-product-id="${product.id}">Adicionar ao Carrinho</button>
-        `;
-
-        // Adiciona evento de clique à div do card
-        card.addEventListener('click', () => {
-            openProductModal(product.id);
-        });
-
-        // Adiciona evento de clique ao botão "Adicionar ao Carrinho"
-        card.querySelector('.add-to-cart').addEventListener('click', async (event) => {
-            event.stopPropagation(); // Impede a propagação do evento para a div do card
-            const productId = card.querySelector('.add-to-cart').dataset.productId;
-            // Chama a função para adicionar o produto ao carrinho
-            await adicionarProdutoAoCarrinho(productId);
-            // Adicione aqui a lógica para adicionar ao carrinho, se necessário
-            console.log('Produto adicionado ao carrinho. ID do produto:', productId);
-        });
-
-        divLista.appendChild(card);
-    });
-}
 
   // Função para buscar produtos destacados
   async function searchProductsHighlights(search) {
@@ -212,6 +179,41 @@ document.addEventListener('DOMContentLoaded', () => {
           console.error('Erro durante a solicitação:', error.message);
       }
   }
+  function renderizarProdutos(products, sectionId) {
+    const secao = document.getElementById(sectionId);
+    const divLista = secao.querySelector('.product-list, .manga-list, .light-list, .act-list');
+
+    products.forEach((product) => {
+        const card = document.createElement('div');
+        card.classList.add('card-product');
+        card.innerHTML = `
+            <img src="${product.imagem}" alt="${product.nome}">
+            <div class="content">
+                <h3 class="product-name">${product.nome}</h3>
+                <p>Preço: R$ ${product.preco}</p>
+                <p>Vendedor: ${product.usuario.nome}</p>
+            </div>
+            <button class="add-to-cart" data-product-id="${product.id}">Adicionar ao Carrinho</button>
+        `;
+
+        // Adiciona evento de clique à div do card
+        card.addEventListener('click', () => {
+            openProductModal(product.id);
+        });
+
+        // Adiciona evento de clique ao botão "Adicionar ao Carrinho"
+        card.querySelector('.add-to-cart').addEventListener('click', async (event) => {
+            event.stopPropagation(); // Impede a propagação do evento para a div do card
+            const productId = card.querySelector('.add-to-cart').dataset.productId;
+            // Chama a função para adicionar o produto ao carrinho
+            await adicionarProdutoAoCarrinho(productId);
+            // Adicione aqui a lógica para adicionar ao carrinho, se necessário
+            console.log('Produto adicionado ao carrinho. ID do produto:', productId);
+        });
+
+        divLista.appendChild(card);
+    });
+}
 
   //MODAL
   async function openProductModal(productId) {
@@ -404,7 +406,41 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+function renderizarProdutos(products, sectionId) {
+    const secao = document.getElementById(sectionId);
+    const divLista = secao.querySelector('.product-list, .manga-list, .light-list, .act-list');
 
+    products.forEach((product) => {
+        const card = document.createElement('div');
+        card.classList.add('card-product');
+        card.innerHTML = `
+            <img src="${product.imagem}" alt="${product.nome}">
+            <div class="content">
+                <h3 class="product-name">${product.nome}</h3>
+                <p>Preço: R$ ${product.preco}</p>
+                <p>Vendedor: ${product.usuario.nome}</p>
+            </div>
+            <button class="add-to-cart" data-product-id="${product.id}">Adicionar ao Carrinho</button>
+        `;
+
+        // Adiciona evento de clique à div do card
+        card.addEventListener('click', () => {
+            openProductModal(product.id);
+        });
+
+        // Adiciona evento de clique ao botão "Adicionar ao Carrinho"
+        card.querySelector('.add-to-cart').addEventListener('click', async (event) => {
+            event.stopPropagation(); // Impede a propagação do evento para a div do card
+            const productId = card.querySelector('.add-to-cart').dataset.productId;
+            // Chama a função para adicionar o produto ao carrinho
+            await adicionarProdutoAoCarrinho(productId);
+            // Adicione aqui a lógica para adicionar ao carrinho, se necessário
+            console.log('Produto adicionado ao carrinho. ID do produto:', productId);
+        });
+
+        divLista.appendChild(card);
+    });
+}
 
 async function searchProductsSection(Search) {
   let currentPage = 0;
