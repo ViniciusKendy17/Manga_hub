@@ -333,3 +333,12 @@ async function searchProducts() {
         const modal = document.getElementById('product-modal');
         modal.style.display = 'none';
     }
+
+    //exibir sobre
+    let sobre = document.getElementById('sobre-link');
+    sobre.addEventListener('click', ()=>{
+      if(containerMain) {
+        containerMain.style.display='none';
+      }
+      sobre.style.display = 'block'
+    })

@@ -409,3 +409,22 @@ font-size: 1rem;
       from { background:#5264AE; }
     to 	{ width:0; background:transparent; }
   }
+
+  .footer {
+    background-color: rgba(44, 0, 139, 0.9);
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+    width: 100%;
+    margin-top: 25px;
+}
+
+.footer a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
