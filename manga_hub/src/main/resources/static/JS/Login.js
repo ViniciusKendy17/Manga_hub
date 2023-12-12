@@ -21,6 +21,7 @@ document.forms["login"].addEventListener('submit', function(event) {
     })
     .then(response => response.json())
     .then(data => {
+      autenticado = true;
       //Manipular a resposta do servidor
       const token = data.token;
       localStorage.setItem('token', token);
