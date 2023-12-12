@@ -1,4 +1,4 @@
-var autenticado = false;
+let autenticado = false;
 
 document.forms["login"].addEventListener('submit', function(event) {
     event.preventDefault(); // Impede o envio do formulário padrão
@@ -17,7 +17,7 @@ document.forms["login"].addEventListener('submit', function(event) {
     })
     .then(response => response.json())
     .then(data => {
-      autenticado = true;
+      let = autenticado = true;
       //Manipular a resposta do servidor
       const token = data.token;
       localStorage.setItem('token', token);

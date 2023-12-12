@@ -41,13 +41,14 @@ function cadastrarp(){
     })
     
     .then(response => {
-        console.log(response.status);
+        console.log("Teste" + response.status);
         alert("Produto Registrado com sucesso !!")
         
         // Lógica adicional de tratamento de resposta aqui
     })
     .catch(error => {
-    alert("Cadastro Inválido");
+    console.log(error);
+    alert("Erro ao cadastrar");
     });
 
 }
