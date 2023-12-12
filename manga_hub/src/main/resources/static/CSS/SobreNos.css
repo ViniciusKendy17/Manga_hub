@@ -76,6 +76,62 @@
     max-width: 100%;
 }
 
+.footer{
+    height: 100%;
+    width: 100%;
+    border: black solid 2px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 0;
+    border: 0;
+    padding: 0;
+}
+
+.img-footer{
+    height: 60%;
+    width: 40%;
+   
+}
+
+#girl{
+    width: 100%;
+    height: 100%;
+}
+
+.container-footer{
+    width: 50%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+ 
+    justify-content: space-between;
+}
+
+
+.link-footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    text-align: center;
+    align-items: center;
+   
+}
+
+#rights{
+    color: white;
+}
+
+.links{
+    text-decoration: none;
+    color: white;
+}
+
+#About{
+    font-size: x-large;
+    color: white;
+}
+
 @media screen and (max-width: 600px) {
     
 .topicos-sobre div{
