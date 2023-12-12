@@ -82,7 +82,7 @@ section h2{
     background-color: rgb(2, 2, 100);
     box-shadow: 0px 3px 10px 0px #ccc;
     color: rgb(235, 235, 235);
-    border-radius: 15px;
+    border-radius: 5px;
 }
 
 .card-dest:hover{
@@ -94,7 +94,7 @@ section h2{
 }
 
 .card-dest img{
-    border-radius: 15px;
+    
     height: 90%;
 }
 
@@ -509,7 +509,7 @@ td{
   }
 
 #out-Between-section{
-  height: 550px;
+  height: 600px;
   width: 100%;
   background: rgb(13,0,87);
 background: linear-gradient(250deg, rgba(13,0,87,1) 0%, rgba(73,2,171,1) 50%, rgba(94,0,255,1) 100%);
@@ -517,6 +517,10 @@ background: linear-gradient(250deg, rgba(13,0,87,1) 0%, rgba(73,2,171,1) 50%, rg
   flex-direction: column;
   justify-content: center;
  
+}
+
+#out-Between-section:hover{
+  cursor: pointer;
 }
 
 #Between-section-product{
@@ -536,13 +540,13 @@ background: linear-gradient(250deg, rgba(13,0,87,1) 0%, rgba(73,2,171,1) 50%, rg
 
 .Description-product{
 
-  width: 30%;
+  width: 38%;
   height: 90%;
 }
 
 .title-manga, .text-manga{
   color: white;
-  font-size:x-large;
+  font-size:30px;
 }
 
 .img-in{

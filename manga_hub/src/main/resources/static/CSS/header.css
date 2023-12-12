@@ -678,13 +678,17 @@ ul{
   height: 100%;
 }
 
-#cart-out-img:hover{
+#cart-out-icon:hover{
   cursor: pointer;
 }
 
 .dropdown {
   position: relative;
   display: inline-block;
+}
+
+.dropdown:hover{
+  cursor: pointer;
 }
 
 

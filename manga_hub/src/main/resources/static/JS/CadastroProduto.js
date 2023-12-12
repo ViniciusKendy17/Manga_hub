@@ -50,8 +50,4 @@ function cadastrarp(){
     alert("Cadastro Inválido");
     });
 
-
-
-
-
 }
