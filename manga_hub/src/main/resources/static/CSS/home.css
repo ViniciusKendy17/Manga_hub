@@ -511,7 +511,8 @@ td{
 #out-Between-section{
   height: 600px;
   width: 100%;
-  background-color:  rgba(44, 0, 139, 0.9);
+  background: rgb(13,0,87);
+background: linear-gradient(250deg, rgba(13,0,87,1) 0%, rgba(73,2,171,1) 50%, rgba(94,0,255,1) 100%);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -547,8 +548,6 @@ td{
   color: white;
   font-size:30px;
 }
-
-
 
 .img-in{
   width: 100%;
