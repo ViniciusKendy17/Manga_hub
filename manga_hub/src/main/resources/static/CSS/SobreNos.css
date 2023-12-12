@@ -1,0 +1,66 @@
+.sobre-container {
+    display: none;
+}
+.titulo-sobre {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+.titulo-sobre h1 {
+    margin: 0;
+}
+
+.resumo-sobre {
+    text-align: center;
+    padding: 20px;
+}
+
+.equipe-sobre {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.membros-sobre {
+    text-align: center;
+    margin: 10px;
+}
+
+.membros-sobre img {
+    width: 100px;
+    border-radius: 50%;
+}
+
+.section-sobre {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 25px;
+}
+
+.topicos-sobre {
+    width: 100%;
+    text-align: center;
+    margin: 10px;
+}
+
+.topicos-sobre ul {
+    list-style-type: none;
+    padding: 0;
+    display: block;
+    width: 100%;
+}
+
+.topicos-sobre li {
+    margin: 15px;
+    padding:15px;
+    background-color: rgba(44, 0, 139, 0.9);
+    color: #fff;
+}
+
+.topicos-sobre p:first-child {
+    font-weight: bold;
+}
