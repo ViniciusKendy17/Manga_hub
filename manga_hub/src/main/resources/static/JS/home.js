@@ -386,8 +386,6 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!response.ok) {
                 throw new Error('Erro ao remover o item do carrinho');
             }
-    
-            console.log(`Item ${itemId} removido do carrinho com sucesso`);
         } catch (error) {
             console.error('Erro ao remover o item do carrinho:', error.message);
         }
