@@ -3,11 +3,13 @@ document.addEventListener('DOMContentLoaded', () => {
   let productsMangas = [];
   let productsLightNovels = [];
   let productsActionFigures = [];
+
   const tipo = {
     manga: "Mangá",
-    lightNovel: "Ligh Novel",
+    lightNovel: "Light Novel",
     actFigure: "Action Figure",
   }
+
     fetch("http://localhost:8080/home/")
       .then(response => response.json())
       .then(data => {
@@ -134,7 +136,6 @@ document.addEventListener('DOMContentLoaded', () => {
       const searchTerm = document.getElementById('SearchProduct');
 
       const searchTermUpperCase = searchTerm.value.toUpperCase();
-      console.log("aqui:"+searchTerm);
       try {
           const response = await fetch(`http://localhost:8080/product/search/${searchTermUpperCase}?page=${currentPage}`);
           if (!response.ok) {
@@ -209,7 +210,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Chama a função para adicionar o produto ao carrinho
             await adicionarProdutoAoCarrinho(productId);
             // Adicione aqui a lógica para adicionar ao carrinho, se necessário
-            console.log('Produto adicionado ao carrinho. ID do produto:', productId);
+
         });
 
         divLista.appendChild(card);
@@ -241,14 +242,13 @@ document.addEventListener('DOMContentLoaded', () => {
             // Chama a função para adicionar o produto ao carrinho
             await adicionarProdutoAoCarrinho(productId);
             // Adicione aqui a lógica para adicionar ao carrinho, se necessário
-            console.log('Produto adicionado ao carrinho. ID do produto:', productId);
         });
 
         modalImage.src = productDetails.imagem;
         modalName.textContent = productDetails.nome;
         modalPrice.textContent = `Preço: R$ ${productDetails.preco}`;
         modalUser.textContent = `Vendedor: ${productDetails.usuario.nome}`;
-        modalUserTel.textContent = `Telefone: ${productDetails.telefone || 'N/A'}`;
+        modalUserTel.textContent = `Telefone: ${productDetails.usuario.telefone}`;
 
         // Exiba o modal
         modal.style.display = 'block';
@@ -287,7 +287,6 @@ document.addEventListener('DOMContentLoaded', () => {
           if (!response.ok) {
               throw new Error('Erro ao adicionar o produto ao carrinho');
           }
-          console.log('Produto adicionado ao carrinho com sucesso!');
       } catch (error) {
           console.error('Erro ao adicionar o produto ao carrinho:', error.message);
       }
@@ -436,7 +435,6 @@ function renderizarProdutos(products, sectionId) {
             // Chama a função para adicionar o produto ao carrinho
             await adicionarProdutoAoCarrinho(productId);
             // Adicione aqui a lógica para adicionar ao carrinho, se necessário
-            console.log('Produto adicionado ao carrinho. ID do produto:', productId);
         });
 
         divLista.appendChild(card);
@@ -448,7 +446,6 @@ async function searchProductsSection(Search) {
 
 const destaqueSection = Search.toUpperCase();
 
-console.log("aaaaa" + destaqueSection);
 try {
     const response = await fetch(`http://localhost:8080/product/search/${destaqueSection}?page=${currentPage}`);
     if (!response.ok) {
