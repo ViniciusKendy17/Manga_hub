@@ -418,7 +418,8 @@ font-size: 1rem;
     margin-top: 25px;
     text-align: start;
     display: flex;
-
+    align-items: end;
+    flex-wrap: nowrap;
     
   }
 
@@ -427,6 +428,7 @@ font-size: 1rem;
     text-decoration: none;
     margin-left: 10px;
     display: block;
+  
 }
 
 .footer a:hover {
@@ -434,20 +436,23 @@ font-size: 1rem;
 }
 
 .footer img {
-  width: 250px;
+  width: 350px;
 
 }
 
+.img-footer {
+}
+
 .footer .link {
-  width: 100%;
   display: flex;
   justify-content: center;
   padding-top:24px;
+  flex-wrap: wrap;
 }
 
 .link-footer1, .link-footer2 {
   line-height: 50px;
-  margin: 0 25px;
+  margin: 0 30px;
 }
 
 .contato-footer {
@@ -461,10 +466,31 @@ font-size: 1rem;
   margin: 5px;
 }
 
+.link-footer1, .link-footer2 {
+}
 
+.container-footer >p {
+  text-align: center;
+  padding: 15px;
+}
 
+.container-footer {
+  width: 100%;
+}
+@media screen and (max-width: 1050px) {
+  .footer {
+    flex-direction: column-reverse;
+    flex-wrap: wrap;
+  }
+  .img-footer {
+    width: 100%;
+  }
+  .contato-footer {
+    width: 100%;
+    justify-content: center;
+  }
 
-
+}
 
 
 

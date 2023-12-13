@@ -1,6 +1,6 @@
 
 .titulo-sobre {
-    background-color: #333;
+    background-color: rgba(44, 0, 139, 0.9);
     color: #fff;
     text-align: center;
     padding: 20px;
@@ -92,6 +92,10 @@
 .topicos-sobre img {
     width: 100%;
 }
+
+.membros-sobre {
+    width: 100%;
+}
     
 }
 
@@ -102,4 +106,10 @@
 .topicos-sobre .texto-topicos {
     text-align: justify;
     width: 650px;
+}
+
+.membros-sobre .nome{
+
+    font-size: 18px;
+    font-weight: bold;
 }
