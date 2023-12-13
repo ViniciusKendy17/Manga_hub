@@ -1,12 +1,7 @@
 package manga_hub.manga_hub.models;
 
-import java.util.List;
-
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
-import jakarta.persistence.CollectionTable;
-import jakarta.persistence.Column;
-import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -29,6 +24,7 @@ public class ProductModel {
     private long id;
 
     private String nome;
+    private String descricao;
     private Double preco;
     private int estoque;
     private String genero;
@@ -43,11 +39,27 @@ public class ProductModel {
 
     public ProductModel(ProductRegDTO productRegDTO){
         nome = productRegDTO.nome();
+        descricao = productRegDTO.descricao();
         preco = productRegDTO.preco();
         estoque = productRegDTO.estoque();
         genero = productRegDTO.genero();
         tipo_produto = productRegDTO.tipo();
         isbn = productRegDTO.isbn();
         imagem = productRegDTO.imagem();
+    }
+
+    @Override
+    public String toString(){
+        return "ProductModel{" +
+            "id=" + id +
+            ", nome='" + nome + '\'' +
+            ", descricao='" + descricao + '\'' +
+            ", preco=" + preco +
+            ", estoque=" + estoque +
+            ", genero='" + genero + '\'' +
+            ", tipo_produto='" + tipo_produto + '\'' +
+            ", isbn='" + isbn + '\'' +
+            ", imagem='" + imagem + '\'' +
+            '}';
     }
 }

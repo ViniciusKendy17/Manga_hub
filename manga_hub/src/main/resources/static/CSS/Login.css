@@ -568,7 +568,18 @@
     left: 15%;
     background-color: rgba(44, 0, 139, 90%);
     color: white;
-    border-radius: 5px;
+
+  }
+
+  .submit{
+    border: none;
+    background-color: rgba(44, 0, 139, 0.689)
+  }
+
+  .submit:hover{
+    cursor: pointer;
+    background-color: rgba(44, 0, 139, 0.689) ;
+
   }
   
   .loginForm p{

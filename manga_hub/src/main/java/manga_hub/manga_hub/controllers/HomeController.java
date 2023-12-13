@@ -15,13 +15,17 @@ import manga_hub.manga_hub.Services.HomeService;
 @RestController
 @RequestMapping("/home")
 public class HomeController {
-    
+
     @Autowired
     HomeService service;
 
     @GetMapping("/")
-    public List<HomeDTO> listHome(){
-        return service.listAll();
+    public List<HomeDTO> listHome() {
+        return service.listLast();
     }
 
+    @GetMapping("/{tipo}")
+    public ResponseEntity<List<HomeDTO>> listPerSection(@PathVariable String tipo ) {
+        return ResponseEntity.ok(service.listItensPerSection(tipo));
+    }
 }

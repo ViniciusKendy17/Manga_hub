@@ -1,8 +1,4 @@
-const nome = document.getElementById('nome');
-const email = document.getElementById('email');
-const senha = document.getElementById('senha');
-const cep = document.getElementById('cep');
-const telefone = document.getElementById('telefone');
+
 
 document.getElementById('botao').addEventListener('click', cadastrar);
 
@@ -33,8 +29,9 @@ function cadastrar() {
     .then(response => {
         console.log(response.status);
         // Lógica adicional de tratamento de resposta aqui
+        window.location.href = "login.html";
     })
     .catch(error => {
-    console.log("aqui");
+    console.log("Erro ao fazer cadastro");
     });
 }

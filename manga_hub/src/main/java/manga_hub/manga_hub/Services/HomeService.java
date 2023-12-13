@@ -2,6 +2,7 @@ package manga_hub.manga_hub.Services;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,9 +22,9 @@ public class HomeService {
     @Autowired
     ProductService service;
 
-    public List<HomeDTO> listAll(){ 
+    public List<HomeDTO> listLast(){ 
 
-        List<ProductModel> listaBanco = repository.findAll();
+        List<ProductModel> listaBanco = repository.findAllOrderedByIdDesc();
         List<HomeDTO> listResponse = new ArrayList<>();
 
         for (ProductModel productModel : listaBanco) {
@@ -40,9 +41,20 @@ public class HomeService {
             productModel.getImagem(), 
             userDTO));
         }
-        for (HomeDTO homeDTO : listResponse) {
-            System.out.println("-->"+homeDTO.nome());
-        }
         return listResponse;
+    }
+
+    public List<HomeDTO> listItensPerSection(String tipo){
+        List<ProductModel> mangas = repository.findTop20ByTipoProduto(tipo);
+        return mangas.stream().map(this::mapToHomeDTO).collect(Collectors.toList());
+    }
+
+    private HomeDTO mapToHomeDTO(ProductModel product) {
+        
+        HomeUserDTO vendedor = new HomeUserDTO(product.getId_vendedor().getId(), product.getId_vendedor().getName(), product.getId_vendedor().getTelefone());
+
+        HomeDTO produtoDTO = new HomeDTO(product.getId(), product.getNome(), product.getPreco(), product.getImagem(), vendedor);
+
+        return produtoDTO;
     }
 }
