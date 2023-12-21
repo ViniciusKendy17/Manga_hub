@@ -8,12 +8,15 @@ Our gool here is to provide a easier way to sell what you intend to, we want to 
 
 <h2>Technologies:</h2>
 
+<img src = "https://github.com/ViniciusKendy17/Manga_hub/assets/135672206/011d00e6-1cb3-4fd1-8004-d43756cbadc7" ></img>
 <img src = "" ></img>
 <img src = "" ></img>
 <img src = "" ></img>
 <img src = "" ></img>
-<img src = "" ></img>
-<img src = "" ></img>
+<img src = "https://github.com/ViniciusKendy17/Manga_hub/assets/135672206/0654d61d-e07b-4ce7-8191-97ca73905fcb" ></img>
+
+![1_ljHUhFnaBissdRBe7DIo6g](https://github.com/ViniciusKendy17/Manga_hub/assets/135672206/011d00e6-1cb3-4fd1-8004-d43756cbadc7)
+![Unofficial_JavaScript_logo_2 svg](https://github.com/ViniciusKendy17/Manga_hub/assets/135672206/0654d61d-e07b-4ce7-8191-97ca73905fcb)
 
 <h2>Main features of the system that can be already used:</h2>
 
