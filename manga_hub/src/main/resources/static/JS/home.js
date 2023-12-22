@@ -250,7 +250,7 @@ document.addEventListener('DOMContentLoaded', () => {
           modalName.textContent = productDetails.nome;
           modalPrice.textContent = `Preço: R$ ${productDetails.preco}`;
           modalUser.textContent = `Vendedor: ${productDetails.usuario.nome}`;
-          modalUserTel.textContent = `Telefone: ${productDetails.telefone || 'N/A'}`;
+          modalUserTel.textContent = `Telefone: ${productDetails.usuario.telefone || 'N/A'}`;
   
           // Exiba o modal
           modal.style.display = 'block';
@@ -445,6 +445,196 @@ document.addEventListener('DOMContentLoaded', () => {
       });
   }
   
+  async function openProductModal(productId) {
+    try {
+        // Faça a requisição ao servidor para obter os detalhes do produto
+        const response = await fetch(`http://localhost:8080/product/${productId}`);
+
+        if (!response.ok) {
+            throw new Error('Erro ao obter detalhes do produto');
+        }
+
+        const productDetails = await response.json();
+
+        // Preencha os elementos do modal com os detalhes do produto
+        const modal = document.getElementById('product-modal');
+        const modalImage = document.getElementById('modal-product-image');
+        const modalName = document.getElementById('modal-product-name');
+        const modalPrice = document.getElementById('modal-product-price');
+        const modalUser = document.getElementById('modal-product-user');
+        const modalUserTel = document.getElementById('modal-product-user-tel');
+        const botaoCarrinho = document.getElementById('cartModal');
+
+        botaoCarrinho.addEventListener('click', async () => {
+            // Chama a função para adicionar o produto ao carrinho
+            await adicionarProdutoAoCarrinho(productId);
+            // Adicione aqui a lógica para adicionar ao carrinho, se necessário
+            console.log('Produto adicionado ao carrinho. ID do produto:', productId);
+        });
+
+        modalImage.src = productDetails.imagem;
+        modalName.textContent = productDetails.nome;
+        modalPrice.textContent = `Preço: R$ ${productDetails.preco}`;
+        modalUser.textContent = `Vendedor: ${productDetails.usuario.nome}`;
+        modalUserTel.textContent = `Telefone: ${productDetails.usuario.telefone || 'N/A'}`;
+
+        // Exiba o modal
+        modal.style.display = 'block';
+    } catch (error) {
+        console.error('Erro ao abrir o modal:', error.message);
+    }
+}
+
+  const closeButton = document.getElementById('close');
+  if (closeButton) {
+      closeButton.addEventListener('click', closeProductModal);
+  }
+
+  // Função para fechar o modal
+  function closeProductModal() {
+      const modal = document.getElementById('product-modal');
+      modal.style.display = 'none';
+  }
+  
+
+  async function adicionarProdutoAoCarrinho(productId) {
+    const token = localStorage.getItem('token');
+    try {
+        const response = await fetch('http://localhost:8080/cart/', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                "Authorization": `Bearer ${token}`
+            },
+            body: JSON.stringify({
+                id: productId,
+                quantidade: 1, // ou a quantidade desejada
+            }),
+        });
+
+        if (!response.ok) {
+            throw new Error('Erro ao adicionar o produto ao carrinho');
+        }
+        console.log('Produto adicionado ao carrinho com sucesso!');
+    } catch (error) {
+        console.error('Erro ao adicionar o produto ao carrinho:', error.message);
+    }
+}
+
+  const cartIcon = document.getElementById('cart-out-icon');
+    if (cartIcon) {
+        cartIcon.addEventListener('click', openCartModal);
+    }
+
+    // Adiciona o evento de clique ao botão de fechar no modal
+    const closeCartButton = document.getElementById('close-cart-modal');
+    if (closeCartButton) {
+        closeCartButton.addEventListener('click', closeCartModal);
+    }
+
+  // Função para abrir o modal do carrinho
+  async function openCartModal() {
+  const cartModal = document.getElementById('cart-modal');
+  const cartItemTable = document.getElementById('cart-item-table');
+  const cartTotalElement = document.getElementById('cart-total');
+  const token = localStorage.getItem('token');
+
+  try {
+      // Realiza um fetch para obter os itens do carrinho
+      const response = await fetch('http://localhost:8080/cart/', {
+          method: 'GET',
+          headers: {
+              "Authorization": `Bearer ${token}`
+          },
+      });
+
+      if (!response.ok) {
+          throw new Error('Erro ao obter os itens do carrinho');
+      }
+
+      const cartItems = await response.json();
+
+      // Limpa a tabela antes de preenchê-la
+      cartItemTable.innerHTML = '';
+
+      // Adiciona a linha de cabeçalho à tabela
+      const headerRow = cartItemTable.insertRow(0);
+      const headerCells = ['Produto', 'Imagem', 'Preço', 'Quantidade', 'Total', 'Ação'];
+
+      headerCells.forEach((cellText, index) => {
+          const cell = headerRow.insertCell(index);
+          cell.textContent = cellText;
+      });
+
+      // Preenche a tabela de itens e calcula o total do carrinho
+      let cartTotal = 0;
+      cartItems.forEach(item => {
+          const row = cartItemTable.insertRow(-1);
+
+          row.innerHTML = `
+              <td>${item.produto.nome}</td>
+              <td><img src="${item.produto.imagem}" alt="${item.produto.nome}" class="img-cart"></td>
+              <td>R$ ${item.produto.preco.toFixed(2)}</td>
+              <td>${item.quantidade}</td>
+              <td>R$ ${item.total.toFixed(2)}</td>
+              <td><button class="remove-item-btn" data-item-id="${item.id}">Remover Item</button></td>
+          `;
+
+          // Adiciona evento de clique ao botão de remover item
+          const removeItemButton = row.querySelector('.remove-item-btn');
+          if (removeItemButton) {
+              removeItemButton.addEventListener('click', async () => {
+                  // Chama o endpoint de exclusão do item
+                  await removeItemFromCart(item.id);
+                  // Atualiza o modal após a remoção do item
+                  openCartModal();
+              });
+          }
+
+          // Atualiza o total do carrinho
+          cartTotal += item.total;
+      });
+
+      // Exibe o total do carrinho
+      cartTotalElement.textContent = `Total do Carrinho: R$ ${cartTotal.toFixed(2)}`;
+
+      // Exibe o modal
+      if (cartModal) {
+          cartModal.style.display = 'block';
+      }
+  } catch (error) {
+      console.error('Erro ao obter os itens do carrinho:', error.message);
+  }
+  }   
+
+  async function removeItemFromCart(itemId) {
+      const token = localStorage.getItem('token');
+  
+      try {
+          const response = await fetch(`http://localhost:8080/cart/${itemId}`, {
+              method: 'DELETE',
+              headers: {
+                  'Authorization': `Bearer ${token}`
+              }
+          });
+  
+          if (!response.ok) {
+              throw new Error('Erro ao remover o item do carrinho');
+          }
+      } catch (error) {
+          console.error('Erro ao remover o item do carrinho:', error.message);
+      }
+  }
+
+  // Função para fechar o modal do carrinho
+  function closeCartModal() {
+    const cartModal = document.getElementById('cart-modal');
+    if (cartModal) {
+        cartModal.style.display = 'none';
+    }
+  };
+
+
   async function searchProductsSection(Search) {
     let currentPage = 0;
   
@@ -530,6 +720,9 @@ document.addEventListener('DOMContentLoaded', () => {
   if (event.key === 'Enter') {
       searchProducts();
   }
+
+  
+  
   })
   
   
