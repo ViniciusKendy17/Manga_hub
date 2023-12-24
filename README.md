@@ -16,7 +16,7 @@ Our gool here is to provide a easier way to sell what you intend to, we want to 
 <img src = "https://github.com/ViniciusKendy17/Manga_hub/assets/135672206/0654d61d-e07b-4ce7-8191-97ca73905fcb" width = "200" height = "200" ></img>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 
-<h2>Main features of the system that can be already used:</h2>
+<h2>Main features</h2>
 
 + Search for products by name;
 + Add a product into the shop cart;
