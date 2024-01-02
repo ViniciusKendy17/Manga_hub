@@ -8,12 +8,16 @@ Our gool here is to provide a easier way to sell what you intend to, we want to 
 
 <h2>Technologies:</h2>
 
-<img src = "https://github.com/ViniciusKendy17/Manga_hub/assets/135672206/011d00e6-1cb3-4fd1-8004-d43756cbadc7" width = "280" height = "200" ></img> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<img src = "https://github.com/ViniciusKendy17/Manga_hub/assets/135672206/bb34da66-2bae-4316-89dc-5b6f5819b666" width = "230" height = "200" ></img> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<img src = "https://github.com/ViniciusKendy17/Manga_hub/assets/135672206/1fa9f2c1-2640-454b-a734-fdaee4ed6d2a" width = "230" height = "200" ></img> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<img src = "https://github.com/ViniciusKendy17/Manga_hub/assets/135672206/7b3c4451-174b-4fe6-81e9-f9607a06d573" width = "230" height = "200" ></img> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<img src = "https://github.com/ViniciusKendy17/Manga_hub/assets/135672206/5d9fa991-9b54-4ca1-8f07-9252ebf0b9ea" width = "230" height = "200" ></img> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<img src = "https://github.com/ViniciusKendy17/Manga_hub/assets/135672206/0654d61d-e07b-4ce7-8191-97ca73905fcb" width = "200" height = "200" ></img>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<div  style="display: inline_block"><br>
+  <img align="center"  height="100" width="130" src="https://github.com/ViniciusKendy17/Manga_hub/assets/135672206/011d00e6-1cb3-4fd1-8004-d43756cbadc7">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <img align="center"  height="100" width="130" src="https://github.com/ViniciusKendy17/Manga_hub/assets/135672206/bb34da66-2bae-4316-89dc-5b6f5819b666">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <img align="center"  height="100" width="100" src="https://github.com/ViniciusKendy17/Manga_hub/assets/135672206/1fa9f2c1-2640-454b-a734-fdaee4ed6d2a">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <img align="center"  height="100" width="100" src="https://github.com/ViniciusKendy17/Manga_hub/assets/135672206/7b3c4451-174b-4fe6-81e9-f9607a06d573">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <img align="center"  height="100" width="100" src="https://github.com/ViniciusKendy17/Manga_hub/assets/135672206/5d9fa991-9b54-4ca1-8f07-9252ebf0b9ea">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <img align="center"  height="100" width="100" src="https://github.com/ViniciusKendy17/Manga_hub/assets/135672206/0654d61d-e07b-4ce7-8191-97ca73905fcb">
+</div>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 
 <h2>Main features</h2>
@@ -25,7 +29,7 @@ Our gool here is to provide a easier way to sell what you intend to, we want to 
 + Register a product
 
 
-**Getting Started**
+<h2>Getting Started</h2>
 
 To get started with Manga Hub, you will need to:
 
@@ -47,7 +51,7 @@ mvn install
 mvn spring-boot:run
 ```
 
-**Project Structure**
+<h2>Project Structure</h2>
 
 The Manga Hub project is structured as follows:
 
@@ -55,7 +59,7 @@ The Manga Hub project is structured as follows:
 * `src/main/resources`: Contains the configuration files for the application.
 * `src/test/java`: Contains the unit tests for the application.
 
-**Main Application Class**
+<h2>Main Application Class</h2>
 
 The main application class is `MangaHubApplication`. This class is responsible for bootstrapping the Spring Boot application.
 
@@ -72,7 +76,7 @@ public class MangaHubApplication {
 
 The `@SpringBootApplication` annotation tells Spring Boot that this class is the main application class. It also enables auto-configuration, which means that Spring Boot will automatically configure the application based on the dependencies that are present in the classpath.
 
-**Running the Application**
+<h2>Running the Application</h2>
 
 To run the Manga Hub application, you can use the following command:
 
