@@ -25,6 +25,64 @@ Our gool here is to provide a easier way to sell what you intend to, we want to 
 + Register a product
 
 
+**Getting Started**
+
+To get started with Manga Hub, you will need to:
+
+1. Clone the repository from GitHub:
+
+```
+git clone https://github.com/manga-hub/manga-hub.git
+```
+
+2. Install the dependencies:
+
+```
+mvn install
+```
+
+3. Run the application:
+
+```
+mvn spring-boot:run
+```
+
+**Project Structure**
+
+The Manga Hub project is structured as follows:
+
+* `src/main/java`: Contains the Java source code for the application.
+* `src/main/resources`: Contains the configuration files for the application.
+* `src/test/java`: Contains the unit tests for the application.
+
+**Main Application Class**
+
+The main application class is `MangaHubApplication`. This class is responsible for bootstrapping the Spring Boot application.
+
+```java
+@SpringBootApplication
+public class MangaHubApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(MangaHubApplication.class, args);
+	}
+
+}
+```
+
+The `@SpringBootApplication` annotation tells Spring Boot that this class is the main application class. It also enables auto-configuration, which means that Spring Boot will automatically configure the application based on the dependencies that are present in the classpath.
+
+**Running the Application**
+
+To run the Manga Hub application, you can use the following command:
+
+```
+mvn spring-boot:run
+```
+
+This command will compile the application, start the Spring Boot application server, and deploy the application to the server.
+
+
 
 
 
